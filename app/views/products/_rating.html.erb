@@ -1,0 +1,9 @@
+<% (1..5).each do |point| %>
+  <% if current_user %>
+  <a onclick="set_rate(<%= current_user.id %>, <%= product_id %> , <%= point %>)">
+  <% else %>
+  <a>
+  <% end %>
+  <span id="star-<%= point %>-<%= product_id %>" class='glyphicon glyphicon-star <%= 'cursor-pointer' if current_user %> rating-point<%= '-empty' if point > rating %>' />
+  </a>
+<% end %>

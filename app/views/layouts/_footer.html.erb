@@ -1,0 +1,39 @@
+<!-- FOOTER LAYOUT -->
+<footer class="flex footer-wrapper">
+    <div class="flex footer-mainlinks-wrapper">
+        <div class="footer-termslink-wrapper">
+            <%= link_to (Info::Term.first.present? ? info_term_path(Info::Term.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-terms-link"><%= t '.terms' %></span>
+            <% end %>
+        </div>
+        <div class="footer-faqlink-wrapper">
+            <%= link_to (Info::Question.first.present? ? info_question_path(Info::Question.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-faq-link"><%= t '.faq' %></span>
+            <% end %>
+        </div>
+        <div class="footer-privacylink-wrapper">
+            <%= link_to (Info::Privacy.first.present? ? info_privacy_path(Info::Privacy.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-privacy-link"><%= t '.privacy' %></span>
+            <% end %>
+        </div>
+        <div class="footer-maplink-wrapper">
+            <%= link_to (Info::About.first.present? ? info_about_path(Info::About.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-map-link"><%= t '.about_us' %></span>
+            <% end %>
+        </div>
+    </div>
+    <div class="flex footer-sociallinks-wrapper">
+        <div class="footer-social-element social-text-wrapper">
+            <span class="social-text"><%= t '.we_are_also_in' %></span>
+        </div>
+        <div class="footer-social-element footer-twitter-wrapper">
+            <a href="#" class="footer-twitter-link"></a>
+        </div>
+        <div class="footer-social-element footer-facebook-wrapper">
+            <a href="#" class="footer-facebook-link"></a>
+        </div>
+        <div class="footer-social-element footer-instagram-wrapper">
+            <a href="#" class="footer-instagram-link"></a>
+        </div>
+    </div>
+</footer>

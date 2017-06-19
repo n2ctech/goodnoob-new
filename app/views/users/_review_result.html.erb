@@ -1,0 +1,10 @@
+<% if @media.total_count == 0 %>
+  <%= t '.no_reviews' %>
+<% else %>
+  <% @media.each do |media_object| %>
+    <% if media_object.is_a?(Review) %>
+      <%= render partial: 'review_thumbnail', locals: { review: media_object } %>
+    <% end %>
+  <%end %>
+<% end %>
+<div class="hidden search-results-have-more" data-hasmore="<%= @media.next_page %>"></div>

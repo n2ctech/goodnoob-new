@@ -1,0 +1,72 @@
+header
+  .flex.white-header-stripe
+    .flex.header-start
+      = yield(:mobile_icons)
+    .flex.header-center
+      = link_to image_tag("header-logo.png", alt: 'main-background'), root_path
+    .flex.header-end
+      .upload-btn-wrapper class=("#{@show_langs || 'visible'}")
+        .dropdown
+          button#upload-menu.upload-btn.dropdown-toggle(
+            aria-expanded="true"
+            aria-haspopup="true"
+            data-toggle="dropdown"
+            type="button")
+            .visible-lg= current_locale
+            .hidden-lg= image_tag 'new-profile.png'
+          ul.dropdown-menu.t-center.font-xs
+            li.hidden-lg.area-container.form-control.w-90.m-auto
+              = image_tag 'new-profile.png'
+              span.area-container-text= t('.user_area')
+            li= t('.choose_your_country')
+            li
+              select.form-control.w-90.m-auto
+                option= t('.countries.uk')
+                option= t('.countries.fr')
+                option= t('.countries.es')
+            li= t('.choose_your_language')
+            li
+              select.form-control.w-90.m-auto
+                option= t('.languages.uk')
+                option= t('.languages.fr')
+                option= t('.languages.es')
+            li= t('.choose_your_currency')
+            li
+              select.form-control.w-90.m-auto.m-b-sm
+                option= t('.currencies.eur')
+                option= t('.currencies.gbp')
+      - if user_signed_in?
+        = render 'layouts/upload_button'
+      = render 'layouts/nav_links_for_auth'
+  /! burger menu
+  .fat-nav
+    .fat-nav__wrapper
+      ul.list
+        li.logo
+          div align="center" = link_to image_tag("logo2.png", alt: 'main-background', width: 70), root_path
+        li= link_to t('.social_feed'), search_index_path
+        - default_cat = SubCategory.find_by(name_en: "Surfboards") || SubCategory.first
+        li= link_to t('.compare_products'), default_cat
+        - default_guide = default_cat.guides.first
+        - if default_guide == nil
+          - default_guide = Guide.first
+          - default_cat = default_guide.sub_category
+        li= link_to t('.buying_guides'), sub_category_guide_path(default_cat, default_guide)
+        - if user_signed_in?
+          li
+            span data-target="#collapseMedia" data-toggle="collapse" = t '.new_post'
+          #collapseMedia.collapse
+            li.whiteli
+              = modal_button_tag '/Photo', modals_path(action: :add_photo), link: true
+            li.divider role="separator"
+            li.whiteli
+              = modal_button_tag '/Video', modals_path(action: :add_video), link: true
+        li= link_to t('.my_profile'), edit_user_registration_path
+        li clas="social-links"
+          div
+            a.btn-social-circle href="https://www.facebook.com/goodnoob" target="_blank"
+              span.fa.fa-facebook
+            a.btn-social-circle href="https://twitter.com/Goodnoob_off" target="_blank"
+              span.fa.fa-twitter
+            a.btn-social-circle href="https://www.instagram.com/goodnoob_official/" target="_blank"
+              span.fa.fa-instagram

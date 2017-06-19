@@ -1,0 +1,8 @@
+<div class="col-xs-12">
+  <%= render partial:'reviews/review_form' %>
+</div>
+
+<% content_for :action do %>
+  <%= link_to t('.upload'), '#', class:'btn upload-button',
+    data: { submit_button: true, submit_target: '#submit-review' } %>
+<% end %>

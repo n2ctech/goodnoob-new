@@ -1,0 +1,8 @@
+<% @media.each do |media_object| %>
+  <% case media_object %>
+  <% when Video %>
+    <%= render partial: 'videos/search_thumbnail', locals: {video: media_object, for_profile: true} %>
+  <% when Photo %>
+    <%= render partial: 'photos/search_thumbnail', locals: {photo: media_object, for_profile: true} %>
+  <% end %>
+<% end %>

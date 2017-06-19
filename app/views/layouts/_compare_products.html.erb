@@ -1,0 +1,14 @@
+<% Category.order(:id).all.compact.in_groups(2, false) do |cats| %>
+  <% cats.each do |cat| %>
+    <div class="buying-list">
+      <div class="item-background">
+        <% cat.sub_categories.each do |sub_cat| %>
+          <span class="buying-list-item">
+            <%= link_to sub_cat.name, sub_cat %>
+          </span>
+          <span class="item-separator">|</span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

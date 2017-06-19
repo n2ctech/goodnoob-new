@@ -1,0 +1,49 @@
+.box.thumb-wrapper.thumb-photo
+  .thumb-preview
+    .flex.thumb-header
+      span.thumb-header-name
+        = photo.user.name
+        = photo.user.last_name
+      .thumb-menu-stripe
+        - if local_assigns[:for_profile].present?
+          a.toggle-product-menu.social-share
+            i.fa.fa-ellipsis-h
+          .menu-group
+            .menu-item
+              a.social-share.toggle-social-share-menu= t '.share'
+            hr/
+            .menu-item
+              = modal_button_tag t('.edit'), edit_photo_path(photo), link: true, method: :get
+            hr/
+            .menu-item
+              = link_to t('.delete'), photo_path(photo), method: :delete
+            hr/
+            .menu-item
+              a.share-button-copylink.js-copylink data-copy-url="#{photo_url(photo)}" = t '.copy_url'
+        - else
+          a.toggle-social-share-menu.thumb-more-button.social-share href="#"
+        span.social_share_group
+          span.share_items
+            a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photo)}"
+            a.share_item.share-button-twitter href="https://twitter.com/intent/tweet?url=#{photo_url(photo)}"
+            a.share_item.share-button-whatsapp href="whatsapp://send?text=#{photo_url(photo)}"
+            span.share_item.share-button-separator
+            a.share_item.share-button-copylink.js-copylink data-copy-url="#{photo_url(photo)}"
+
+    - if photo.picture.present?
+      = link_to photo.picture.image.url, class: 'embed-responsive text-hide thumb-bg js-zoom-photo' do
+        = image_tag photo.picture.image.url(:medium), class: 'image-cover-fit'
+      = link_to photo.picture.image.url, class: 'btn btn-link btn-xs thumb-preview-button js-zoom-photo' do
+        span.glyphicon.glyphicon-resize-full
+  .thumb-description.thumb-brd-btm-4.text-left
+    p
+      = truncate strip_tags(photo.comment), length: 200, separator: ' '
+  .flex.thumb-footer
+    - if photo.product.present?
+      .thumb-footer-model
+        = link_to photo.product do
+          = "#{photo.product.company.name} – " if photo.product.company
+          = photo.product.name
+          = "(#{photo.product.year})" if photo.product.year
+      .thumb-star-wrapper
+        = render 'products/rating', rating: photo.product.rating, product_id: photo.product.id

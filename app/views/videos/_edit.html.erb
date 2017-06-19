@@ -1,0 +1,25 @@
+<%= addendum_storage 'video' %>
+
+<%= form_for @video, url: {action: :update}, html: { class: 'form-horizontal' } do |form| %>
+
+  <%= render 'shared/selects', f: form %>
+
+  <div class='form-group'>
+    <div class='col-sm-11 center-block'>
+      <%= form.text_field :url, class: 'form-control', placeholder: 'URL' %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <div class='col-sm-11 center-block'>
+      <%= form.text_area :comment, class: 'form-control', maxlength: 250, placeholder: t('.comment') %>
+    </div>
+  </div>
+
+  <%= form.submit class: 'btn btn-primary hidden', id:'submit-video', style:'display:none;' %>
+
+<% end %>
+
+<% content_for :action do %>
+  <%= link_to "Post", '#', class: 'btn upload-button', data: { submit_button: true, submit_target: '#submit-video', disable_with: 'Loading...' } %>
+<% end %>

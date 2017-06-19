@@ -1,0 +1,27 @@
+<div class='thumb-wrapper'>
+  <div class='flex thumb-header'>
+    <span class='thumb-header-abbr'>
+      <%= product.name %> <%= "(#{product.year})" if product.year %>
+    </span>
+  </div>
+    <div class='thumb-image'>
+      <%= image_tag product.picture_url(:thumbnail), alt: '' %>
+    </div>
+    <div class='flex thumb-footer'>
+      <div class='thumb-star-wrapper'>
+        <%= render 'products/rating', rating: product.rating, product_id: product.id %>
+        (<%= product.reviews.length %>)
+      </div>
+      <span class='thumb-footer-price'>
+        <%= product.price_string %>
+      </span>
+    </div>
+    <div class='thumb-description text-left'>
+      <p>
+        <%= truncate strip_tags(product.description), length: 110, separator: ' ' %>
+      </p>
+    </div>
+    <div class='thumb-moreinfo-link'>
+      <%= link_to t('.more_info'), product %>
+    </div>
+</div>

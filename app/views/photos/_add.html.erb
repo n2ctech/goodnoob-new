@@ -1,0 +1,42 @@
+<%= addendum_storage 'photo' %>
+
+<%= form_for Photo.add_billet, url: photos_path, html: { multipart: true, class: 'form-horizontal' } do |form| %>
+
+  <%= render 'shared/selects', f: form %>
+
+  <%= form.fields_for :picture do |fields| %>
+
+    <div class='form-group'>
+      <div class='col-sm-11 center-block'>
+        <%= fields.file_field :image, class: 'form-control hidden file-upload-button', accept: 'image/*;capture=camera' %>
+        <%= fields.label :image, t('.upload_your_photo') %>
+      </div>
+    </div>
+
+<script>
+          $('.file-upload-button').click(function() {
+            send_track_upload();
+          });
+</script>
+  <% end %>
+
+  <div class='form-group'>
+    <div class='col-sm-11 center-block'>
+      <%= form.text_area :comment, class: 'form-control', maxlength: 250, placeholder: t('.comment') %>
+    </div>
+  </div>
+
+  <%= form.submit class: 'hidden btn btn-primary', id: 'submit-photo' %>
+
+<% end %>
+
+<% content_for :action do %>
+  <%= link_to "Post", '#', class: 'btn upload-button', data: { submit_button: true, submit_target: '#submit-photo', disable_with: 'Loading...' } %>
+
+  <script>
+          $('#submit-photo').click(function() {
+            send_track_upload_complete();
+          });
+  </script>
+
+<% end %>

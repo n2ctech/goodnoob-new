@@ -1,0 +1,84 @@
+$font-family-myriad-light: 'Myriad Pro Light', sans-serif;
+.breadcrumb.cover {
+  background-color: transparent !important;
+  a {
+    color: #fff;
+  }
+  > li + li:before {
+    color: #ccc;
+    font-family: 'Glyphicons Halflings';
+    content: "\e080";
+    padding: 0 5px;
+    vertical-align: middle;
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  &:not(.cover) {
+    margin-top: 50px;
+  }
+}
+
+.toast-top-right {
+  margin-top: 30px;
+}
+
+.body-fix {
+  overflow: hidden !important;
+}
+.body-visible {
+  overflow: visible !important;
+}
+
+select.form-control {
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0 12px;
+  height: 25px;
+  &:focus {
+    box-shadow: none;
+    border-color: rgb(204, 204, 204);
+  }
+  option:hover {
+    background-color: gray;
+  }
+
+}
+.upload-btn-wrapper {
+  img {
+    width: 20px;
+  }
+  .area-container {
+    display: inline-flex;
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 0 12px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 12%;
+      margin-right: 5px;
+    }
+    .area-container-text {
+      color: black;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  header .dropdown-menu {
+    position: fixed;
+    top: 9.5vh;
+    color: black;
+    border: none;
+    font-family: $font-family-myriad-light;
+    letter-spacing: 0.5px;
+  }
+  .login-btn-wrapper .btn:active:focus {
+    opacity: 1;
+  }
+}

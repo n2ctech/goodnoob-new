@@ -1,0 +1,160 @@
+@font-face{
+  font-family: 'DIN LIGHT';
+  src: font-url('din-light-webfont.eot'); /* IE9 Compat Modes */
+  src: font-url('din-light-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('din-light-webfont.woff') format('woff'), /* Modern Browsers */
+  font-url('din-light-webfont.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'DIN REGULAR';
+  src: font-url('din-regular-webfont.eot'); /* IE9 Compat Modes */
+  src: font-url('din-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('din-regular-webfont.woff') format('woff'), /* Modern Browsers */
+  font-url('din-regular-webfont.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'ROBOTO BOLD';
+  src: font-url('RobotoBold.eot'); /* IE9 Compat Modes */
+  src: font-url('RobotoBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('RobotoBold.woff') format('woff'), /* Modern Browsers */
+  font-url('RobotoBold.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'ROBOTO LIGHT';
+  src: font-url('RobotoLight.eot'); /* IE9 Compat Modes */
+  src: font-url('RobotoLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('RobotoLight.woff') format('woff'), /* Modern Browsers */
+  font-url('RobotoLight.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'ROBOTO MEDIUM';
+  src: font-url('RobotoMedium.eot'); /* IE9 Compat Modes */
+  src: font-url('RobotoMedium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('RobotoMedium.woff') format('woff'), /* Modern Browsers */
+  font-url('RobotoMedium.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'ROBOTO REGULAR';
+  src: font-url('RobotoRegular.eot'); /* IE9 Compat Modes */
+  src: font-url('RobotoRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('RobotoRegular.woff') format('woff'), /* Modern Browsers */
+  font-url('RobotoRegular.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'DIN CONDENSED';
+  src: font-url('DinCondensedRegular.eot'); /* IE9 Compat Modes */
+  src: font-url('DinCondensedRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('DinCondensedRegular.woff') format('woff'), /* Modern Browsers */
+  font-url('DinCondensedRegular.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'DIN Alternate';
+  src: font-url('DIN-Alternate-Bold.eot'); /* IE9 Compat Modes */
+  src: font-url('DIN-Alternate-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('DIN-Alternate-Bold.woff') format('woff'), /* Modern Browsers */
+  font-url('DIN-Alternate-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+  font-url('DIN-Alternate-Bold.svg#c96181ae6d23b8cf4b9199e21bdfb845') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Myriad Pro Light';
+  src: font-url('MyriadPro-Light.eot'); /* IE9 Compat Modes */
+  src: font-url('MyriadPro-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('MyriadPro-Light.woff') format('woff'), /* Modern Browsers */
+  font-url('MyriadPro-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+  font-url('MyriadPro-Light.svg#a99616dbb054e76c282c87b27678ee84') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: font-url('MyriadPro-Regular.eot'); /* IE9 Compat Modes */
+  src: font-url('MyriadPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('MyriadPro-Regular.woff') format('woff'), /* Modern Browsers */
+  font-url('MyriadPro-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  font-url('MyriadPro-Regular.svg#b6b933d6eeb92d33db4fad36c45b0bff') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Affogato-Black';
+    src: font-url('Affogato-Black.eot');
+    src: font-url('Affogato-Black.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Black.woff') format('woff'),
+         font-url('Affogato-Black.woff2') format('woff2'),
+         font-url('Affogato-Black.ttf')  format('truetype'),
+         font-url('Affogato-Black.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Affogato-Bold';
+    src: font-url('Affogato-Bold.eot');
+    src: font-url('Affogato-Bold.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Bold.woff') format('woff'),
+         font-url('Affogato-Bold.woff2') format('woff2'),
+         font-url('Affogato-Bold.ttf')  format('truetype'),
+         font-url('Affogato-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Affogato-Medium';
+    src: font-url('Affogato-Medium.eot');
+    src: font-url('Affogato-Medium.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Medium.woff') format('woff'),
+         font-url('Affogato-Medium.woff2') format('woff2'),
+         font-url('Affogato-Medium.ttf')  format('truetype'),
+         font-url('Affogato-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Affogato-Regular';
+    src: font-url('Affogato-Regular.eot');
+    src: font-url('Affogato-Regular.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Regular.woff') format('woff'),
+         font-url('Affogato-Regular.woff2') format('woff2'),
+         font-url('Affogato-Regular.ttf')  format('truetype'),
+         font-url('Affogato-Regular.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Affogato-Light';
+    src: font-url('Affogato-Light.eot');
+    src: font-url('Affogato-Light.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Light.woff') format('woff'),
+         font-url('Affogato-Light.woff2') format('woff2'),
+         font-url('Affogato-Light.ttf')  format('truetype'),
+         font-url('Affogato-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

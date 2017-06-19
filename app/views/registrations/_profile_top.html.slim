@@ -1,0 +1,19 @@
+#profile
+  .background-wrapper
+    .flex.main-heading-wrapper
+      .main-heading-wrapper__shadow
+      #profile-card
+        .profile-edit
+          - edit_content = "#{image_tag('edit-icon-white.png', class: 'edit-icon')}" + t('.edit_info')
+          = modal_button_tag edit_content.html_safe, modals_path(action: :edit_user), link: true
+        .user-avatar
+          - user_avatar = image_tag(current_user.picture.url(:avatar), alt: "profile photo") if current_user.picture
+          - picture_image = current_user.picture ? user_avatar : '<div class="no-photo"><span class="glyphicon glyphicon-camera"></span></div>'
+          = modal_button_tag(picture_image.html_safe, modals_path(action: :add_picture), { link: true, imageable_type: "User", imageable_id: current_user.id  })
+        .user-info
+          h1= current_user.full_name
+          - if current_user.address
+            h2= [current_user.address.city, current_user.address.country].compact.join(', ')
+          - if current_user.bio.present?
+            .quotes
+              p.overflow-ellipsis-text= truncate(strip_tags(current_user.bio), length: 150)

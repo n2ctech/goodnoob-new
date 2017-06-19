@@ -1,0 +1,18 @@
+<% content_for :messages do %>
+  <%= render partial: 'layouts/messages', locals: { flash_class: 'floating' } %>
+<% end %>
+
+<% content_for :mobile_icons do %>
+<!--  <div class="mobile-filter-button"></div>-->
+<% end %>
+
+<%= render 'search_header' %>
+
+<div class="main-container">
+
+  <!-- MAIN CONTENTS LAYOUT -->
+  <main class="main-content-wrapper">
+    <%= render partial: 'search_results', locals: {media: @media } %>
+    <%= render partial: 'load_more_button', locals: { media: @media } %>
+  </main>
+</div>

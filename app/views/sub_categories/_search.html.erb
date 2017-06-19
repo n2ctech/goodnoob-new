@@ -1,0 +1,18 @@
+<div class="flex main-search-wrapper">
+
+  <div class="sort-by-field js-sort-by-dropdown hidden-xs dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <%= t '.sort_by' %>
+      <span class="sort-by-value"><%= params[:search_field].try(:titleize) || t('.newest') %></span>
+      <i class="down-arrow">▼</i>
+    </a>
+
+    <ul class="dropdown-menu">
+      <li><a href="#" class="js-apply-sort" data-field="newest" data-desc="true"><%= t '.newest' %></a></li>
+      <li><a href="#" class="js-apply-sort" data-field="price" data-desc="false"><%= t '.price' %></a></li>
+      <li><a href="#" class="js-apply-sort" data-field="year" data-desc="true"><%= t '.year' %></a></li>
+      <li><a href="#" class="js-apply-sort" data-field="rating" data-desc="true"><%= t '.rating' %></a></li>
+      <li><a href="#" class="js-apply-sort" data-field="name" data-desc="false"><%= t '.name' %></a></li>
+    </ul>
+  </div>
+</div>

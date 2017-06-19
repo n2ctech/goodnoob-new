@@ -1,0 +1,14 @@
+- @show_langs = 'hidden'
+- @active_reviews = 'active'
+= render partial: 'registrations/profile_top'
+= render partial: 'registrations/nav_filters'
+.review-wrapper.center-block.sides-indents
+  .review-section
+    = render partial: 'review_result'
+  .flex.review-showmore-thumbs-row
+    .plus-button-wrapper
+      = review_link [param_change(:update, :page, @media.next_page)], "data-remote": true do
+        i.zmdi.zmdi-plus-circle-o
+    .showmore-text-wrapper
+      = review_link [param_change(:update, :page, @media.next_page)], { class: "show-more-text", 'data-remote': true } do
+        span= t '.more_listings'

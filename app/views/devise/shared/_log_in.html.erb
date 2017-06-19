@@ -1,0 +1,48 @@
+<% unless user_signed_in? %>
+  <button type='button' class='close my-custom-close' data-dismiss='modal' aria-label='Close'>
+    <%= image_tag 'cross.png' %>
+  </button>
+  <div class="authform row flex-form" id="UserSignIn">
+
+    <div class='login-form no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
+        <% devise_error_messages! %>
+        <div class="form-group">
+          <%= f.email_field :email, :autofocus => true, class: 'form-control', placeholder: 'Mail address' %>
+        </div>
+        <div class="form-group">
+          <!-- <%- if devise_mapping.recoverable? %> -->
+            <!-- <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %> -->
+          <!-- <% end -%> -->
+          <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+        </div>
+
+<!--       <% if devise_mapping.rememberable? -%>
+        <div class="checkbox" style="width:150px">
+          <label>
+            <%= f.check_box :remember_me %> Remember me
+          </label>
+        </div>
+      <% end -%> -->
+        <%= render "devise/shared/social_login" %>
+
+        <div class="button-login-page" align="center">
+          <a type="button" class="btn btn-commit btn-register" data-dismiss='modal' data-target='#SignUpModal' id='btnRegister'>Register</a>
+          <%= f.submit 'Login', :class => 'btn btn-commit' %>
+        </div>
+      </div>
+      <div class='login-image no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+        <%= image_tag(asset_path 'login_image.png') %>
+      </div>
+    </div>
+
+            <script>
+          $('#btnRegister').click(function() {
+            send_track_signup();
+          });
+        </script>
+
+
+    <% end %>
+  </div>
+<% end %>

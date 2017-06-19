@@ -1,0 +1,17 @@
+<ol class='breadcrumb'>
+  <li>
+    <%= link_to t('.home'), root_path %>
+  </li>
+  <li>
+    <%= link_to product.sub_category_name,
+                sub_category_path(product.sub_category) %>
+  </li>
+  <li>
+    <%= link_to product.company_name,
+                sub_category_path(product.sub_category,
+                                  companies: [product.company_id]) %>
+  </li>
+  <li class='active'>
+    <%= link_to product.name, product %>
+  </li>
+</ol>

@@ -1,0 +1,27 @@
+<h1>
+  <%== simple_format distributor.information %>
+  <small class='pull-right'>
+    <%= link_to distributor.url, distributor.url %>
+  </small>
+</h1>
+<address>
+  <% if distributor.email? %>
+    <p>
+      <strong><%= t '.contact_email' %>: </strong><%= distributor.email %>
+    </p>
+  <% end %>
+
+  <% if distributor.address.present? %>
+    <p>
+      <strong><%= t '.address' %>:</strong><%= distributor.address.street %> <%= distributor.address.city %> <%= distributor.address.postcode %>
+    </p>
+  <% end %>
+
+
+  <% if distributor.phone? %>
+    <p>
+      <strong><%= t '.contact_phone' %>: </strong><%= distributor.phone %>
+    </p>
+  <% end %>
+
+</address>

@@ -1,0 +1,10 @@
+<% case @user.locale %>
+<% when "fr" %>
+  <%= render "first_photo_upload_fr" %>
+<% when "en" %>
+  <%= render "first_photo_upload_en" %>
+<% when "es" %>
+  <%= render "first_photo_upload_es" %>
+<% else %>
+  <%= render "first_photo_upload_en" %>
+<% end %>

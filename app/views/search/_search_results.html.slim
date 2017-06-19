@@ -1,0 +1,22 @@
+#search_results
+  - if media.blank?
+    .flex.thumbs-matrix-wrapper.search-results-container
+      .flash.alert.alert-danger
+        button.close aria-hidden="true" data-dismiss="alert" type="button"  &times;
+        = t '.no_results'
+  - else
+    .flex.thumbs-matrix-wrapper.search-results-container.infinite-scroll#masonry-container
+      .box.hidden-xs.hidden-sm
+        button.new-post-container type="button" data-toggle='modal' data-target='#NewPost'
+          .image-post
+            = image_tag 'plus.png'
+          .text-post
+            |Share a&nbsp
+            span.underline new photo
+            br
+            .underline or video
+      - media.each do |media_object|
+        - if media_object.is_a?(Photo)
+          = render partial: 'photos/search_thumbnail', locals: { photo: media_object }
+        - elsif media_object.is_a?(Video)
+          = render partial: 'videos/search_thumbnail', locals: { video: media_object }

@@ -1,0 +1,69 @@
+<div class='container-mask hidden'></div>
+<% content_for :messages do %>
+  <%= render partial: 'layouts/messages', locals: { flash_class: 'floating' } %>
+<% end %>
+
+<% content_for :mobile_icons do %>
+<!--  <div class="mobile-filter-button"></div>-->
+<% end %>
+
+<%= render 'filters_header' %>
+<div class="flex main-subfilters-wrapper">
+  <div class="subcategory-wrapper">
+    <% cur_category = @categories.where(id: @sub_category.category_id).first %>
+    <% if cur_category != nil %>
+      <% subcategory_first = true %>
+      <% cur_category.sub_categories.each do |sub_cat| %>
+
+        <!-- subcategory separator -->
+        <!-- <% if subcategory_first == false %>
+          <div class="subcategory-separator"></div>
+        <% end %> -->
+
+        <% class_name = 'subcategory-name' %>
+        <% if @sub_category.id == sub_cat.id %>
+          <% class_name << ' subcategory-selected' %>
+        <% end %>
+        <% link_body = '<label class="' + class_name + '">' + sub_cat.name + '</label>' %>
+        <%= link_to raw(link_body), sub_cat, class: 'subcategory-link' %>
+
+        <% subcategory_first = false %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= form_tag(sub_category_path(@sub_category, format: :js), method: 'get', id: 'filter_form', remote: true) do %>
+  <div class="main-search-container">
+    <%= render 'left_filters' %>
+    <!-- MAIN CONTENTS LAYOUT -->
+    <main class="main-content-wrapper">
+      <!-- <%#= render partial: 'sort' %> -->
+      <%= render partial: 'products', locals: { products: @products } %>
+      <%= render partial: 'load_more_button', locals: { products: @products } %>
+    </main>
+  </div>
+<% end %>
+
+<div class="bottom-bar">
+  <div class="bottom-bar-button js-activate-filters-sidebar"><%= t '.filters' %></div>
+  |
+  <div class="bottom-bar-button js-activate-mobile-sort-by">
+    <%= t '.sort_by' %>
+    <span class="sort-by-value"><%= params[:search_field].try(:titleize) || t('.newest') %></span>
+    <i class="down-arrow">▼</i>
+  </div>
+</div>
+
+<div class="mobile-sort-bar hidden">
+  <div class="mobile-sort-bar-header">
+    <%= t '.sort_by' %>
+    <span class="sort-by-value"><%= params[:search_field].try(:titleize) || t('.newest') %></span>
+    <i class="down-arrow">▼</i>
+  </div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="newest" data-desc="true"><%= t '.newest' %></div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="price" data-desc="false"><%= t '.price' %></div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="year" data-desc="true"><%= t '.year' %></div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="rating" data-desc="true"><%= t '.rating' %></div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="name" data-desc="false"><%= t '.name' %></div>
+</div>

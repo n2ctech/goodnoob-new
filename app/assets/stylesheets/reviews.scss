@@ -1,0 +1,94 @@
+$flores-heading-font: 'DIN Alternate', sans-serif;
+$font-family-sans-serif-light: 'Myriad Pro Light', sans-serif;
+
+.review-wrapper {
+  background-color: white;
+
+  .header-title {
+    padding: 50px 0;
+  }
+
+  .review-section {
+    padding: 20px 100px;
+
+    @media only screen and (max-width: 767px) {
+      padding: 20px;
+    }
+
+    .review-unit {
+      .review-title {
+        h3,
+        h3 > a {
+          color: #9f9f9f;
+          font-size: 17px;
+          font-weight: 200;
+          margin: 5px 0;
+        }
+
+        h3 {
+          display: inline-block;
+        }
+      }
+
+      .review-rating-body {
+        margin-top: 10px;
+
+        .thumb-menu-stripe {
+          float: right;
+        }
+        .review-rating {
+          p {
+            font-family: $flores-heading-font;
+            display: inline-block;
+            color: #232323;
+            font-size: 17px;
+            font-weight: bold;
+          }
+        }
+
+        .review-date {
+          p {
+            font-size: 13px;
+            color: #606060;
+          }
+        }
+      }
+
+      .review-description {
+        margin-bottom: 30px;
+        color: black;
+        font-size: 15px;
+        font-family: $font-family-sans-serif-light;
+
+        a {
+          text-decoration: none;
+          color: #3fa9f5;
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .review-wrapper {
+    .glyphicon-star {
+      font-size: 14px;
+    }
+
+    .review-section {
+      .review-unit {
+
+        .review-title {
+          margin: 7px 0;
+
+          h3 {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

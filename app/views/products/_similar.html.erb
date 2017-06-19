@@ -1,0 +1,20 @@
+<div class="product-similar-wrapper col-md-12">
+  <div class="product-similar">
+    <div class="product-similar-header"><%= t '.similar_products' %></div>
+    <div class="main-content-wrapper">
+      <div class="product-similars short flex thumbs-matrix-wrapper similar-wrapper">
+        <%= render partial: 'product_similar', locals: { results: @similars } %>
+<!--             <%= link_to "Show more (#{product.similars.length - 2})",
+                product_path(product, similar: @similars.next_page),
+                { class: 'btn btn-default', role: 'button', 'data-remote': true } %> -->
+      </div>
+    </div>
+
+  <div class="row visible-xs">
+      <div class="toggle-block col-md-5 center-block">
+        <span class="glyphicon glyphicon-menu-down js-toggle-product-details-block" data-block-selector=".product-similars"></span>
+      </div>
+    </div>
+  </div>
+</div>
+

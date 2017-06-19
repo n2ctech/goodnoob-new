@@ -1,0 +1,47 @@
+<div class="thumb-wrapper">
+  <div class='flex thumb-header'>
+    <span class='thumb-header-name'>
+      <%= photo.user.try :name %>
+      <%= photo.user.try(:last_name) if photo.user.try :last_name %>
+    </span>
+    <div class="thumb-menu-stripe">
+      <a class="toggle-product-menu social-share"></a>
+      <!-- social share tool window -->
+
+      <div class="menu-group">
+        <div class="menu-item">
+          <a class="social-share toggle-social-share-menu"><%= t '.share' %></a>
+        </div>
+        <hr>
+
+        <div class="menu-item">
+          <a class="share-button-copylink js-copylink" data-copy-url="<%= photo_url(photo) %>"><%= t '.copy_url' %></a>
+        </div>
+      </div>
+
+      <span class="social_share_group">
+        <span class="share_items">
+          <a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= photo_url(photo) %>"></a>
+          <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= photo_url(photo) %>"></a>
+          <a class="share_item share-button-whatsapp" href="whatsapp://send?text=<%= photo_url(photo) %>"></a>
+          <span class="share_item share-button-separator"></span>
+          <a class="share_item share-button-copylink js-copylink" data-copy-url="<%= photo_url(photo) %>"></a>
+        </span>
+      </span>
+    </div>
+  </div>
+  <%= link_to photo do %>
+  <div class="embed-responsive embed-responsive-16by9">
+    <%= link_to photo.picture.image.url, class: 'js-zoom-photo' do %>
+      <%= image_tag photo.picture.image.url(:original), alt: '', class: 'img-responsive center-block' %>
+    <% end %>
+
+    <%= link_to photo.picture.image.url, class: 'btn btn-link btn-xs thumb-preview-button js-zoom-photo' do %>
+      <span class="glyphicon glyphicon-resize-full"></span>
+    <% end %>
+  </div>
+  <% end %>
+  <div class="thumb-description text-center">
+    <%= truncate strip_tags(photo.comment), length: 110, separator: ' '%>
+  </div>
+</div>

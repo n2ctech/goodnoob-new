@@ -1,0 +1,10 @@
+<% case @user.locale %>
+<% when "fr" %>
+  <%= render "welcome_fr" %>
+<% when "en" %>
+  <%= render "welcome_en" %>
+<% when "es" %>
+  <%= render "welcome_es" %>
+<% else %>
+  <%= render "welcome_en" %>
+<% end %>

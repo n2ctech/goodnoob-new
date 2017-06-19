@@ -1,0 +1,24 @@
+<div class="thumb-wrapper">
+  <div class='flex thumb-header'>
+    <span class='thumb-header-name'>
+      <%= video.user.name %>
+      <%= video.user.last_name %>
+    </span>
+    <div class="thumb-menu-stripe">
+      <a href="#" class="toggle-social-share-menu thumb-more-button social-share"></a>
+      <span class="social_share_group">
+        <span class="share_items">
+          <a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video_url(video) %>"></a>
+          <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= video_url(video) %>"></a>
+          <a class="share_item share-button-whatsapp" href="whatsapp://send?text=<%= video_url(video) %>"></a>
+          <span class="share_item share-button-separator"></span>
+          <a class="share_item share-button-copylink js-copylink" data-copy-url="<%= video_url(video) %>"></a>
+        </span>
+      </span>
+    </div>
+  </div>
+  <%= video_with_share(video) %>
+  <div class="thumb-description text-center">
+    <%=truncate strip_tags(video.comment), length: 110, separator: ' '%>
+  </div>
+</div>

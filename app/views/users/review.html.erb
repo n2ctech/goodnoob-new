@@ -1,0 +1,19 @@
+<%= render partial: 'registrations/profile_top' %>
+<%= render partial: 'registrations/nav_filters' %>
+<div class="review-wrapper center-block sides-indents">
+  <div class="review-section">
+    <%= render partial: 'review_result' %>
+  </div>
+  <div class="flex review-showmore-thumbs-row">
+    <div class="plus-button-wrapper">
+      <%= review_link [param_change(:update, :page, @media.next_page)], "data-remote": true do %>
+        <i class="zmdi zmdi-plus-circle-o"></i>
+      <% end %>
+    </div>
+    <div class="showmore-text-wrapper">
+      <%= review_link [param_change(:update, :page, @media.next_page)], { class: "show-more-text", 'data-remote': true } do %>
+        <span><%= t '.more_listings' %></span>
+      <% end %>
+    </div>
+  </div>
+</div>

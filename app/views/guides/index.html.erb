@@ -1,0 +1,19 @@
+<div class="main-content-guides-wrapper">
+  <%= render partial: 'learn_filter' %>
+   <div class='flex learn-content-wrapper w-100'>
+     <% @sub_categories.each do |sub_category| %>
+       <div class="learn-content w-100 text-center" style="<%= sub_category.picture ? "background-image: url('#{sub_category.picture.url}')" : 'background-color: grey' %>">
+         <div class="flex hover-field w-100">
+           <div class="learn-title">
+             <%= link_to sub_category_guide_path(sub_category, sub_category.guides.first) do %>
+               <%= sub_category.name_en %>
+             <% end %>
+           </div>
+           <div class="learn-description text-left">
+             <%= sub_category.guides.first.description_en.truncate(150) %>
+           </div>
+         </div>
+       </div>
+     <% end %>
+ </div>
+</div>

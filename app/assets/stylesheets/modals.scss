@@ -1,0 +1,141 @@
+.modal {
+  overflow: auto;
+}
+
+.modal-dialog {
+  z-index: 999;
+  width: 1000px;
+  margin-top: 15%;
+  @media (max-width: 992px) {
+      width: 85%;
+  }
+
+  .btn {
+    border-radius: 0;
+    padding: 2.2% 6% 2%;
+    font-size: 14.5px;
+    &.upload-button {
+    }
+
+    &.btn-primary {
+      background-color: #64b0fc;
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+
+  .modal-content {
+    overflow: auto;
+    border-radius: 0;
+    border: none;
+    padding-bottom: 20px;
+    .modal-body {
+      .bootstrap-select {
+        border-radius: 0;
+        border: 1px solid #777;
+        width: 100%;
+        .dropdown-menu {
+          width: 100%;
+          li {
+            a {
+              font-size: 1rem;
+            }
+          }
+        }
+        .dropdown-toggle {
+          height: 32px;
+          font-weight: 200;
+          font-size: 1.1rem;
+          box-shadow: none;
+          .caret {
+            border: none;
+            top: 0;
+            font-family: 'Glyphicons Halflings';
+            font-size: 1.4rem;
+            &:before {
+              position: absolute;
+              right: -7px;
+              top: 3px;
+              content: "\e003";
+            }
+          }
+        }
+      }
+      padding: 10px 30px;
+    }
+    .modal-header {
+      font-family: "DIN Alternate", sans-serif;
+      font-size: 2rem;
+      color: white;
+      font-weight: bolder;
+      background-color: #64b0fc;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+
+      .close {
+        opacity: 1;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          opacity: 0.2;
+        }
+      }
+    }
+
+    .form-group {
+      &.c-rating {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .center-block {
+        float: none;
+      }
+    }
+
+    .file-upload-button + label {
+      cursor: pointer;
+      color: white;
+      background-color: #64b0fc;
+      display: inline-block;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 10px;
+    }
+
+    .file-upload-button:focus + label,
+    .file-upload-button + label:hover {
+      background-color: #3297fb;
+    }
+
+    input[type="text"], textarea, select {
+      &.form-control {
+        border-radius: 0;
+        border: 1px solid #777;
+        box-shadow: none;
+        font-size: 1.1em;
+        font-weight: 200;
+        max-width: 100%;
+
+        &:active {
+          border: 1px solid #20b0ff;
+          box-shadow: none;
+        }
+      }
+    }
+
+    textarea {
+      height: 150px;
+      max-height: 150px;
+    }
+
+    .modal-footer {
+      padding-top: 0;
+    }
+  }
+}

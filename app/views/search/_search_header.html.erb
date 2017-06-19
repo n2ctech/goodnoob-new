@@ -1,0 +1,71 @@
+<div id="home-search-page">
+  <div class="visible-lg">
+    <div class="video-background w-100 p-absolute" id="header_video">
+    </div>
+  </div>
+  <div class="subcategory-margin"></div>
+  <div class="main-tabs-wrapper w-100">
+
+    <div class="flex tabs-list m-auto">
+      <span class="dropdown dropdown-on-hover tabs-item">
+        <%= link_to t('.learn'), guides_path(category_id: @categories.first.id), { class: "btn btn-link tabs-link" } %>
+      </span>
+
+      <span class="item-separator"><%= image_tag('l-arrow.png') %></span>
+
+      <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper p-static text-center">
+        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown">
+          <span ><%= defined?(@category) ? @category.name : t('.compare') %></span>
+        </button>
+        <div class="dropdown-menu compare-block-wrapper">
+          <%= render 'layouts/compare_products' %>
+        </div>
+      </span>
+
+      <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
+
+      <span class="social-feed-button-wrapper">
+        <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link active" } %>
+      </span>
+    </div>
+  </div>
+
+    <div class="flex main-filters-wrapper">
+      <div class="container-filters m-auto">
+        <% @categories.each do |category| %>
+            <%= render partial: 'search/category_filter', locals: {category: category} %>
+        <% end %>
+      </div>
+    </div>
+
+    <% if @filters.length > 0 %>
+      <div class="show-filters">
+        <a href="#" class="show-filters-button">
+          <span class="glyphicon glyphicon-chevron-down"></span>
+          <span class="applied-filter-text"><%= t '.view_filters' %></span>
+        </a>
+        <%= link_to search_index_path(clear_sub_categories(params)), data: {'turbolinks-scroll' => false} do %>
+          <span class="glyphicon glyphicon-remove"></span>
+          <span class="applied-filter-text"><%= t '.clear_all' %></span>
+        <% end %>
+      </div>
+
+      <div class="flex applied-filters-wrapper sub-filters-wrapper">
+        <% @filters.each do |filter| %>
+            <div class="applied-filter">
+              <%= link_to search_index_path(update_params(params, :remove, filter.type, filter.id)), data: {'turbolinks-scroll' => false} do %>
+                  <span class="glyphicon glyphicon-remove"></span>
+                  <span class="applied-filter-text"><%= filter.name %></span>
+              <% end %>
+            </div>
+        <% end %>
+        <span class="applied-filter js-clear-all clear-filters-filter">
+          <%= link_to search_index_path(clear_sub_categories(params)), data: {'turbolinks-scroll' => false} do %>
+            <span class="glyphicon glyphicon-remove"></span>
+            <span class="applied-filter-text"><%= t '.clear_all' %></span>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<% disabled = [['sub_categories', 'show']] %>
+<% current = [params[:controller], params[:action]]%>
+<% unless disabled.include? current %>
+  <div class='mobile-post-buttons visible-xs'>
+    <% if params[:controller] == 'reviews' && params[:action] == 'index' %>
+      <span class='mobile-post-button'>
+        <%= modal_button_tag '+',
+           new_product_review_path(@product),
+           method: :get,
+           link: true,
+           class: 'visible-xs-inline-block' %>
+      </span>
+    <% else %>
+      <span class='mobile-post-button video'>
+        <% if current_user.present? %>
+          <%= modal_button_tag image_tag('camera.png', class: 'camera'), modals_path(action: :add_video), link: true %>
+        <% else %>
+          <%= modal_link image_tag('camera.png', class: 'camera'), nil, t('.log_in_to_post_video') %>
+        <% end %>
+      </span>
+
+      <span class='mobile-post-button photo'>
+        <% if current_user.present? %>
+          <%= modal_button_tag image_tag('image.png', class: 'image'), modals_path(action: :add_photo), link: true %>
+        <% else %>
+          <%= modal_link image_tag('image.png', class: 'image'), nil, t('.log_in_to_post_photo') %>
+        <% end%>
+      </span>
+
+      <span class='mobile-post-button'>
+        <a href="#" class="toggle-mobile-post-buttons">+</a>
+      </span>
+    <% end %>
+  </div>
+<% end %>

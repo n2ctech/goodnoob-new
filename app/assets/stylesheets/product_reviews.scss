@@ -1,0 +1,211 @@
+$header-font-size: 1.5rem;
+$main-padding: 30px;
+
+@mixin black-button() {
+  display: inline-block;
+  font-weight: bolder;
+  background-color: #333;
+  padding: 5px;
+  color: white;
+  height: 26px;
+  line-height: 21px;
+  font-size: .8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #4eb9e8;
+  }
+}
+
+@mixin section-heading() {
+  width: 100%;
+  font-size: $header-font-size;
+  text-align: center;
+  margin: 20px 0;
+  height: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+section.product-statistics-wrapper {
+  background-color: #fff;
+  width: 100%;
+  padding: 60px 0;
+  .product-statistics {
+    width: 1000px;
+    float: none;
+    .product-thumbnail {
+      width: 500px;
+      img {
+        max-height: 230px;
+        margin: auto;
+      }
+    }
+    .product-stats {
+      width: 440px;
+      .product-name {
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: bolder;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .product-review-bar {
+        color: #ccc;
+        margin: 10px 0;
+        text-align: center;
+      }
+      .product-reviews-charts {
+        width: 320px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        .chart {
+          padding: 0 5px;
+          li {
+            display: flex;
+            margin: auto;
+            line-height: 15px;
+            height: 15px;
+            position: relative;
+            width: 100%;
+            margin: 10px 0;
+            .chart-title {
+              width: 45px;
+              text-align: right;
+              margin-right: 10px;
+              color: #ccc;
+            }
+            .chart-bar-wrapper {
+              width: 250px;
+              background-color: white;
+              height: 100%;
+              .chart-bar {
+                height: 100%;
+                background-color: #4eb9e8;
+              }
+            }
+          }
+        }
+
+      }
+      .product-buttons {
+        position: relative;
+        display: flex;
+        height: 30px;
+        line-height: 35px;
+        justify-content: center;
+        width: 100%;
+        .product-price {
+          color: #4eb9e8;
+          font-size: 1.6rem;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .product-button {
+          border: none;
+          margin: 0 5px;
+          border-radius: 0;
+          vertical-align: middle;
+          height: 30px;
+          line-height: 25px;
+          text-decoration: none;
+          // font-family: 'Myriad Pro';
+          min-width: 35px;
+          display: inline-block;
+          font-weight: bolder;
+          font-size: 1rem;
+          background-color: #4eb9e8;
+          padding: 5px;
+          color: #fff;
+          text-align: center;
+          text-transform: uppercase;
+          &:hover {
+            background-color: #333;
+          }
+
+          .glyphicon {
+            font-size: 1.2rem;
+          }
+        }
+        .dropdown-menu {
+          right: auto;
+          left: 110px;
+        }
+      }
+    }
+  }
+}
+
+section.product-reviews-all-wrapper {
+  width: 100%;
+  background-color: white;
+  .product-reviews-all {
+    float: none;
+    .product-reviews-header {
+      @include section-heading;
+      span {
+        display: inline-block;
+        height: 17px;
+        vertical-align: middle;
+      }
+      a {
+        @include black-button;
+      }
+    }
+    .reviews-container {
+      margin-bottom: $main-padding*2;
+      .add-review {
+        @include black-button;
+      }
+      .product-review {
+        font-size: 1.3rem;
+        margin-top: 20px;
+        .product-review-bar {
+          font-size: 1rem;
+        }
+        .review-title {
+          font-family: 'Myriad Pro', sans-serif;
+          font-weight: bolder;
+        }
+        .review-author-name {
+          margin: 5px 0;
+          font-weight: 200;
+          color: #aaa;
+        }
+        .review-body {
+          font-weight: 200;
+        }
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  section.product-statistics-wrapper {
+    padding: 30px 0;
+    .product-statistics {
+      width: 100%;
+      .product-thumbnail {
+        width: 100%;
+        padding-bottom: 20px;
+        img {
+          max-height: 150px;
+        }
+      }
+      .product-stats {
+        width: 100%;
+      }
+    }
+  }
+
+  section.product-reviews-all-wrapper {
+    .product-reviews-all {
+      .reviews-container {
+        .product-review {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}

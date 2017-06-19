@@ -1,0 +1,15 @@
+nav#nav-filters.navbar.navbar-default
+  - if user_signed_in?
+    ul.nav.navbar-nav.nav-center
+      li.navbar-btn
+        = link_to(edit_user_registration_path, class:"btn-icon profile-icon") do
+          label type="text" = t '.profile'
+      li.navbar-btn class="#{@active_reviews || ''}"
+        = link_to(reviews_users_path, class:"btn-icon reviews-icon") do
+          label type="text" = t '.reviews'
+      li.navbar-btn class="#{@active_social || ''}"
+        = link_to(social_users_path, class:"btn-icon photos-icon") do
+          label type="text" = t '.social'
+      li.navbar-btn class="#{@active_favorites || ''}"
+        = link_to(favourites_users_path, class:"btn-icon favourites-icon") do
+          label type="text" = t '.favorites'

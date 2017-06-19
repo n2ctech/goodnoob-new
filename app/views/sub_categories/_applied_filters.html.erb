@@ -1,0 +1,51 @@
+<div class="flex applied-sub-filters-wrapper">
+  <div class="applied-sub-filters-title">Filters:</div>
+  <% FilterOption.where(id: params[:filters]).each do |filter| %>
+      <div class="applied-sub-filter" data-type="filter" data-id="<%= filter.id %>">
+        <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+        <span class="applied-filter-text"><%= filter.name %></span>
+      </div>
+  <% end if params[:filters] %>
+  <% Company.where(id: params[:companies]).each do |company| %>
+      <div class="applied-sub-filter" data-type="company" data-id="<%= company.id %>">
+        <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+        <span class="applied-filter-text"><%= company.name %></span>
+      </div>
+  <% end if params[:companies].present? %>
+  <% if params[:year_from].present? %>
+      <div class="applied-sub-filter" data-type="year_from">
+        <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+        <span class="applied-filter-text"><%= t '.from_year', year: params[:year_from] %></span>
+      </div>
+  <% end %>
+  <% if params[:year_to].present? %>
+      <div class="applied-sub-filter" data-type="year_to">
+        <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+        <span class="applied-filter-text"><%= t '.to_year', year: params[:year_from] %></span>
+      </div>
+  <% end %>
+  <% if params[:price_from].present? && params[:price_from].to_i != @sub_category.prices.minimum(:amount).to_i %>
+      <div class="applied-sub-filter" data-type="price_from">
+        <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+        <span class="applied-filter-text"><%= t '.from' %> <%= params[:price_from] %></span>
+      </div>
+  <% end %>
+  <% if params[:price_to].present? && params[:price_to].to_i != @sub_category.prices.maximum(:amount).to_i  %>
+      <div class="applied-sub-filter" data-type="price_to">
+        <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+        <span class="applied-filter-text"><%= t '.to' %> <%= params[:price_to] %></span>
+      </div>
+  <% end %>
+</div>

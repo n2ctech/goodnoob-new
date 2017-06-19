@@ -1,0 +1,28 @@
+<div class="col-md-12 col-sm-12">
+  <div class="row">
+
+    <div class="col-md-4 col-sm-4">
+      <div class="input-group-btn search-panel  ">
+        <button type="button" id="cat-btn" class="btn btn-default dropdown-toggle" style="width: 100%;" data-toggle="dropdown">
+          <span id="search_concept"><%= t '.categories' %></span> <span class="caret"></span>
+        </button>
+
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-8">
+      <%= form_tag search_index_path, method: :get do %>
+          <div class="input-group">
+            <%= text_field_tag(:search, params[:search], class: 'form-control', placeholder: t('.search')) %>
+            <span class="input-group-addon">
+              <button name="button" style="border:none ; background-color: rgba(220, 146, 159, 0)" type="submit" class="submit-icon">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+            </span>
+         </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

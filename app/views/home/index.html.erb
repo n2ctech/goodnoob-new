@@ -1,0 +1,15 @@
+<% content_for :messages do %>
+  <%= render partial: 'layouts/messages', locals: { flash_class: 'floating' } %>
+<% end %>
+
+<%= render partial: 'search/search_header' %>
+
+<div class="main-container">
+  <!-- MAIN CONTENTS LAYOUT -->
+  <main class="main-content-wrapper">
+    <div>
+      <div class="flex thumbs-matrix-wrapper search-results-container">
+      </div>
+    </div>
+  </main>
+</div>

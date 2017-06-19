@@ -1,0 +1,17 @@
+<%= form_for @review, url: {action: 'update'} do |f| %>
+  <div class='form-group'>
+    <%= f.text_field :title, class: 'form-control', placeholder: t('.title'), required: true %>
+  </div>
+  <%= render partial: 'reviews/review_rating_form' , locals:{form:f}%>
+  <div class='form-group'>
+    <%= f.text_area :review, class: 'form-control',
+                             placeholder: t('.post_review'),
+                             rows: 7,
+                             required: true %>
+  </div>
+  <%= f.submit "", id:'submit-review', class:'btn btn-default', style:"display:none;"%>
+<% end %>
+
+<% content_for :action do %>
+  <%= link_to t('.upload'), '#', class:'btn upload-button', data:{submit_button:true, submit_target:'#submit-review'} %>
+<% end %>

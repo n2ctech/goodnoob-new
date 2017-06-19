@@ -1,0 +1,17 @@
+<div class="flex showmore-thumbs-row" id="load_more_but">
+        <div class="plus-button-wrapper">
+          <%= link_to request.query_parameters.merge(page: products.next_page), "data-remote": true do %>
+            <i class="zmdi zmdi-plus-circle-o"></i>
+          <% end %>
+        </div>
+        <div class="showmore-text-wrapper">
+          <%= link_to request.query_parameters.merge(page: products.next_page), class: "show-more-text", 'data-remote': true do %>
+            <span><%= t '.more_listings' %></span>
+          <% end %>
+        </div>
+        <div class="loading-spinner">
+          <%= image_tag("spinner.svg") %>
+        </div>
+
+    <div class="hidden search-results-have-more" data-hasmore="<%= products.next_page %>"></div>
+</div>

@@ -1,0 +1,19 @@
+<%- @show_langs = 'hidden' %>
+<%- @active_social = 'active' %>
+<%= render partial: 'registrations/profile_top' %>
+<%= render partial: 'registrations/nav_filters' %>
+<div class="center-block sides-indents">
+  <main class="main-content-wrapper social">
+  <div id="user_social">
+    <div class="flex thumbs-matrix-wrapper search-results-container">
+      <% if @media.length == 0 %>
+        <%= t '.no_activities' %>
+      <% end %>
+      <%= render 'social_bunch' %>
+      <div class="showmore-thumbs-row">
+        <%= link_to '', social_users_path(page: @media.next_page), remote: true, data: {turbolinks_scroll: false}, class: 'show-more-text' %>
+      </div>
+    </div>
+  </div>
+  </main>
+</div>

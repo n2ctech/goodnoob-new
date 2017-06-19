@@ -1,0 +1,381 @@
+$font-family-sans-serif: 'Myriad Pro', sans-serif;
+$font-family-sans-serif-light: 'Myriad Pro Light', sans-serif;
+$headings-font-family: 'DIN Alternate', sans-serif;
+
+.main-content-guides-wrapper {
+  margin-top: 50px;
+  .guide-info {
+    background-size: cover;
+
+    .guide-info-overlay {
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+
+      .guide-description-wrapper {
+        width: 40%;
+        order: 1;
+        color: white;
+        .guide-description {
+          margin: 0 auto;
+          max-width: 400px;
+          padding: 100px 10px 0 10px;
+          h1 {
+            font-weight: bolder;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+          }
+          p {
+            font-weight: 200;
+            margin-bottom: 20px;
+          }
+          .compare-products {
+            text-align: right;
+            margin-top: 30px;
+            a {
+              cursor: pointer;
+              text-transform: uppercase;
+              color: white;
+              text-decoration: none;
+              display: inline-block;
+              padding: 0 10px;
+              height: 30px;
+              line-height: 30px;
+              background-color: #232323;
+              &:hover {
+                color: #232323;
+                background-color: white;
+              }
+            }
+          }
+        }
+      }
+
+      .guide-video-wrapper {
+        width: 60%;
+        order: 2;
+      }
+    }
+  }
+
+  .learn-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+    padding: 1.7% 4.2% 4.6%;
+    .learn-content {
+      height: 321px;
+      font-size: 9.9vw;
+      margin-bottom: 20px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      @media only screen and (max-width: 1280px) {
+        height: 250px;
+      }
+      @media only screen and (max-width: 768px) {
+        height: 46vw;
+      }
+      .hover-field {
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        color: white;
+        background-color: transparent;
+        padding: 20px 0;
+        &:hover {
+          background-color: #2ae8d2;
+          opacity: .9;
+        }
+        &:hover .learn-description {
+          visibility: visible;
+          color: #16524c;
+        }
+        &:hover .learn-title a,
+        &:focus .learn-title a {
+          color: #16524c;
+          text-decoration: none;
+        }
+        .learn-title {
+          font-family: $headings-font-family;
+          text-transform: uppercase;
+          padding: 0 20px;
+          a {
+            color: white;
+          }
+        }
+        .learn-description {
+          width: 169px;
+          font-size: 18px;
+          visibility: hidden;
+          @media only screen and (max-width: 1280px) {
+            font-size: 14px;
+          }
+          @media only screen and (max-width: 768px) {
+            font-size: 10px;
+          }
+
+        }
+      }
+    }
+  }
+
+  .title-background-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: auto 100%;
+    height: 358px;
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media only screen and (max-width: 768px) {
+      height: 46vw;
+    }
+  }
+
+  .title-field {
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+    color: white;
+    font-size: 11.5vw;
+  }
+
+  .conten-guides-wrapper {
+    padding: 2% 25%;
+    @media only screen and (max-width: 768px) {
+      padding: 2% 10%;
+    }
+  }
+
+  .image-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 286px;
+    height: 286px;
+    float: left;
+    margin: 0 8% 6% 0;
+    background-color: black;
+    text-align: center;
+    font-size: 19px;
+    @media only screen and (max-width: 768px) {
+      float: none;
+      margin: 5% auto;
+    }
+    a {
+      color: #5c5d61;
+      &:hover {
+        text-decoration: none;
+      }
+      &:focus,
+      &:hover {
+        font-size: 27px;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .up-arrow {
+    background-image: image-url('up-arrow.png');
+  }
+
+  .down-arrow {
+    background-image: image-url('down-arrow.png');
+  }
+
+  .up-arrow,
+  .down-arrow {
+    height: 14px;
+    width: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 5px auto;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .slide-container {
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .slide {
+    margin: 1% 0;
+  }
+
+  .color-font-grey {
+    color: #2a3137;
+  }
+
+  .guide-header {
+    font-family: $font-family-sans-serif;
+    font-size: 29px;
+    padding-bottom: 2%;
+    color: #cdcdcd;
+  }
+
+  .sub-category-name {
+    font-family: $headings-font-family;
+    display: inline;
+    color: #2c2e33;
+    @media only screen and (max-width: 768px) {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      padding: 5px 0;
+      font-size: 24px;
+    }
+  }
+
+  .guide-name {
+    display: inline;
+    @media only screen and (max-width: 768px) {
+      display: inline-block;
+      font-size: 19px;
+      padding: 5px 0;
+    }
+  }
+
+  .guide-text-field {
+    font-family: $font-family-sans-serif-light;
+    font-size: 17px;
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
+  .glyphicon-menu-down,
+  .glyphicon-menu-up {
+    padding: 0 2%;
+    width: 25px;
+    height: 25px;
+  }
+
+  .guide-chapters {
+    background: #232323;
+    display: flex;
+    .guide-chapters-list-wrapper {
+      font-family: $font-family-sans-serif;
+      background: #232323;
+      text-align: right;
+      color: white;
+      .guide-chapters-list {
+        padding: 30px;
+        width: 300px;
+        overflow: hidden;
+        .title {
+          display: inline;
+          font-family: $font-family-sans-serif-light;
+        }
+        .guides-list-header {
+          margin: 20px 0;
+          text-transform: uppercase;
+        }
+        .category-guides {
+          margin-bottom: 20px;
+        }
+        a {
+          display: block;
+          color: #2a3137;
+          opacity: 0.4;
+          font-size: 1.1em;
+          &:focus {
+            opacity: 1;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .white-background {
+      background-color: white;
+    }
+    .guide-text-wrapper {
+      padding: 20px;
+      background-color: #f0f2f6;
+      font-weight: 200;
+      flex: 1 100%;
+      h1 {
+        font-weight: bolder;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-weight: bolder;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .logo {
+        display: block;
+        margin: 20px auto 40px;
+      }
+      .guide-text {
+        float: none;
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .main-content-guides-wrapper {
+
+    .guide-info {
+      .guide-info-overlay {
+        display: block;
+
+        .guide-description-wrapper {
+          width: 100%;
+          .guide-description {
+            width: 100%;
+            max-width: 100%;
+            padding: 40px;
+          }
+        }
+
+        .guide-video-wrapper {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    .guide-chapters {
+      display: block;
+      .guide-chapters-list-wrapper {
+        font-family: $font-family-sans-serif-light;
+        width: 100%;
+        text-align: center;
+        .guide-chapters-list {
+          padding: 10px;
+          margin: auto;
+          &.short {
+            height: 45px;
+          }
+        }
+      }
+      .guide-text-wrapper {
+        padding: 10px 20px;
+        h1 {
+          margin-bottom: 10px;
+          font-size: 1.2rem;
+        }
+        h2 {
+          margin-bottom: 10px;
+          font-size: 1rem;
+        }
+        .logo {
+          margin: 10px auto 20px;
+        }
+      }
+    }
+  }
+}

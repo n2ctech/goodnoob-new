@@ -1,0 +1,55 @@
+<div id="products_goes_here">
+  <%= render partial: 'applied_filters' if params[:filters].present? ||
+                                          params[:companies].present? ||
+                                          params[:year_from].present? ||
+                                          params[:year_to].present? ||
+                                          params[:price_from].present? && params[:price_from].to_i != @sub_category.prices.minimum(:amount).to_i ||
+                                          params[:price_to].present? && params[:price_to].to_i != @sub_category.prices.maximum(:amount).to_i
+
+                                           %>
+  <%= render partial: 'search' %>
+  <div class="flex thumbs-matrix-wrapper search-results-container">
+    <% if products.count == 0 %>
+        <div class="flash alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= t '.no_results' %>
+        </div>
+    <% else %>
+        <% products.each do |product| %>
+            <div class='thumb-wrapper thumb-product'>
+              <%= link_to product, class: 'thumb-preview' do %>
+                <%= image_tag product.picture.url, class: 'thumb-bg' %>
+              <% end %>
+              <div class='flex thumb-header'>
+                <span class='thumb-header-abbr'>
+                  <%= link_to product do %>
+                      <%= product.name %> <%= "(#{product.year})" if product.year %>
+                      <% if false %>
+                          <!-- commented -->
+                          <%= "(#{product.company.name})" if product.company.name %>
+                      <% end %>
+                  <% end %>
+                </span>
+              </div>
+              <div class='flex thumb-footer'>
+                <div class='thumb-star-wrapper'>
+                  <%= product.actual_price.amount if product.actual_price %>
+                  <%= product.actual_price.currency.sign if product.actual_price %>
+                </div>
+                <span class='thumb-star-wrapper'>
+                  <%= render 'products/rating', rating: product.rating, product_id: product.id %>
+                </span>
+              </div>
+              <!-- <div class='thumb-description text-left'>
+                <p>
+                  <%= truncate strip_tags(product.description), length: 320, separator: ' ' %>
+                </p>
+              </div> -->
+              <!-- <div class='thumb-moreinfo-link'>
+                <%= link_to t('.more_info'), product %>
+              </div> -->
+            </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>

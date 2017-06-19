@@ -1,0 +1,20 @@
+- if review.product
+  .review-unit
+    .row.review-rating-body
+      .col-md-12.review-rating
+        p= review.title
+        .thumb-menu-stripe
+          a.toggle-product-menu.social-share.thumb-more-button href="javascript:;" 
+          .menu-group
+            .menu-item
+              = modal_button_tag t('.edit'), edit_product_review_path(review.product, review), method: :get, link: true, class: ''
+            hr/
+            .menu-item
+              = link_to t('.remove'), product_review_path(review.product, review), method: :delete, remote: true
+    .review-title
+      h3= link_to review.product&.name, product_path(review.product)
+      = render 'products/rating', rating: review.product.rating, product_id: review.product.id
+    .review-description
+      p
+      .more-less-text
+        = review.review.html_safe

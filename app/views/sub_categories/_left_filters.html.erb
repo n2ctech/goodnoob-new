@@ -1,0 +1,51 @@
+<aside class="side-panel-wrapper search-side-panel">
+  <div class="side-panel-header visible-xs">filters</div>
+  <div id="filters">
+
+    <%= hidden_field_tag :search_field, params[:search_field] || :newest %>
+    <%= hidden_field_tag :search_direction, params[:search_direction] || true %>
+
+    <%= render layout: 'left_filter',
+        locals: { filter_name: 'Categories', filter_type: 'categories', icon_class: 'glyphicon glyphicon-plane' } do %>
+      <% Category.all.in_groups(2, false) do |cats| %>
+        <% cats.each do |cat| %>
+          <%= render partial: 'category_filter', locals: { category: cat, sub_categories: cat.sub_categories } %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <%= render layout: 'left_filter',
+        locals: { filter_name: 'International Brands', filter_type: 'international-brands', icon_class: 'glyphicon glyphicon-plane' } do %>
+      <% @sub_category.companies.international(@user_country).uniq.each do |company| %>
+        <%= render partial: 'company_filter', locals: { company: company } %>
+      <% end %>
+    <% end if @sub_category.companies.international(@user_country).uniq.present? %>
+
+    <%= render layout: 'left_filter',
+        locals: { filter_name: 'Local Brands', filter_type: 'international-brands', icon_class: 'glyphicon glyphicon-plane' } do %>
+      <% @sub_category.companies.local(@user_country).uniq.each do |company| %>
+        <%= render partial: 'company_filter', locals: { company: company } %>
+      <% end %>
+    <% end if @sub_category.companies.local(@user_country).uniq.present? %>
+
+    <%= render layout: 'left_filter',
+        locals: { filter_name: 'Year', filter_type: 'year', icon_class: 'glyphicon glyphicon-plane' } do %>
+        <%= render partial: 'year_filter', locals: { years: @sub_category.products.map(&:year).uniq.compact.sort.reverse } %>
+    <% end if @sub_category.products.map(&:year).uniq.compact.present? %>
+
+    <%= render layout: 'left_filter',
+        locals: { filter_name: 'Price', filter_type: 'prive', icon_class: 'glyphicon glyphicon-plane' } do %>
+        <%= render partial: 'price_filter', locals: { prices: @sub_category.products.map(&:actual_price).uniq.compact.select { |p| p.amount.present? } } %>
+    <% end if @sub_category.products.map(&:actual_price).uniq.compact.select { |p| p.amount.present? }.present? %>
+
+    <% @filters.each do |filt| %>
+      <% type = "#{filt.name.downcase.gsub(/[^a-z]/, '')}-opt" %>
+      <%= render layout: 'left_filter',
+          locals: { filter_name: filt.name, filter_type: type, icon_class: 'glyphicon glyphicon-home' } do %>
+        <% filt.filter_options.each do |option| %>
+          <%= render partial: 'filter_options', locals: { option: option } %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</aside>

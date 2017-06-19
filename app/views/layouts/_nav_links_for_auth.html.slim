@@ -1,0 +1,16 @@
+.login-btn-wrapper
+  - if user_signed_in?
+    .dropdown.hidden-xs
+      button#dropdownMenu1.btn.btn-default.dropdown-toggle aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button" 
+        span.user-profile
+          = current_user.picture ? image_tag(current_user.picture.url(:avatar), alt: "profile photo") : image_tag('profile-icon.png')
+      ul.dropdown-menu.header-side-dropdown-button aria-labelledby="dropdownMenu1" 
+        li= link_to t('.account'), edit_user_registration_path
+        li.divider role="separator" 
+        li= link_to t('.log_out'), destroy_user_session_path, method: 'delete'
+    .visible-xs
+      = link_to search_index_path, class: 'black-search-icon' do
+        i.fa.fa-search
+  - else
+    button.btn.login-btn data-target="#SignInModal" data-toggle="modal" type="button" 
+      = t('.log_in')

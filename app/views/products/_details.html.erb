@@ -1,0 +1,71 @@
+<section class="product-details-wrapper col-md-12">
+  <div class="product-details">
+    <div class="row">
+      <div class="product-details-tabs-control col-md-5 center-block">
+        <a href="#" class="product-tab-button active"><%= t '.characteristics' %></a>
+        <a href="#" class="product-tab-button"><%= t '.company' %></a>
+      </div>
+    </div>
+
+    <!-- <%= render partial: 'distributor', collection: product.distributors %> -->
+
+    <div class="row tab-wrapper">
+      <div class="product-characteristics product-tab col-md-5 center-block short">
+        <% product.characteristics.each do |characteristic| %>
+          <div class="characteristic-title"><%= "#{characteristic.title}:" %></div>
+          <span class="characteristic-value"><%= simple_format characteristic.value %></span>
+        <% end %>
+
+        <% unless product.dimensions.empty? %>
+            <h1><%= t '.dimensions' %>:</h1>
+            <% product.dimensions.each do |dimension| %>
+                <p><%= dimension.text %></p>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row tab-wrapper">
+      <div class="product-company product-tab col-md-5 center-block short hidden">
+        <% company = product.company %>
+        <div class="company-name"><%= company.name %></div>
+        <div class="company-email">
+          <%= link_to company.url, company.url, :target => "_blank" %>
+        </div>
+        <%= simple_format company.description %>
+
+        <div class="contacts">
+          <% if company.email? %>
+            <p>
+              <%= t '.email' %>: <%= company.email %>
+            </p>
+          <% end %>
+
+          <% unless company.address.nil? %>
+            <p>
+              <%= t '.address' %>: <%= company.address.street %> <%= company.address.city %> <%= company.address.postcode %>
+            </p>
+          <% end %>
+
+          <% if company.phone? %>
+            <p>
+              <%= t '.phone' %>: <%= company.phone %>
+            </p>
+          <% end %>
+
+          <% if company.fax? %>
+            <p>
+              <%= t '.fax' %>: <%= company.fax %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="toggle-block col-md-5 center-block ">
+        <span class="glyphicon glyphicon-menu-down js-toggle-product-details-block" data-block-selector=".product-tab"></span>
+      </div>
+    </div>
+  </div>
+</section>

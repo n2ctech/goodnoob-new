@@ -1,0 +1,42 @@
+<% currency = Currency.current_currency %>
+<% min_price = prices.min { |a, b| a.amount <=> b.amount }.amount.floor %>
+<% max_price = prices.max { |a, b| a.amount <=> b.amount }.amount.ceil %>
+
+<div class="filter-wrapper price-filter-wrapper">
+      <div class='price-range' id='label_min'>
+        <%= min_price %> <%= currency.sign %>
+      </div>
+      <div id="slider">
+        <%= hidden_field_tag 'price_from', :onchange => "$(this).closest('form').submit();" %>
+        <%= hidden_field_tag 'price_to', :onchange => "$(this).closest('form').submit();" %>
+      </div>
+      <div class='price-range' id='label_max'>
+        <%= max_price %> <%= currency.sign %>
+      </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+      var slider = $("#slider").slider({
+          range: true,
+          min: <%= min_price %>,
+          max: <%= max_price %>,
+          values: [<%= min_price %>, <%= max_price %>],
+          slide: function(event, ui) {
+              $("#price_from").val(slider.slider("values")[0]);
+              $("#price_to").val(slider.slider("values")[1]);
+              $("#label_min").text(slider.slider("values")[0] + " <%= currency.sign %>");
+              $("#label_max").text(slider.slider("values")[1] + " <%= currency.sign %>");
+          },
+          change: function() {
+            $('#filter_form').submit();
+          }
+      });
+      $("#price_from").val('');
+      $("#price_to").val('');
+
+      $("#label_min").text(slider.slider("values")[0] + " <%= currency.sign %>");
+      $("#label_max").text(slider.slider("values")[1] + " <%= currency.sign %>");
+      $(".ui-slider-handle").focus();
+  });
+</script>

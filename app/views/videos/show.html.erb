@@ -1,0 +1,27 @@
+<div class='main-container'>
+  <main class='main-content-wrapper main-share-content-wrapper'>
+    <%= render partial:'products/breadcrumbs', locals: { product: @product } %>
+    <section class="product-media flex thumbs-matrix-wrapper background-surf">
+      <%= render 'videos/search_thumbnail', video: @video %>
+    </section>
+    <section class="other-product-medias">
+      <div class="other-product-medias-header">
+        <%= t '.other_photos_and_videos' %>
+      </div>
+
+      <div class="flex thumbs-matrix-wrapper">
+        <% @other_media.each do |media_item| %>
+          <% if media_item.is_a? Photo %>
+            <%= render partial: 'photos/thumbnail', locals: { photo: media_item } %>
+          <% elsif media_item.is_a? Video %>
+            <%= render partial: 'videos/thumbnail', locals: { video: media_item } %>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
+  </main>
+</div>
+
+<style>
+  .background-surf { background: url(<%= image_url @product.category&.image&.url %>) no-repeat center center; }
+</style>

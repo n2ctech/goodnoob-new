@@ -1,0 +1,85 @@
+<section class="product-reviews-wrapper">
+  <div class="product-reviews">
+    <div class="filters pull-right col-md-3">
+      <% filter_options = product.filter_options %>
+      <div class="filters-content short">
+        <% @filters.each do |filter| %>
+          <div class="filters-item">
+            <strong><%= filter.name %>: </strong>
+            <%== filter_options.select{|f| f.filter == filter}.map(&:name).join ', ' %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="row visible-xs">
+        <div class="toggle-block col-md-3 center-block">
+          <span class="glyphicon glyphicon-menu-down js-toggle-product-details-block" data-block-selector=".filters-content"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-wrapper col-md-9 pull-left <%= product.reviews.length > 0 ? '' : 'no-reviews'%>">
+      <div class="reviews">
+        <div class="product-reviews-header">
+          <span><%= t '.reviews' %></span>
+          <% if reviews.length > 0 %>
+            <%= link_to t('.read_more_reviews'), product_reviews_path(product_id: product.id) %>
+          <% end %>
+        </div>
+
+        <% if reviews.length > 0 %>
+          <div class="reviews-container col-md-9 center-block">
+            <% if user_signed_in? %>
+              <%= modal_button_tag t('.add_a_review'),
+                           new_product_review_path(product),
+                           method: :get,
+                           link: true,
+                           class: 'add-review hidden-xs' %>
+            <% end %>
+
+            <% reviews.last(2).each do |review|%>
+              <div class="product-review">
+                <span class="product-review-bar">
+                  <%= render partial:'rating', locals:{product_id: review.product_id, rating: review.rating && review.rating.value || 0} %>
+                </span>
+                <span class="review-title">
+                  <%= review.title %>
+                </span>
+                <div class="review-author-name">
+                  <%= review&.user&.full_name %>
+                </div>
+                <div class="review-body">
+                  <div class="more-less-text-big">
+                    <%= review.review.html_safe %>
+                  </div>
+                </div>
+              </div>
+            <%end%>
+          </div>
+        <% else %>
+          <div class="no-reviews-block-wrapper col-md-9 center-block">
+            <div class="no-reviews-block">
+              <div class="no-review-title"><%= t '.no_reviews_yet' %> <b><%= t '.be_the_first' %></b></div>
+              <div>
+                <% if user_signed_in? %>
+                  <%= modal_button_tag t('.add_a_review'),
+                    new_product_review_path(product),
+                    method: :get,
+                    link: true,
+                    class: 'add-review hidden-xs' %>
+
+                    <script>
+                                $('.add-review').click(function() {
+                                send_track_review();
+                              });
+                    </script>
+
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+<%- @show_langs = 'hidden' %>
+<%- @active_favorites = 'active' %>
+<%= render partial: 'registrations/profile_top' %>
+<%= render partial: 'registrations/nav_filters' %>
+<div class="center-block sides-indents">
+  <main class="main-content-wrapper social">
+    <div id="products_goes_here">
+      <div class="flex thumbs-matrix-wrapper search-results-container">
+        <% if @products.count == 0 %>
+          <%= t '.no_favorites' %>
+        <% else %>
+          <% @products.each do |product| %>
+              <div class='thumb-wrapper thumb-product'>
+                <div class='flex thumb-header'>
+                  <span class='thumb-header-abbr'>
+                    <%= link_to product do %>
+                        <%= product.name %> <%= "(#{product.year})" if product.year %>
+                        <% if false %>
+                            <%= "(#{product.company.name})" if product.company.name %>
+                        <% end %>
+                    <% end %>
+                  </span>
+                  <div class="thumb-menu-stripe ">
+                    <a href="javascript:;" class="toggle-product-menu social-share thumb-more-button"></a>
+                    <div class="menu-group">
+                      <div class="menu-item">
+                        <%= link_to t('.remove'), product_user_favourite_products_path(product), method: :delete, remote: true, class: 'remove-favourite' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <%= link_to product, class: 'thumb-preview' do %>
+                  <%= image_tag product.picture.url, class: 'thumb-bg' %>
+                <% end %>
+                <div class='flex thumb-footer'>
+                  <span class='thumb-star-wrapper'>
+                    <%= render 'products/rating', rating: product.rating, product_id: product.id %>
+                  </span>
+                  <div class='thumb-star-wrapper'>
+                    <%= product.actual_price.amount if product.actual_price %>
+                    <%= product.actual_price.currency.sign if product.actual_price %>
+                  </div>
+                </div>
+                <div class='thumb-description text-left'>
+                  <p>
+                    <%= truncate strip_tags(product.description), length: 320, separator: ' ' %>
+                  </p>
+                </div>
+                <div class='thumb-moreinfo-link'>
+                  <%= link_to t('.more_info'), product %>
+                </div>
+              </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>

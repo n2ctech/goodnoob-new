@@ -1,0 +1,43 @@
+<div class="main-content-guides-wrapper">
+
+<%= render partial: 'sub_categories/guide_filter' %>
+
+<div class="title-background-field" style="<%= @sub_category.picture ? "background-image: url('#{@sub_category.picture.url}')" : 'background-color: grey' %>">
+  <div class='title-field'><%= @sub_category.name %></div>
+</div>
+
+<section class="guide-chapters row visible-xs">
+  <div class="guide-chapters-list-wrapper">
+    <div class="guide-chapters-list short toggle-block col-md-3 center-block">
+      <div class="title"><%= t '.chapters' %></div><span class="glyphicon glyphicon-menu-down js-toggle-product-details-block" data-block-selector=".guide-chapters-list"></span>
+      <div class="guides-list-header"></div>
+      <% @sub_category.guides.order(:id).each do |guide| %>
+        <%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/>
+       <% end %>
+    </div>
+  </div>
+</section>
+
+<div class="conten-guides-wrapper">
+  <div class="image-field hidden-xs">
+    <div class="up-arrow"></div>
+      <ul class="slide-container">
+        <% @sub_category.guides.order(:id).each do |guide| %>
+          <li class="slide"><%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/></li>
+        <% end %>
+      </ul>
+    <div class="down-arrow"></div>
+  </div>
+  <div class="guide-header">
+    <div class="sub-category-name">
+      <%= @sub_category.name %> guide
+    </div>
+    <div class="guide-name">
+      - <%= @guide.header_en %>
+    </div>
+  </div>
+  <div class="guide-text-field">
+    <%= simple_format @guide.description&.html_safe %>
+  </div>
+</div>
+</div>

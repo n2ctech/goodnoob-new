@@ -1,0 +1,153 @@
+#welcome_page
+  .row.back
+    .row
+      .text-log.text-right
+        a#btnLogin data-dismiss="modal" data-target="#SignUpModal" type="button" login
+        | &nbsp/&nbsp
+        a#btnRegister data-dismiss="modal" data-target="#SignInModal" register
+    .row.margin
+      .col-lg-9.hidden-xs.hidden-sm.margin-padding.hidden-md
+        .row.big-text
+          .text Welcome to &nbsp
+          span.logo-text goodnoob
+          |&nbsp
+          .image-logo.center = image_tag 'good noob_logo.png'
+        .small-text The extreme sport community.
+        .small-text This is how it works:
+        .row
+          .col-lg-4.component
+            = image_tag 'learn.png'
+            .text-back
+              |Learn everything with our buying guides
+              .text
+                |Learn how to pick your extreme sports products
+                br
+                |with the full explained guides on our site,
+                br
+                |information is power!
+          .col-lg-4.component
+            = image_tag 'compare.png'
+            .text-back
+              |Compare and search your extreme sport product
+              .text
+                |Search, compare and filter every product you can
+                br
+                |imagine. Read reviews, save your favourite and
+                br
+                |buy it.
+          .col-lg-4.component
+            = image_tag 'share.png'
+            .text-back
+              |Share your photos and videos with the community
+              .text
+                |Share your photos with the community, make a
+                br
+                |video, or upload the review of your new gear.
+                br
+                |Enjoy the ride!
+      .col-lg-3.col-sm-12.col-xs-12
+        - unless user_signed_in?
+          .authform.register-form-welcome-page
+            .big-image
+              #welcome_register_image
+                .opacity-container
+                .text-image-container
+                  = image_tag 'good noob_logo.png'
+                  .hidden-lg
+                    .mobile-logo-title
+                      | Welcome to &nbsp
+                      span.logo-text goodnoob
+                    .mobile-logo-text The extreme sports community
+                  .visible-lg
+                    .mobile-logo-title.w-100
+                      span Join the &nbsp
+                      span.logo-text goodnoob
+                      span &nbspfamily
+                    .w-100.text-center
+                      .mobile-logo-text Register and share your
+                      .mobile-logo-text extreme sports adwantures
+                .visible-lg= image_tag 'welcome_register_image.png'
+                .hidden-lg= image_tag 'main-photo.png'
+              .login-image.hidden#welcome_login_image
+                = image_tag(asset_path 'login_image.png')
+              #learn-big.hidden.hidden-lg
+                .opacity-container
+                .text-image-container
+                  = image_tag 'good noob_logo.png'
+                  .title-text Learn
+                  .small-title-text Learn how to pick your extreme sports
+                  .small-title-text products with the full explained guides on
+                  .small-title-text our site, Information is power!
+                .button-title
+                  = link_to 'go to "learn"', home_index_path, class: 'btn btn-block'
+                = image_tag 'learn-image.png'
+              #compare-big.hidden.hidden-lg
+                .opacity-container
+                .text-image-container
+                  = image_tag 'good noob_logo.png'
+                  .title-text Compare
+                  .small-title-text Search, compare and filter every product
+                  .small-title-text you can imagine. Read reviews, save your
+                  .small-title-text favourite and buy it.
+                .button-title
+                  = link_to 'go to "compare"', home_index_path, class: 'btn btn-block'
+                = image_tag 'compare-image.png'
+              #share-big.hidden.hidden-lg
+                .opacity-container
+                .text-image-container
+                  = image_tag 'good noob_logo.png'
+                  .title-text Share
+                  .small-title-text Share your photos with the community,
+                  .small-title-text make a video, or upload the review of your
+                  .small-title-text new gear. Enjoy the ride!
+                .button-title
+                  = link_to 'go to "share"', home_index_path, class: 'btn btn-block'
+                = image_tag 'share-image.png'
+            .col-sm-12.col-xs-12.container-images.hidden-lg
+              .col-sm-4.col-xs-4.component-image#learn
+                #learn-image-text= image_tag 'learn.png'
+                .hidden#learn-image = image_tag 'learn-image.png'
+              .col-sm-4.col-xs-4.component-image#compare
+                #compare-image-text = image_tag 'compare.png'
+                .hidden#compare-image = image_tag 'compare-image.png'
+              .col-sm-4.col-xs-4.component-image#share
+                #share-image-text = image_tag 'share.png'
+                .hidden#share-image = image_tag 'share-image.png'
+            #welcome_register_form
+              = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
+                = devise_error_messages!
+                .form-group
+                  = f.text_field :name, :autofocus => true, class: 'form-control b', placeholder: 'Name'
+                  = f.email_field :email, class: 'form-control b', placeholder: 'E-mail address'
+                  = f.password_field :password, class: 'form-control b', placeholder: 'Password'
+                  = f.password_field :password_confirmation, class: 'form-control b', placeholder: 'Confirm password'
+                  br
+                  .row.text-center align="center"
+                    = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path,
+                              class: "text-center btn btn-block btn-welcome-social wp-btn-font wp-btn btn-facebook"
+                    = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path,
+                              class: "text-center btn btn-block btn-welcome-social wp-btn-font wp-btn btn-google-plus"
+                  .row.padding-top align="center"
+                    = f.submit 'Register', :class => 'btn btn-commit wp-btn', :id => 'btnRegister_signup'
+                    a#welcome_register_button.btn-login.wp-btn-font I already have an account...
+              .continue-container
+                = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-continue"
+            .login-form.no-padding.hidden#welcome_login_form
+              = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %
+                = devise_error_messages!
+                .form-group
+                  = f.email_field :email, :autofocus => true, class: 'form-control b', placeholder: 'Mail address'
+                .form-group
+                  = f.password_field :password, class: 'form-control b', placeholder: 'Password'
+                  br
+                  .row align="center"
+                    = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path,
+                              class: "text-center btn btn-block btn-welcome-social wp-btn-font wp-btn btn-facebook"
+                    = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path,
+                              class: "text-center btn btn-block btn-welcome-social wp-btn-font wp-btn btn-google-plus"
+                  .row.padding-top align="center"
+                    a#welcome_login_button.btn.btn-commit.btn-register Register
+                    = f.submit 'Login', :class => 'btn btn-commit wp-btn'
+              = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-continue"
+    .text-footer.text-right By entering this page, you are agree to our terms of us and services.
+

@@ -1,0 +1,22 @@
+(function() {
+    var $html = $("<%=j render partial: 'sub_categories/products', locals: { products: @products } %>");
+    var $html_button = $("<%=j render partial: 'sub_categories/load_more_button', locals: { products: @products } %>");
+    <% if params[:page].present? %>
+      $('.search-results-container').append($html.find('.search-results-container .thumb-wrapper'));
+      $('#load_more_but').replaceWith($html_button);
+    <% else %>
+      $('#products_goes_here').replaceWith($html);
+      $('#load_more_but').replaceWith($html_button);
+    <% end %>
+
+
+  var nextPageProducts = $('.search-results-have-more').attr('data-hasmore');
+
+  window.ajax = false;
+  $('.check__form').attr('disabled', false);
+  if(nextPageProducts.length === 0){
+    $('#load_more_but').hide();
+  } else if(nextPageProducts.length > 0) {
+    $('#load_more_but').show();
+  }
+}());

@@ -1,0 +1,6 @@
+<div class='form-group producct-select'>
+  <div class="col-md-11 center-block">
+    <%= f.select :product_id, products_for_select_tag, {selected: params[:product_id]}, {class: 'selectpicker', data: {live_search: true, size: 5},
+      title: t('.search_product')} %>
+  </div>
+</div>

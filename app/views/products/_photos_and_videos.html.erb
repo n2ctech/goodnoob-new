@@ -1,0 +1,61 @@
+<section class="product-photos-wrapper col-md-12">
+  <div class="product-photos">
+    <div class="product-photos-header">
+      <%= t '.photos_and_videos' %>
+    </div>
+
+    <% if @media.any? %>
+      <div class="main-container">
+        <div class="main-content-wrapper">
+          <div class="flex thumbs-matrix-wrapper product-media" id="js-product-media">
+            <% @media.each do |media_item| %>
+              <% if media_item.is_a? Photo %>
+                <%= render partial: 'photos/thumbnail', locals: { photo: media_item } %>
+              <% elsif media_item.is_a? Video %>
+                <%= render partial: 'videos/thumbnail', locals: { video: media_item } %>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div class="load-more-button">
+            <span class="glyphicon glyphicon-menu-down" id="js-load-more"></span>
+            <span> </span>
+            <span class="glyphicon glyphicon-menu-up" id="js-show-less"></span>
+          </div>
+        </div>
+      </div>
+
+    <% else %>
+      <div class="no-media-block-wrapper">
+        <div class="no-media-block">
+          <div class="no-media-title"><%= t '.no_photos_or_videos_yet' %> <b><%= t '.be_the_first' %></b></div>
+          <div>
+            <% if user_signed_in? %>
+              <div class="dropdown">
+                <button type='button' id='upload-menu' class='btn new-post hidden-xs dropdown-toggle'
+                  data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
+                  <%= t '.new_post' %>
+                </button>
+                <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
+                  <li>
+                    <%= modal_button_tag t('.photo'), modals_path(action: :add_photo), link: true %>
+                  </li>
+                  <li role='separator' class='divider'></li>
+                  <li>
+                    <%= modal_button_tag t('.video'), modals_path(action: :add_video), link: true %>
+                  </li>
+                </ul>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<script>
+       $('.upload-menu').click(function() {
+        send_track_upload();
+       });
+</script>
