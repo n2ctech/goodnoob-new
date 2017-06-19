@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.3.4'
+
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
 gem 'masonry-rails'
 gem 'slim-rails'
@@ -26,7 +31,6 @@ gem 'image_optim_pack'
 gem 'aws-sdk', '< 2'
 gem 'kaminari'
 gem 'pg'
-gem 'pry'
 gem 'gon'
 gem 'active_model_serializers'
 gem 'autoprefixer-rails'
@@ -44,11 +48,10 @@ gem 'font-awesome-rails'
 gem "jquery-slick-rails"
 
 group :development, :test do
-  gem 'byebug'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 
 group :development do

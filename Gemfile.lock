@@ -1,24 +1,24 @@
 GIT
-  remote: git://github.com/activeadmin/activeadmin.git
-  revision: b1f96a39c6126364c661a952be28000e39d73938
+  remote: https://github.com/activeadmin/activeadmin.git
+  revision: e62ee4f792ed12eafee176cf9693b8e37706e4b3
   specs:
-    activeadmin (1.0.0.pre4)
-      arbre (~> 1.0, >= 1.0.2)
+    activeadmin (1.0.0)
+      arbre (>= 1.1.1)
       bourbon
       coffee-rails
       formtastic (~> 3.1)
       formtastic_i18n
-      inherited_resources (~> 1.6)
+      inherited_resources (~> 1.7)
       jquery-rails
       jquery-ui-rails
       kaminari (>= 0.15, < 2.0)
-      railties (>= 3.2, < 5.1)
+      railties (>= 4.2, < 5.2)
       ransack (~> 1.3)
       sass-rails
       sprockets (< 4.1)
 
 GIT
-  remote: git://github.com/ejholmes/active_admin_editor.git
+  remote: https://github.com/ejholmes/active_admin_editor.git
   revision: 86f964be3071cd938c3cd17ad00df94ece3a50c0
   specs:
     active_admin_editor (1.1.0)
@@ -27,7 +27,7 @@ GIT
       rails (>= 3.0.0)
 
 GIT
-  remote: git://github.com/nixme/jazz_hands.git
+  remote: https://github.com/nixme/jazz_hands.git
   revision: 5e4b48f145883ecb14b55bf04eacc28ac9662676
   branch: bring-your-own-debugger
   specs:
@@ -97,7 +97,7 @@ GEM
     ast (2.3.0)
     autoprefixer-rails (6.3.7)
       execjs
-    awesome_print (1.7.0)
+    awesome_print (1.8.0)
     aws-sdk (1.66.0)
       aws-sdk-v1 (= 1.66.0)
     aws-sdk-v1 (1.66.0)
@@ -115,13 +115,10 @@ GEM
       sass (>= 3.3.4)
     bootstrap-wysihtml5-rails (0.3.3.8)
       railties (>= 3.0)
-    bourbon (4.2.7)
+    bourbon (4.3.4)
       sass (~> 3.4)
       thor (~> 0.19)
     builder (3.2.3)
-    byebug (2.7.0)
-      columnize (~> 0.3)
-      debugger-linecache (~> 1.2)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -143,14 +140,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    columnize (0.9.0)
     concurrent-ruby (1.0.4)
     coolline (0.5.0)
       unicode_utils (~> 1.4)
     daemons (1.2.3)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
-    debugger-linecache (1.2.0)
     devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -158,7 +153,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-    diffy (3.1.0)
+    diffy (3.2.0)
     easy_translate (0.5.0)
       json
       thread
@@ -180,7 +175,7 @@ GEM
     ffi (1.9.14)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
-    formtastic (3.1.4)
+    formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
     fspath (3.0.1)
@@ -196,9 +191,9 @@ GEM
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
       posix-spawn (~> 0.3.6)
-    has_scope (0.6.0)
-      actionpack (>= 3.2, < 5)
-      activesupport (>= 3.2, < 5)
+    has_scope (0.7.1)
+      actionpack (>= 4.1, < 5.2)
+      activesupport (>= 4.1, < 5.2)
     hashie (3.4.6)
     heroku-deflater (0.6.2)
       rack (>= 1.4.5)
@@ -228,10 +223,10 @@ GEM
       image_optim (~> 0.19)
     image_size (1.5.0)
     in_threads (1.3.1)
-    inherited_resources (1.6.0)
-      actionpack (>= 3.2, < 5)
-      has_scope (~> 0.6.0.rc)
-      railties (>= 3.2, < 5)
+    inherited_resources (1.7.2)
+      actionpack (>= 3.2, < 5.2.x)
+      has_scope (~> 0.6)
+      railties (>= 3.2, < 5.2.x)
       responders
     iso8601 (0.9.1)
     jbuilder (2.6.0)
@@ -323,15 +318,12 @@ GEM
     pg (0.18.4)
     polyamorous (1.3.1)
       activerecord (>= 3.0)
-    posix-spawn (0.3.12)
+    posix-spawn (0.3.13)
     progress (3.2.2)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pry-byebug (1.3.2)
-      byebug (~> 2.7)
-      pry (~> 0.9.12)
     pry-doc (0.4.6)
       pry (>= 0.9)
       yard (>= 0.8)
@@ -339,7 +331,7 @@ GEM
       diffy
       grit
       pry (>= 0.9.8)
-    pry-rails (0.3.4)
+    pry-rails (0.3.5)
       pry (>= 0.9.10)
     pry-remote (0.1.8)
       pry (~> 0.9)
@@ -384,7 +376,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.3.0)
-    ransack (1.8.2)
+    ransack (1.8.3)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
@@ -488,7 +480,7 @@ GEM
     websocket (1.2.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
-    yard (0.9.5)
+    yard (0.9.9)
 
 PLATFORMS
   ruby
@@ -503,7 +495,6 @@ DEPENDENCIES
   better_errors
   bootstrap-sass
   bootstrap-wysihtml5-rails
-  byebug
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
@@ -535,8 +526,7 @@ DEPENDENCIES
   paperclip (~> 4.3)
   paperclip-optimizer
   pg
-  pry
-  pry-byebug
+  pry-rails
   puma
   quiet_assets
   rails (= 4.2.4)
@@ -560,7 +550,7 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 RUBY VERSION
-   ruby 2.3.0p0
+   ruby 2.3.4p301
 
 BUNDLED WITH
-   1.15.0
+   1.15.1
