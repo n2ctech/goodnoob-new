@@ -59,6 +59,9 @@ class ApplicationController < ActionController::Base
         session[:locale] = current_user.locale
       end
       I18n.locale = session[:locale]
+
+      session[:country] ||= 'US'
+      session[:currency] ||= 'USD'
     end
 
     def set_admin_locale

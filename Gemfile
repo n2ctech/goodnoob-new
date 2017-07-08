@@ -46,12 +46,13 @@ gem 'i18n-tasks', '~> 0.9.12'
 gem 'slim'
 gem 'font-awesome-rails'
 gem "jquery-slick-rails"
+gem 'flag-icons-rails'
 
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'pry-rails'
+  gem 'pry-rails', '0.3.6'
 end
 
 group :development do
@@ -64,9 +65,6 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'annotate'
   gem 'thin'
-  gem 'jazz_hands',
-      github: 'nixme/jazz_hands',
-      branch: 'bring-your-own-debugger'
   gem 'letter_opener'
 end
 

@@ -50,6 +50,15 @@ module ApplicationHelper
     session[:locale] || :en
   end
 
+  def locale_to_flag
+    case current_locale.to_sym
+    when :en
+      :gb
+    else
+      current_locale
+    end
+  end
+
   def home_page_description
     case current_locale.to_sym
     when :es
