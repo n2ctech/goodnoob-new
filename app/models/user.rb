@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
 
   belongs_to :currency
   belongs_to :language
+  belongs_to :country
   has_one :address, as: :addressable, dependent: :destroy
   has_many :ratings, dependent: :destroy
 
@@ -125,9 +126,11 @@ end
 #  bio                    :text
 #  locale                 :string
 #  surname                :string
+#  country_id             :integer
 #
 # Indexes
 #
+#  index_users_on_country_id            (country_id)
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #

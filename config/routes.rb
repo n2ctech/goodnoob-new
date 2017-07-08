@@ -101,6 +101,8 @@ Rails.application.routes.draw do
   end
 
   patch :select_locale, to: 'visitors#select_locale'
+  patch :select_country, to: 'visitors#select_country'
+  patch :select_currency, to: 'visitors#select_currency'
 
   post '/modals/:action', controller: :modals, format: false, as: :modals
   get '/modals/fetch' => 'modals#fetch', format: :json

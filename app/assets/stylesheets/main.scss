@@ -612,9 +612,10 @@ header {
   margin-left: 10px;
 
   .btn {
-    @extend .header-btn-bg;
-    border-radius: 50%;
-    overflow: hidden;
+    background: transparent;
+    line-height: 30px;
+    font-family: 'Affogato', sans-serif;
+    font-weight: 700;
     padding: 0;
     .user-profile {
       img {
@@ -626,10 +627,15 @@ header {
     .dropdown-toggle {
       padding-right: 30px;
     }
+
+    &:hover, &:focus {
+      border: none;
+      outline: none;
+    }
   }
 
   .login-btn {
-    font-weight: 200;
+    font-weight: 700;
     text-transform: uppercase;
     border-radius: 0;
   }

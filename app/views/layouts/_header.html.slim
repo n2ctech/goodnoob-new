@@ -5,6 +5,9 @@ header
     .flex.header-center
       = link_to image_tag("header-logo.png", alt: 'main-background'), root_path
     .flex.header-end
+      - if user_signed_in?
+        = render 'layouts/upload_button'
+      = render 'layouts/nav_links_for_auth'
       .upload-btn-wrapper class=("#{@show_langs || 'visible'}")
         .dropdown
           button#upload-menu.upload-btn.dropdown-toggle(
@@ -12,32 +15,29 @@ header
             aria-haspopup="true"
             data-toggle="dropdown"
             type="button")
-            .visible-lg= current_locale
-            .hidden-lg= image_tag 'new-profile.png'
+            = flag_icon locale_to_flag, alt: current_locale
           ul.dropdown-menu.t-center.font-xs
             li.hidden-lg.area-container.form-control.w-90.m-auto
               = image_tag 'new-profile.png'
               span.area-container-text= t('.user_area')
             li= t('.choose_your_country')
             li
-              select.form-control.w-90.m-auto
-                option= t('.countries.uk')
-                option= t('.countries.fr')
-                option= t('.countries.es')
+              = form_tag select_country_path, method: :patch do
+                = select_tag :country, options_for_select(Country.all.pluck(:name, :country_code),
+                  selected: session[:country]), class: 'form-control w-90 m-auto',
+                  onchange: "this.form.submit();"
             li= t('.choose_your_language')
             li
-              select.form-control.w-90.m-auto
-                option= t('.languages.uk')
-                option= t('.languages.fr')
-                option= t('.languages.es')
+              = form_tag select_locale_path, method: :patch do
+                = select_tag :locale, options_for_select([ [ t('.languages.uk'), 'en' ], [ t('.languages.fr'), 'fr' ], [ t('.languages.es'), 'es' ] ],
+                  selected: I18n.locale), class: 'form-control w-90 m-auto',
+                  onchange: "this.form.submit();"
             li= t('.choose_your_currency')
             li
-              select.form-control.w-90.m-auto.m-b-sm
-                option= t('.currencies.eur')
-                option= t('.currencies.gbp')
-      - if user_signed_in?
-        = render 'layouts/upload_button'
-      = render 'layouts/nav_links_for_auth'
+              = form_tag select_currency_path, method: :patch do
+                = select_tag :currency, options_for_select(Currency.all.collect { |c| [ "#{c.code} (#{c.sign})", c.code ] },
+                  selected: session[:currency]), class: 'form-control w-90 m-auto',
+                  onchange: "this.form.submit();"
   /! burger menu
   .fat-nav
     .fat-nav__wrapper
