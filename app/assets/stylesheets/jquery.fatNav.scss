@@ -51,16 +51,16 @@
   background-color: #222;
 }
 .hamburger.active .hamburger__icon:before {
-  -moz-transform: translateY(7px) rotate(45deg);
-  -ms-transform: translateY(7px) rotate(45deg);
-  -webkit-transform: translateY(7px) rotate(45deg);
-  transform: translateY(7px) rotate(45deg);
+  -moz-transform: translateY(5px) rotate(45deg);
+  -ms-transform: translateY(5px) rotate(45deg);
+  -webkit-transform: translateY(5px) rotate(45deg);
+  transform: translateY(5px) rotate(45deg);
 }
 .hamburger.active .hamburger__icon:after {
-  -moz-transform: translateY(-7px) rotate(-45deg);
-  -ms-transform: translateY(-7px) rotate(-45deg);
-  -webkit-transform: translateY(-7px) rotate(-45deg);
-  transform: translateY(-7px) rotate(-45deg);
+  -moz-transform: translateY(-5px) rotate(-45deg);
+  -ms-transform: translateY(-5px) rotate(-45deg);
+  -webkit-transform: translateY(-5px) rotate(-45deg);
+  transform: translateY(-5px) rotate(-45deg);
 }
 
 .fat-nav {
@@ -94,9 +94,11 @@
   display: table;
   table-layout: fixed;
 
-  hr {
+  hr.divider {
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border-top: 2px solid #fff;
+    max-width: 120px;
   }
 }
 .fat-nav.active {

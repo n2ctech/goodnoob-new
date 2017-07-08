@@ -3,7 +3,7 @@ header
     .flex.header-start
       = yield(:mobile_icons)
     .flex.header-center
-      = link_to image_tag("header-logo.png", alt: 'main-background'), root_path
+      = link_to image_tag("header-logo.png", alt: 'main-background'), '/home'
     .flex.header-end
       - if user_signed_in?
         = render 'layouts/upload_button'
@@ -52,16 +52,16 @@ header
           - default_guide = Guide.first
           - default_cat = default_guide.sub_category
         li= link_to t('.buying_guides'), sub_category_guide_path(default_cat, default_guide)
-        - if user_signed_in?
-          li
-            span data-target="#collapseMedia" data-toggle="collapse" = t '.new_post'
-          #collapseMedia.collapse
-            li.whiteli
-              = modal_button_tag '/Photo', modals_path(action: :add_photo), link: true
-            li.divider role="separator"
-            li.whiteli
-              = modal_button_tag '/Video', modals_path(action: :add_video), link: true
+        hr.divider
         li= link_to t('.my_profile'), edit_user_registration_path
+        li
+          span data-target="#collapseMedia" data-toggle="collapse" = t '.new_post'
+        #collapseMedia.collapse
+          li.whiteli
+            = modal_button_tag '/Photo', modals_path(action: :add_photo), link: true
+          li.divider role="separator"
+          li.whiteli
+            = modal_button_tag '/Video', modals_path(action: :add_video), link: true
         li clas="social-links"
           div
             a.btn-social-circle href="https://www.facebook.com/goodnoob" target="_blank"
