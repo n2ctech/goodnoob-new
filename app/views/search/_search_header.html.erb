@@ -49,23 +49,6 @@
           <span class="applied-filter-text"><%= t '.clear_all' %></span>
         <% end %>
       </div>
-
-      <div class="flex applied-filters-wrapper sub-filters-wrapper">
-        <% @filters.each do |filter| %>
-            <div class="applied-filter">
-              <%= link_to search_index_path(update_params(params, :remove, filter.type, filter.id)), data: {'turbolinks-scroll' => false} do %>
-                  <span class="glyphicon glyphicon-remove"></span>
-                  <span class="applied-filter-text"><%= filter.name %></span>
-              <% end %>
-            </div>
-        <% end %>
-        <span class="applied-filter js-clear-all clear-filters-filter">
-          <%= link_to search_index_path(clear_sub_categories(params)), data: {'turbolinks-scroll' => false} do %>
-            <span class="glyphicon glyphicon-remove"></span>
-            <span class="applied-filter-text"><%= t '.clear_all' %></span>
-          <% end %>
-        </span>
-      </div>
     <% end %>
   </div>
 </div>
