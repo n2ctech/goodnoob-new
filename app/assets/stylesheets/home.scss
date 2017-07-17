@@ -5,10 +5,10 @@ $font-family-din-condensed: 'DIN CONDENSED', sans-serif;
 $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
 #home-search-page {
   .container-filters {
-    left: 0;
-    right: 0;
-    display: flex;
-    width: 50%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: box;
   }
   .video-background {
     overflow: hidden;
