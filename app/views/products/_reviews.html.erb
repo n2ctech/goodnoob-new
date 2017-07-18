@@ -29,12 +29,9 @@
 
         <% if reviews.length > 0 %>
           <div class="reviews-container col-md-9 center-block">
-            <% if user_signed_in? %>
-              <%= modal_button_tag t('.add_a_review'),
-                           new_product_review_path(product),
-                           method: :get,
-                           link: true,
-                           class: 'add-review hidden-xs' %>
+            <% if current_user && product.reviews.pluck(:user_id).exclude?(current_user.id) %>
+              <%= link_to t('.add_a_review'), new_product_review_path(product), remote: true,
+                class: 'add-review hidden-xs' %>
             <% end %>
 
             <% reviews.last(2).each do |review|%>
@@ -61,17 +58,13 @@
             <div class="no-reviews-block">
               <div class="no-review-title"><%= t '.no_reviews_yet' %> <b><%= t '.be_the_first' %></b></div>
               <div>
-                <% if user_signed_in? %>
-                  <%= modal_button_tag t('.add_a_review'),
-                    new_product_review_path(product),
-                    method: :get,
-                    link: true,
+                <% if current_user && product.reviews.pluck(:user_id).exclude?(current_user.id) %>
+                  <%= link_to t('.add_a_review'), new_product_review_path(product), remote: true,
                     class: 'add-review hidden-xs' %>
-
                     <script>
-                                $('.add-review').click(function() {
-                                send_track_review();
-                              });
+                      $('.add-review').click(function() {
+                        send_track_review();
+                      });
                     </script>
 
                 <% end %>

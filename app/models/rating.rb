@@ -7,23 +7,14 @@ class Rating < ActiveRecord::Base
   belongs_to :review
   belongs_to :review, inverse_of: :rating
 
-  validates :review, :value, presence: true
+  validates :product_id, :user_id, :value, presence: true
+  validates :product_id, uniqueness: { scope: :user_id }
 
-  before_save :set_product
-  before_save :set_user
-  after_save :update_average
-
-  def set_product
-    self.product_id = review.product.id
+  before_validation do
+    self.product_id ||= review&.product_id
+    self.user_id ||= review&.user_id
   end
 
-  def set_user
-    self.user_id = review.user.id
-  end
-
-  def update_average
-
-  end
 end
 
 # == Schema Information

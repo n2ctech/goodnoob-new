@@ -1,0 +1,15 @@
+$('#js-review-form-modal').remove();
+$('body').append("<%= j render(partial: 'new_js') %>");
+$('#js-review-form-modal').modal();
+$('.wysihtml5').wysihtml5({
+  'toolbar': {
+    'blockquote': false,
+    'html': false,
+    'link': false,
+    'image': false,
+    'font-styles': false,
+    'emphasis': {
+      'small': false
+    }
+  }
+});

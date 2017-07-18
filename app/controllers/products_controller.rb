@@ -91,31 +91,15 @@ class ProductsController < ApplicationController
     end
 
   def ajax_set_product_rating
-    success = true
-    error_msg = ""
+    rating = Rating.where({user_id: current_user.id, product_id: params[:product_id]})
+                   .first_or_initialize
+    rating.value = params[:rating]
 
-    rating_field = Rating.where({user_id: current_user.id, product_id: params[:product_id]}).first_or_create do |record|
-      record.user_id = current_user.id
-      record.product_id = params[:product_id]
-
-      record.review = Review.new({user_id: current_user.id, product_id: params[:product_id], language_id: current_user.language_id, title: " ", review: " ", rating: record})
-      if record.review.save({validate: false}) == false
-        errror_msg = record.review.errors.full_messages
-        puts error_msg
-      end
-    end
-
-    if success
-      rating_field.value = params[:rating]
-      success = rating_field.save({validate: false})
-    end
-
-    if success
-      render json: { rating: params[:rating], status: 200 }, status: 200
+    if rating.save
+      render json: { rating: params[:rating] }, status: 200
     else
-      error_msg = rating_field.errors.full_messages
-      render json: { error: error_msg, status: 400}, status: 400
+      render json: { error: rating.errors.full_messages }, status: 400
     end
-
   end
+
 end
