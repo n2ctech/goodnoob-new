@@ -2166,7 +2166,7 @@ $upload-button-color: #64b0fc;
     padding: 16px;
 
     .thumb-wrapper {
-      background: $thumb-background;
+      background: #f9f9f9 !important;
       font-family: $thumbs-main-font;
       margin: 0 15px 15px 0;
       padding: 0;
@@ -2346,7 +2346,7 @@ $upload-button-color: #64b0fc;
       }
 
       .thumb-brd-btm-4 {
-        border-bottom: 4px solid $main-background-color;
+        border-bottom: 4px solid #f9f9f9;
       }
 
       .thumb-moreinfo-link {
@@ -2800,7 +2800,6 @@ $footer-links-color: #7f7f7f;
 
 .thumb-star-wrapper {
   white-space: nowrap;
-  flex: 0 0 94px;
   text-align: left;
   color: #3cbbe8
 }
