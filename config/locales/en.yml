@@ -180,8 +180,11 @@ en:
       post_review: Post your review and help others...
       upload: Upload
     new:
-      upload: Upload
+      upload: Submit
       title: Add a review
+    new_js:
+      title: Title
+      post_review: Post your review and help others...
     review_form:
       title: Title
       post_review: Post your review and help others...

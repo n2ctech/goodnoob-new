@@ -10,6 +10,7 @@ class Review < ActiveRecord::Base
   validates :title, :review, :language, :user, :product, presence: true
   validates_associated :rating
   validates_presence_of :rating
+  validates :product_id, uniqueness: { scope: :user_id }
 
   delegate :name, to: :user, prefix: true # .user_name method
 

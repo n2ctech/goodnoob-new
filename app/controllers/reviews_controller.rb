@@ -25,11 +25,20 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @review.build_rating(value: Rating::DEFAULT_VALUE)
+    @review.rating = Rating.where({user_id: current_user.id, product_id: params[:product_id]})
+                           .first_or_initialize
+    @review.rating.value ||= Rating::DEFAULT_VALUE
   end
 
   def create
     @review = Review.new(review_params.merge(review_extra_params))
+    if rating = Rating.find_by_id(rating_params[:id])
+      @review.rating = rating
+    else
+      @review.build_rating
+    end
+    @review.rating.value = rating_params[:value]
+
     if @review.save!
       redirect_to product_path(@product)
     else
@@ -71,8 +80,11 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:title, :review, rating_attributes: [:value])
+    params.require(:review).permit(:title, :review)
+  end
 
+  def rating_params
+    params.require(:review).permit(rating_attributes: [:value, :id])["rating_attributes"]
   end
 
   def review_extra_params
