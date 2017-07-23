@@ -462,16 +462,6 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
       }
     }
   }
-
-  .product-details-wrapper {
-    .product-details {
-      .product-tab {
-        &.short {
-          height: 0;
-        }
-      }
-    }
-  }
 }
 
 @media only screen and (max-width: 769px) {
