@@ -1,4 +1,4 @@
-$(document).on 'turbolinks:load', ->
+$(document).ready ->
   $('.check__form').on 'change', ->
     $('#filter_form').submit()
 

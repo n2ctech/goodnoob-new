@@ -1,10 +1,9 @@
 /**
  * Created by Lilik on 17.12.2015.
  */
+
 $(document).ready(function() {
     $('.selectpicker').selectpicker();
-});
-$(document).on('turbolinks:load', function() {
     var filterHead = $('.filter-heading-wrapper');
     var subFilter = $('.sub-filter-wrapper');
     var showMoreLink = $('.showmore-link-wrapper');
@@ -27,17 +26,6 @@ $(document).on('turbolinks:load', function() {
             'international-brands': 'hide',
             'local-brands': 'hide' };
     var filterStatus = window.filterStatus;
-
-    $(document).on("page:change", function() {
-        window.prevPageYOffset = window.pageYOffset;
-        window.prevPageXOffset = window.pageXOffset;
-    });
-    $(document).on("page:load", function() {
-        if( window.turbolinksScroll === false ){
-            window.scrollTo( window.prevPageXOffset, window.prevPageYOffset );
-        }
-        window.turbolinksScroll = undefined;
-    });
 
     $(document).on('click', 'a', function(event) {
         var scroll = $(this).data('turbolinks-scroll');
@@ -630,9 +618,4 @@ $(document).on('turbolinks:load', function() {
       prevArrow: $('.up-arrow'),
       nextArrow: $('.down-arrow')
     });
-});
-
-$(document).on('turbolinks:before-visit', function() {
-    $('.more-less-text').readmore('destroy');
-    $('.more-less-text-big').readmore('destroy');
 });

@@ -1,4 +1,4 @@
-$(document).on 'turbolinks:load', ->
+$(document).ready ->
   new SearchForm $(elem) for elem in $('.search-form--inline')
 
 class SearchForm
