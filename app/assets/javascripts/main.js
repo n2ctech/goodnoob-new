@@ -1,7 +1,9 @@
 /**
  * Created by Lilik on 17.12.2015.
  */
-
+$(document).ready(function() {
+    $('.selectpicker').selectpicker();
+});
 $(document).on('turbolinks:load', function() {
     var filterHead = $('.filter-heading-wrapper');
     var subFilter = $('.sub-filter-wrapper');

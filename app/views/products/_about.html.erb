@@ -32,28 +32,9 @@
         </div>
         <div class="product-buttons">
           <span class="product-price"><%= product.price_string %></span>
-          <button type='button' id='upload-menu' class='btn product-button product-post hidden-xs dropdown-toggle'
-                  data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
+          <button type='button' id='upload-menu' class='btn product-button product-post hidden-xs' data-target="#NewPost" data-toggle="modal">
             <%= t '.post_photo_video' %>
           </button>
-
-          <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
-            <li>
-              <% if current_user.present? %>
-                  <%= modal_button_tag t('.photo'), modals_path(action: :add_photo, product_id: product.id), link: true %>
-              <% else %>
-                  <%= modal_link t('.photo'), nil, t('.log_in_to_post_photo') %>
-              <% end %>
-            </li>
-            <li role='separator' class='divider'></li>
-            <li>
-              <% if current_user.present? %>
-                  <%= modal_button_tag t('.video'), modals_path(action: :add_video, product_id: product.id), link: true %>
-              <% else %>
-                  <%= modal_link t('.video'), nil, t('.log_in_to_post_video') %>
-              <% end %>
-            </li>
-          </ul>
 
           <%= modal_button_tag t('.add_a_review'),
              new_product_review_path(product),

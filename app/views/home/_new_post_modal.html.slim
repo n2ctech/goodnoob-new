@@ -27,8 +27,8 @@
     .col-xs-12.col-sm-6.form-container#photo_form
       = form_for Photo.add_billet, url: photos_path, html: {multipart: true, class: 'form-horizontal'} do |f|
         .form-group
-          = f.select :product_id, products_for_select_tag, {selected: params[:product_id]},
-                      {class: 'selectpicker form-control form-height', data: {live_search: true, size: 5}, title: t('.search_product')}
+          = f.select :product_id, products_for_select_tag, {selected: params[:product_id] || @product&.id},
+                      {class: 'selectpicker form-control', data: {live_search: true, size: 5}}
           .form-control.container-list.form-height.no-padding
             .col-xs-6.col-sm-6.open.photo Photo
             .col-xs-6.col-sm-6.closed.video Video
