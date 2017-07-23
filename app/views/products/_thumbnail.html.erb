@@ -1,9 +1,4 @@
 <div class='thumb-wrapper'>
-  <div class='flex thumb-header'>
-    <span class='thumb-header-abbr'>
-      <%= product.name %> <%= "(#{product.year})" if product.year %>
-    </span>
-  </div>
     <div class='thumb-image'>
       <%= image_tag product.picture_url(:thumbnail), alt: '' %>
     </div>
@@ -18,6 +13,9 @@
     </div>
     <div class='thumb-description text-left'>
       <p>
+        <strong class='thumb-header-abbr'>
+          <%= product.name %> <%= "(#{product.year})" if product.year %>
+        </strong><br>
         <%= truncate strip_tags(product.description), length: 110, separator: ' ' %>
       </p>
     </div>

@@ -26,6 +26,7 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
   height: 20px;
   line-height: 25px;
   text-transform: uppercase;
+  font-family: 'DIN Alternate', sans-serif;
 }
 
 .toggle-block {
@@ -34,7 +35,6 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
   float: none;
   font-size: 1.2rem;
   text-align: center;
-  color: #ffffff;
 }
 
 .product-about-wrapper {
@@ -96,6 +96,7 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
         width: 520px;
         margin: auto;
         .product-name {
+          font-family: 'DIN Alternate', sans-serif;
           font-size: 1.8rem;
           font-weight: bolder;
           margin: 0;
@@ -115,6 +116,7 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
           font-size: 1.2rem;
           font-weight: 200;
           height: 370px;
+          font-family: 'Myriad Pro Light', sans-serif;
         }
         .product-buttons {
           height: 30px;
@@ -133,16 +135,15 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
           .product-button {
             border-radius: 0;
             vertical-align: middle;
-            height: 30px;
+            font-family: 'DIN Alternate', sans-serif;
             line-height: 25px;
             text-decoration: none;
-            // font-family: 'Myriad Pro';
             min-width: 35px;
             display: inline-block;
             font-weight: bolder;
             font-size: 1rem;
             background-color: #4eb9e8;
-            padding: 5px;
+            padding: 5px 10px;
             color: #fff;
             text-align: center;
             text-transform: uppercase;
