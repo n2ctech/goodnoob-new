@@ -38,11 +38,11 @@ $(document).ready ->
     if x <= per_page
       $('#js-show-less').hide()
     return
-  return
-  $('body').on 'click', '.video', ->
+
+  $('.video').click ->
     $('#photo_form').addClass('hidden')
     $('#video_form').removeClass('hidden')
-  $('body').on 'click', '.photo', ->
+  $('.photo').click ->
     $('#photo_form').removeClass('hidden')
     $('#video_form').addClass('hidden')
   $('#masonry-container').masonry

@@ -82,6 +82,11 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
     margin: 0 auto;
     left: 0;
     right: 0;
+
+    @media (max-width: 992px) {
+      width: 80vw;
+    }
+
     .form-container {
       background: white;
       padding: 0 5%;
@@ -134,7 +139,6 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
           }
           .form-height {
             height: 6.5%;
-            font-size: 1.05vw;
           }
           textarea::placeholder { color: #dfdfdf; }
           .comment-container {
@@ -144,7 +148,6 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
           }
           .url-input{
             height: 6%;
-            font-size: 1vw;
             border-radius: 0;
           }
         }

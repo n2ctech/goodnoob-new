@@ -664,10 +664,6 @@ header {
   margin-top: 50px;
   max-width: 100%;
 
-  @media (max-width: 992px) {
-    width: 75%;
-  }
-
 .register-image {
   height: 100%;
 }
@@ -3050,10 +3046,6 @@ $footer-links-color: #7f7f7f;
     justify-content: center;
     align-items: center;
     margin-bottom:15px;
-  }
-
-  .authform > .login-form > form {
-    padding: 24% 9% 0;
   }
 
   .authform .button{
