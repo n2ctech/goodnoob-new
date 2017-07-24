@@ -14,7 +14,7 @@ class SubCategoriesController < ApplicationController
     @sub_category = SubCategory.find(params[:id])
     params[:sub_categories] = [ @sub_category.id.to_s ]
 
-    product_ids =
+    @products =
       @sub_category.products
                    .base_search(params[:search],
                                 params[:sub_categories],
@@ -25,9 +25,6 @@ class SubCategoriesController < ApplicationController
                    .price_from(params[:price_from])
                    .price_to(params[:price_to])
                    .sort_by(params[:search_field], params[:search_direction])
-                   .pluck(:id)
-
-    @products = Product.where(id: product_ids).sort_by('rating', 'true')
                    .page(params[:page])
                    .per(16)
 
