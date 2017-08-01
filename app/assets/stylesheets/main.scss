@@ -309,7 +309,7 @@ header {
 
   .header-start,
   .header-end {
-    flex-basis: 25%;
+    flex-basis: 28%;
   }
 
   .header-start {
@@ -328,7 +328,8 @@ header {
       width: 40.5%;
     }
     img {
-      height: 22px;
+      height: auto;
+     
       @media only screen and (max-width: 767px) {
         height: auto;
         width: 100%;
@@ -577,7 +578,7 @@ header {
 }
 
 .upload-btn-wrapper {
-  height: 30px;
+  height: 2px;
   font-weight: 200;
   line-height: 30px;
   vertical-align: middle;
@@ -616,7 +617,7 @@ header {
     line-height: 30px;
     font-family: 'Affogato', sans-serif;
     font-weight: 700;
-    padding: 0;
+    padding: 0 2px;
     .user-profile {
       img {
         margin: 0;
@@ -628,8 +629,7 @@ header {
       padding-right: 30px;
     }
 
-    &:hover, &:focus {
-      border: none;
+    &:hover, &:focus {      
       outline: none;
     }
   }
@@ -1116,7 +1116,7 @@ header {
   align-items: center;
   background-color: #2b3339;
   @media only screen and (max-width: 767px) {
-    margin-top: 18vw;
+    margin-top: 0;
   }
 }
 
@@ -2158,7 +2158,7 @@ $upload-button-color: #64b0fc;
 
   .thumbs-matrix-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-wrap: wrap;
     padding: 16px;
 
@@ -2481,7 +2481,8 @@ $footer-links-color: #7f7f7f;
   background: $main-footer-background;
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: auto;
+  padding: 26px 0 22px;
   color: $footer-links-color;
   width: 100%;
 
@@ -2851,7 +2852,7 @@ $footer-links-color: #7f7f7f;
   &:focus,
   &:active {
     color: #3ce1e6;
-    border: none;
+    border-color: transparent;
     font-size: 2em;
     text-decoration: none;
   }
@@ -3305,4 +3306,24 @@ $footer-links-color: #7f7f7f;
   object-fit: cover;
   height: 100%;
   width: 100%;
+}
+#welcome_page + #footer_render {
+  .footer-wrapper {
+   padding: 54px 0 20px;
+  }
+}
+#search_results {
+  .search-results-container > div{
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 5px;
+  }
+}
+#search_results {
+  .search-results-container{
+    .thumb-preview{
+      height: 120px;
+    }
+  }
 }

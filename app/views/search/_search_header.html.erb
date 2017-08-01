@@ -17,9 +17,9 @@
         <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown">
           <span ><%= defined?(@category) ? @category.name : t('.compare') %></span>
         </button>
-        <div class="dropdown-menu compare-block-wrapper">
-          <%= render 'layouts/compare_products' %>
-        </div>
+        <!-- <div class="dropdown-menu compare-block-wrapper">
+          <%#= render 'layouts/compare_products' %>
+        </div> -->
       </span>
 
       <span class="item-separator"><%= image_tag('r-arrow.png') %></span>

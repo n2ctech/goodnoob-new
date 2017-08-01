@@ -29,6 +29,7 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
     }
     .new-post-container {
       width: 16.9vw;
+      align: center;
     }
     .box {
       margin: 0 0 1% 0;
@@ -74,14 +75,15 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
     padding: 0;
     background: white;
     .new-post-container {
-      height: 16.8vh;
+      height: auto;
       background: #e4e4e4;
       margin-bottom: 15px;
       position: relative;
       border-radius: 10px;
+      padding: 50px 6px 0;
+      min-height: 120px;
       .text-post {
-        position: absolute;
-        bottom: 10%;
+        position: relative;
         font-size: 1vw;
         color: #b4b4b4;
         width: 100%;
@@ -92,9 +94,9 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
         }
       }
       .image-post {
-        top: 10%;
+        top: 30%;
         position: absolute;
-        width: 100%;
+        width: 95%;
         img {
           width: 16.3%;
           margin: auto;
