@@ -8,7 +8,7 @@
 
     <div class="flex tabs-list m-auto">
       <span class="dropdown dropdown-on-hover tabs-item">
-        <%= link_to t('.learn'), guides_path(category_id: @categories.first.id), { class: "btn btn-link tabs-link" } %>
+        <%= link_to t('.learn'), guides_path(category_id: @categories.default_for_surf), { class: "btn btn-link tabs-link" } %>
       </span>
 
       <span class="item-separator"><%= image_tag('l-arrow.png') %></span>

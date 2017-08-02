@@ -31,6 +31,10 @@ class Category < ActiveRecord::Base
     searched_for?(sub_categories_ids) && (sub_categories.ids - sub_categories_ids.map(&:to_i)).count > 0
   end
 
+  def self.default_for_surf
+    find_by(name_en: 'Surf').id
+  end
+
 end
 
 # == Schema Information
