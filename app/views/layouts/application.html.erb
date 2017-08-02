@@ -17,7 +17,7 @@
     <section class="main-wrapper">
       <%= content_for?(:messages) ? yield(:messages) : render( 'layouts/messages' ) %>
       <%= yield %>
-      <div id='footer_render>
+      <div id='footer_render'>
         <%= render 'layouts/footer' %>
       </div>
     </section>

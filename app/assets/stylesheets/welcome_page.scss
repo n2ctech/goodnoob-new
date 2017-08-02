@@ -110,8 +110,9 @@ $font-family-light: 'DIN LIGHT', sans-serif;
 
   .back {
     background-image: url(asset-path('welcome_page_back.png'));
-    height: 100vh;
+    height: auto;
     color: white;
+    position: relative;
   }
 
   .component {
@@ -154,7 +155,9 @@ $font-family-light: 'DIN LIGHT', sans-serif;
   .logo-text {
     background: white;
     color: #303030;
-    padding: 0 0.5% 0 0.3%;
+    padding: 10px 5px;
+    display: inline-block;
+    line-height: 30px;
   }
 
   .small-text {
@@ -179,6 +182,7 @@ $font-family-light: 'DIN LIGHT', sans-serif;
     padding-top: 4px;
     color: #929292;
   }
+  
 
   @media only screen and (min-width: 1200px) {
     .register-form-welcome-page {
@@ -205,6 +209,7 @@ $font-family-light: 'DIN LIGHT', sans-serif;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            font-family: 'DIN Alternate';
             img {
               width: 8%;
               margin-bottom: 5%;
@@ -254,7 +259,7 @@ $font-family-light: 'DIN LIGHT', sans-serif;
       width: 100%;
       right: 0;
       text-align: center;
-      bottom: 8vh;
+      bottom: -42px;
       font-size: 3vw;
     }
     .margin {

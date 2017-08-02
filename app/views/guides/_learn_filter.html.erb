@@ -4,7 +4,7 @@
 
       <span class="dropdown dropdown-on-hover tabs-item">
         <div class="tabs-link active">
-          <%= link_to t('.learn'), guides_path(category_id: @categories.first.id) %>
+          <%= link_to t('.learn'), guides_path(category_id: @categories.default_for_surf) %>
         </div>
       </span>
 
