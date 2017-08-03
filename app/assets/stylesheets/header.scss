@@ -1,0 +1,134 @@
+.search-bar {
+  position: relative;
+  cursor: pointer;
+  padding-left: 15px;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -18px;
+    height: 48px;
+    width: 1px;
+    background: #ddd;
+    opacity: 0.8;
+  }
+}
+
+.search-input {
+  width: 99%;
+  display: block;
+  margin: 0.99% 0.5% 0;
+  background: #fff;
+  min-height: 35px;
+  input[type=text] {
+    border: none;
+    font-size: 16px;
+    max-width: 88.99%;
+    width: 100%;
+    line-height: 35px;
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-input-placeholder {
+      color: #bbb9b9;
+    }
+    &::-moz-placeholder {
+      color: #bbb9b9;
+    }
+    &:-ms-input-placeholder {
+      color: #bbb9b9;
+    }
+    &:-moz-placeholder {
+      color: #bbb9b9;
+    }
+  }
+  button {
+    height: 35px;
+    width: 35px;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    border-left: 1px solid #ddd;
+    opacity: 0.8;
+    &:focus {
+      outline: none;
+    }
+  }
+  .cancel-search {
+    display: inline-block;
+    vertical-align: top;
+    background: #6fecdd;
+    color: #fff;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    float: right;
+    cursor: pointer;
+  }
+  .hamburger__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+    top: 0;
+    opacity: 0.10;
+  }
+}
+
+.search-overlay {
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 103;
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .search-input {
+    input[type=text] {
+      max-width: 86.99%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .search-input {
+    input[type=text] {
+      max-width: 87.99%;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .search-input {
+    input[type=text] {
+      max-width: 82.99%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .search-input {
+    input[type=text] {
+      max-width: 74.99%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .search-input {
+    input[type=text] {
+      max-width: 61.99%;
+    }
+  }
+}

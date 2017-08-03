@@ -618,4 +618,11 @@ $(document).ready(function() {
       prevArrow: $('.up-arrow'),
       nextArrow: $('.down-arrow')
     });
+
+    $('.search-bar').on('click', function () {
+        $(".search-overlay").addClass("active");
+    });
+    $('.cancel-search').on('click', function () {
+        $(".search-overlay").removeClass("active");        
+    });
 });

@@ -27,6 +27,18 @@
       <%= render partial: 'shared/bootstrap_modal', locals: { modal_id: 'NewPost', modal_partial: 'home/new_post_modal' } %>
       <%= render 'layouts/mobile_post_button' %>
     </div>
+
+    <div class="search-overlay">
+      <form class="search-input">
+        <div class="hamburger__icon"></div>
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" name="search" placeholder="Search your sport, brand, modal...">
+        <span class="cancel-search">X</span>
+        </form>
+    </div>
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

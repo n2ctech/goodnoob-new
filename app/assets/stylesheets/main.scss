@@ -160,6 +160,7 @@ body,
 #footer_render {
   position: fixed;
   bottom: 0;
+  z-index: 10;
   width: 100%;
 }
 
@@ -316,7 +317,7 @@ header {
 
   .header-start,
   .header-end {
-    flex-basis: 28%;
+    flex-basis: 32%;
   }
 
   .header-start {
@@ -335,7 +336,7 @@ header {
       width: 40.5%;
     }
     img {
-      height: auto;
+      height: 22px;
      
       @media only screen and (max-width: 767px) {
         height: auto;
