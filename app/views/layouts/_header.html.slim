@@ -2,8 +2,20 @@ header
   .flex.white-header-stripe
     .flex.header-start
       = yield(:mobile_icons)
+      .dropdown.mobile_user_dropdown
+        a.dropdown-toggle[href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
+          = image_tag("user-icon.png")
+        ul.dropdown-menu
+          li
+            button.upload-btn.dropdown-toggle type="button" class="btn login-btn" data-toggle='modal' data-target='#NewPost' = t '.+new_post'
+          li
+            button.btn.blog-btn data-target="#BlogModal" data-toggle="modal" type="button"= t('.the_blog')
+          li
+            button.btn.login-btn data-target="#SignInModal" data-toggle="modal" type="button"= t('.login')
+          li
+            button.btn.register-btn data-target="#SignUpModal" data-toggle="modal" type="button" = t('. register')
       .search-bar
-        i.fa.fa-search.icon_search        
+        =image_tag  "search-icon.png", :class => "icon_search"      
     .flex.header-center
       = link_to image_tag("logo-good-noob-BIG-02.png", alt: 'main-background'), '/home'
     .flex.header-end

@@ -12,6 +12,9 @@
     background: #ddd;
     opacity: 0.8;
   }
+  .icon_search {
+    max-width: 18px;
+  }
 }
 
 .search-input {
@@ -122,6 +125,11 @@
     input[type=text] {
       max-width: 74.99%;
     }
+  }
+  .search-bar {
+    .icon_search {
+      max-width: 14px;
+    }    
   }
 }
 

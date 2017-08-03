@@ -374,3 +374,12 @@ $font-family-light: 'DIN LIGHT', sans-serif;
     }
   }
 }
+
+@media (max-width: 1200px) {
+  #welcome_page {
+    .logo-text {
+      padding: 7px 5px 0;
+      line-height: inherit;
+    }
+  }
+}
