@@ -711,7 +711,7 @@ header {
     padding-bottom: 50px;
   }
   @media (max-width: 680px) {
-    padding: 40px 25px;
+    padding: 0 25px 15px;
   }
 }
 
@@ -2330,6 +2330,12 @@ $upload-button-color: #64b0fc;
         outline: none;
 
         a, img { outline: none; }
+
+        &:hover {
+          img {
+            opacity: 0.5;
+          }
+        }
       }
 
       .thumb-preview-button {
@@ -3171,7 +3177,7 @@ $footer-links-color: #7f7f7f;
   }
 
   .thumb-more-button {
-    background: image-url('three-dots-menu.svg') no-repeat scroll center center transparent;
+    background: image-url('three-dots-menu_white.svg') no-repeat scroll center center transparent;
     width: 20px;
     height:20px;
     margin: 0px;
@@ -3361,6 +3367,14 @@ $footer-links-color: #7f7f7f;
 
 .mobile_user_dropdown {
   display: none;
+}
+
+.bx-wrapper {
+  .bx-controls-direction {
+    a {
+      z-index: 1;
+    }
+  }
 }
 
 @media (min-width: 993px) and (max-width: 1110px) {

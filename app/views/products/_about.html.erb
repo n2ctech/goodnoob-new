@@ -5,7 +5,7 @@
         <ul class="photos-container bxslider">
           <% product.pictures.each do |picture| %>
             <li class="product-photo">
-              <%= link_to picture.image.url, class: 'js-zoom-photo' do %>
+              <%= link_to picture.image.url, class: 'product-zoom-photo' do %>
                 <%= image_tag picture.url %>
               <% end %>
             </li>

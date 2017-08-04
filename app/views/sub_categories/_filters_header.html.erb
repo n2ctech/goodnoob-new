@@ -3,11 +3,17 @@
 
   <div class="flex tabs-list">
 
+    <span class="tabs-item social-feed-button-wrapper">
+      <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
+    </span>
+
+    <span class="item-separator"><%= image_tag(asset_path('l-arrow.png')) %></span>
+
     <span class="dropdown dropdown-on-hover tabs-item">
         <%= link_to t('.learn'), guides_path(category_id: @categories.first.id), { class: "btn btn-link tabs-link" } %>
     </span>
 
-    <span class="item-separator"><%= image_tag(asset_path('l-arrow.png')) %></span>
+    <span class="item-separator"><%= image_tag(asset_path('r-arrow.png')) %></span>
 
     <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
       <button type="button" class="btn btn-link tabs-link active dropdown-toggle" data-toggle="dropdown">
@@ -16,13 +22,8 @@
       <div class="dropdown-menu compare-block-wrapper">
         <%= render 'layouts/compare_products' %>
       </div>
-    </span>
-
-    <span class="item-separator"><%= image_tag(asset_path('r-arrow.png')) %></span>
-
-    <span class="tabs-item social-feed-button-wrapper">
-      <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
-    </span>
+    </span>    
+    
   </div>
 </div>
 

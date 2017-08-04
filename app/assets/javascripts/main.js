@@ -414,7 +414,23 @@ $(document).ready(function() {
 
     if ($('.js-zoom-photo').length) {
       $('.js-zoom-photo').magnificPopup({
+        type: 'image',        
+        closeBtnInside: false,
+        closeOnContentClick: true,
+        image: {
+          verticalFit: true
+        }
+      });
+    }
+
+    
+
+    if ($('.product-zoom-photo').length) {
+      $('.product-zoom-photo').magnificPopup({
         type: 'image',
+        gallery:{
+            enabled:true
+        },
         closeBtnInside: false,
         closeOnContentClick: true,
         image: {

@@ -89,6 +89,7 @@ $headings-font-family: 'DIN Alternate', sans-serif;
         &:hover .learn-description {
           visibility: visible;
           color: #16524c;
+          display: block;
         }
         &:hover .learn-title a,
         &:focus .learn-title a {
@@ -107,6 +108,7 @@ $headings-font-family: 'DIN Alternate', sans-serif;
           width: 169px;
           font-size: 18px;
           visibility: hidden;
+          display: none;
           @media only screen and (max-width: 1280px) {
             font-size: 14px;
           }
