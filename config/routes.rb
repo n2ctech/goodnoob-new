@@ -93,6 +93,7 @@ Rails.application.routes.draw do
   resource :pictures, format: false, only: :create
   resources :photos, only: [:create, :show, :edit, :update, :destroy]
   resources :videos, format: false, only: [:create, :show, :edit, :update, :destroy]
+  resources :guide_images, only: :create
 
   namespace :info do
     resources :terms, only: :show
