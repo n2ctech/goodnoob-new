@@ -1,5 +1,27 @@
 #= require active_admin/base
 
+#= require redactor.min
+#= require redactor/inlinestyle
+#= require redactor/source
+#= require redactor/codemirror
+#= require redactor/alignment
+#= require redactor/table
+#= require redactor/fullscreen
+#= require redactor/fontsize
+#= require redactor/fontcolor
+#= require redactor/fontfamily
+#= require redactor/video
+#= require redactor/imagemanager
+#= require redactor/filemanager
+#= require redactor/properties
+#= require redactor/definedlinks
+#= require redactor/limiter
+#= require redactor/textdirection
+#= require redactor/counter
+#= require redactor/imagelink
+#= require codemirror
+#= require codemirror/modes/xml
+
 $ ->
   if $('#product_sub_category_id').length == 0
     return
@@ -26,3 +48,29 @@ $(document).ready ->
       $.get '/ajax_get_filter_options/' + $('#product_sub_category_id').val() + '?product_id=' + product_id,
         (data) -> $('#product_filter_options_input').html data
 
+
+$ ->
+  $('#guide_description_en, #guide_description_es, #guide_description_fr').redactor
+    plugins: [
+      'inlinestyle'
+      'codemirror'
+      'alignment'
+      'table'
+      'fullscreen'
+      'fontsize'
+      'fontcolor'
+      'fontfamily'
+      'video'
+      'textexpander'
+      'textdirection'
+      'imagelink'
+    ]
+    imageUpload: '/guide_images'
+    imageResizable: true
+    imagePosition: true
+    codemirror:
+      lineNumbers: true
+      mode: 'xml'
+      indentUnit: 4
+      theme: 'default'
+      lineWrapping: true

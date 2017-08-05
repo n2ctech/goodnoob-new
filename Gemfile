@@ -47,6 +47,11 @@ gem 'slim'
 gem 'font-awesome-rails'
 gem "jquery-slick-rails"
 gem 'flag-icons-rails'
+gem 'redactor2', github: 'nguyenducgiang/redactor2', branch: '2.8.1'
+gem 'codemirror-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'factory_girl_rails'
