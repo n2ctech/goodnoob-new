@@ -1,6 +1,6 @@
 #= require active_admin/base
 
-#= require redactor.min
+#= require redactor
 #= require redactor/inlinestyle
 #= require redactor/source
 #= require redactor/codemirror
