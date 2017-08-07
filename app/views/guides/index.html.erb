@@ -10,7 +10,7 @@
              <% end %>
            </div>
            <div class="learn-description text-left">
-             <%= sub_category.guides.first.description_en.truncate(150) %>
+             <%= sub_category.guides.first.description_en.truncate(150).html_safe %>
            </div>
          </div>
        </div>
