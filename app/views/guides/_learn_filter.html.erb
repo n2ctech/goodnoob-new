@@ -16,18 +16,9 @@
 
       <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
 
-      <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
-        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown">
-          <span><%= t('.compare') %></span>
-        </button>
-        <div class="dropdown-menu compare-block-wrapper">
-          <%= render 'layouts/compare_products' %>
-        </div>
+      <span class="dropdown dropdown-on-hover tabs-item">
+        <%= link_to t('.compare'), sub_category_path(id: 10), { class: "btn btn-link tabs-link" } %>
       </span>
-
-      
-      
-
     </div>
   </div>
 </div>
