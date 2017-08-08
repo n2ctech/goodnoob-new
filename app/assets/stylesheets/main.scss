@@ -172,7 +172,7 @@ $font-family-sans-serif-light: 'Myriad Pro Light', sans-serif;
 $headings-font-family: 'DIN Alternate', sans-serif;
 
 // Font-families
-$header-button-font: 'Affogato-Regular', serif;
+$header-button-font: 'Myriad Pro Light', serif;
 $flores-heading-font: 'DIN Alternate', sans-serif;
 $heading-subtext-font: 'Myriad Pro', sans-serif;
 $heading-button-font: 'Myriad Pro', sans-serif;
@@ -182,7 +182,7 @@ $input-field-font: 'Myriad Pro Light', sans-serif;
 $button-social-font:  'Myriad Pro Light', sans-serif;
 $button-toggle-modal-font: 'Myriad Pro', sans-serif;
 $tabs-list-font: 'DIN Alternate', sans-serif;
-$main-filters-wrapper-font: 'Affogato-Regular', sans-serif;
+$main-filters-wrapper-font: 'Affogato-Light', sans-serif;
 $button-social-font: 'Myriad Pro Light', sans-serif;
 $mobile-sort-bar-font: 'DIN Alternate', sans-serif;
 $mobile-sort-bar-item-font: 'Myriad Pro Light', sans-serif;
@@ -205,7 +205,7 @@ $mainmenu-link-weight: 700;
 // Colors
 $login-button-background: #fff;
 $login-button-hovered: #373737;
-$login-button-text: #050505;
+$login-button-text: #000;
 $login-button-text-hovered: #fff;
 $buying-list-header-text: #4ad7fa;
 $buying-list-item-text: #fff;
@@ -337,7 +337,7 @@ header {
     }
     img {
       height: 22px;
-
+     
       @media only screen and (max-width: 767px) {
         height: auto;
         width: 100%;
@@ -354,7 +354,6 @@ header {
   color: $login-button-text;
   border: 0;
   opacity: 1;
-  transform: scale(0.752, 0.752);
 
   &:hover,
   &:active,
@@ -515,9 +514,8 @@ header {
 }
 
 .item-separator > img {
-  height: 20px;
-  width: 12px;
-  margin: 0 6px;
+  height: 9px;
+  width: 5px;
 }
 
 .red-man-logo {
@@ -596,7 +594,7 @@ header {
   .upload-btn {
     @extend .header-btn-bg;
     font-family: $header-button-font;
-    //font-size: 0.9rem;
+    font-size: 0.9rem;
   }
   .flag-icon {
     background-size: 22px;
@@ -634,8 +632,8 @@ header {
   .btn {
     background: transparent;
     line-height: 30px;
-    font-family: 'Affogato-Regular', sans-serif;
-    font-weight: 200;
+    font-family: 'Affogato', sans-serif;
+    font-weight: 700;
     padding: 0 4px;
     text-transform: uppercase;
     .user-profile {
@@ -649,7 +647,7 @@ header {
       padding-right: 30px;
     }
 
-    &:hover, &:focus {
+    &:hover, &:focus {      
       outline: none;
     }
     &:last-child {
@@ -660,18 +658,10 @@ header {
     }
   }
 
-  .login-btn, .blog-btn, .register-btn {
-    @extend .header-btn-bg;
-    font-weight: 200;
+  .login-btn {
+    font-weight: 700;
     text-transform: uppercase;
     border-radius: 0;
-    color: #050505;
-  }
-  .login-btn.text_bold, .register-btn.text_bold {
-    font-weight: 700;
-  }
-  .register-btn.text_bold {
-    margin-left: -10px;
   }
 }
 
@@ -695,7 +685,6 @@ header {
 
 .authform {
   width: 100%;
-  margin-top: 50px;
   max-width: 100%;
 
 .register-image {
@@ -977,7 +966,7 @@ header {
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  background: #60e8cc;
+  background: #00e9cc;
 
 
   .filter-wrapper {
@@ -993,13 +982,12 @@ header {
 
     a {
       display: block;
-      color: #313b3f;
-      padding: 9.5px 40px;
-      font-size: 1.1em;
+      color: black;
+      padding: 12.5px 15px;
+      font-size: .9em;
       text-decoration: none;
       @media (max-width: 480px) {
         font-size: 1em;
-        padding: 9.5px 15px;
       }
 
       .affix & {
@@ -1031,7 +1019,7 @@ header {
 }
 
 .category-item {
-  background: #60e8cc no-repeat center/cover;
+  background: #00e9cc no-repeat center/cover;
   overflow: hidden;
   transition: 0.3s all ease-in-out;
   opacity: 0.75;
@@ -1040,7 +1028,7 @@ header {
   &.active,
   &:hover {
     opacity: 1;
-    background-color: #83fee5;
+    background-color: #00fee4;
   }
 
   .category-link {
@@ -1072,7 +1060,7 @@ header {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  background: #83fee5;
+  background: #00fee4;
   height: 30px;
 
   .subcategory-wrapper {
@@ -1149,7 +1137,7 @@ header {
 .main-tabs-wrapper {
   justify-content: center;
   align-items: center;
-  background-color: #6f6f6f;
+  background-color: #2b3339;
   @media only screen and (max-width: 767px) {
     margin-top: 0;
   }
@@ -2907,7 +2895,7 @@ $footer-links-color: #7f7f7f;
     line-height: 20px
   }
   &.active {
-    color: #29eab0;
+    color: #01ebae;
     border: none;
     font-size: 2em;
     font-weight: bold;
@@ -3373,7 +3361,7 @@ $footer-links-color: #7f7f7f;
         }
       }
     }
-  }
+  }  
 }
 
 .mobile_user_dropdown {
@@ -3417,7 +3405,7 @@ $footer-links-color: #7f7f7f;
     .btn {
       font-size: 12px;
     }
-  }
+  } 
   .hamburger.active {
     .hamburger__icon {
       &:before {
@@ -3452,7 +3440,7 @@ $footer-links-color: #7f7f7f;
     padding-bottom: 170px;
   }
   .login-btn-wrapper {
-    display: none;
+    display: none; 
   }
   .white-header-stripe {
     .header-start {
@@ -3465,12 +3453,12 @@ $footer-links-color: #7f7f7f;
       justify-content: flex-end;
     }
     .header-center {
-      order: 2;
+      order: 2; 
     }
   }
   .search-bar {
     &:before {
-      display: none;
+      display: none; 
     }
   }
   .mobile_user_dropdown {
@@ -3497,8 +3485,8 @@ $footer-links-color: #7f7f7f;
         -webkit-box-shadow: 0 0 3px #aaa;
         box-shadow: 0 0 3px #aaa;
       }
-    }
-  }
+    }    
+  } 
   .bottom-bar {
     bottom: 108px;
     background: #fff;
@@ -3509,9 +3497,9 @@ $footer-links-color: #7f7f7f;
       .thumbs-matrix-wrapper {
         .thumb-wrapper {
           width: 47%;
-        }
+        }        
       }
-    }
+    }  
   }
   #NewPost {
     .modal-dialog {
@@ -3555,8 +3543,8 @@ $footer-links-color: #7f7f7f;
       .thumbs-matrix-wrapper {
         .thumb-wrapper {
           width: 100%;
-        }
+        }        
       }
-    }
+    }  
   }
 }
