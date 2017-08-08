@@ -10,20 +10,14 @@
     <span class="item-separator"><%= image_tag(asset_path('l-arrow.png')) %></span>
 
     <span class="dropdown dropdown-on-hover tabs-item">
-        <%= link_to t('.learn'), guides_path(category_id: @categories.first.id), { class: "btn btn-link tabs-link" } %>
+        <%= link_to t('.learn'), guides_path(category_id: @categories.default_for_surf), { class: "btn btn-link tabs-link" } %>
     </span>
 
     <span class="item-separator"><%= image_tag(asset_path('r-arrow.png')) %></span>
 
-    <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
-      <button type="button" class="btn btn-link tabs-link active dropdown-toggle" data-toggle="dropdown">
-        <span><%= defined?(@category) ? @category.name : t('.compare') %></span>
-      </button>
-      <div class="dropdown-menu compare-block-wrapper">
-        <%= render 'layouts/compare_products' %>
-      </div>
-    </span>    
-    
+    <span class="dropdown dropdown-on-hover tabs-item">
+      <%= link_to t('.compare'), sub_category_path(id: 10), { class: "btn btn-link tabs-link" } %>
+    </span>
   </div>
 </div>
 
