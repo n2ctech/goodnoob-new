@@ -292,7 +292,7 @@ header {
   align-content: center;
   justify-content: space-between;
   align-items: center;
-  min-height: 48px;
+  min-height: 33px;
   position: fixed;
   width: 100%;
   z-index: 9;
@@ -986,6 +986,10 @@ header {
       padding: 12.5px 15px;
       font-size: .9em;
       text-decoration: none;
+      @media (max-width: 1200px) {
+        font-size: 0.8em;
+        padding: 9.5px 15px;
+      }
       @media (max-width: 480px) {
         font-size: 1em;
       }
@@ -1053,7 +1057,7 @@ header {
 }
 
 .subcategory-margin {
-  margin-top: 50px;
+  margin-top: 34px;
 }
 
 .main-subfilters-wrapper {
@@ -3344,7 +3348,7 @@ $footer-links-color: #7f7f7f;
 }
 
 .header-start {
-  padding: 8px 0 0 40px;
+  padding: 0px 0 0 40px;
 }
 
 .main-content-wrapper {
