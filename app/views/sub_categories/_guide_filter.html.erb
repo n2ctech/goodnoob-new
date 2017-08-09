@@ -7,10 +7,16 @@
       </span>
 
       <span class="item-separator"><%= image_tag('l-arrow.png') %></span>
-      
-      <span class="dropdown dropdown-on-hover tabs-item">
-        <%= link_to t('.compare'), sub_category_path(id: 10), { class: "btn btn-link tabs-link" } %>
-      </span>
+
+      <a class="tabs-item compare-button-wrapper" href="/sub_categories/<%= cookies[:selected_sub_category_id] %>">
+        <button type="button" class="btn btn-link tabs-link">
+          <span ><%= t('.compare') %></span>
+        </button>
+        <div class="dropdown-menu compare-block-wrapper">
+          <%= render 'layouts/compare_products' %>
+        </div>
+      </a>
+
       <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
 
       <span class="tabs-item social-feed-button-wrapper">
@@ -23,7 +29,7 @@
 <div class="flex main-filters-wrapper">
   <% @categories.each do |category| %>
       <div class="filter-wrapper category-item <%= "active" if category.searched_for?([params[:sub_category_id]]) %>">
-        <%= link_to guides_path(category_id: category.id), class: 'category-link' do %>
+        <%= link_to guides_path(category_id: category.id), class: 'category-link category-link-learn' do %>
           <label for="<%= "category-#{category.id}" %>" class="filter-name"><%= category.name %></label>
         <% end %>
       </div>

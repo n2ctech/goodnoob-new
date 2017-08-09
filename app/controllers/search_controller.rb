@@ -1,10 +1,12 @@
 class SearchController < ApplicationController
   def index
-    # store a selected sub category id
+    # update selected sub category id and category id
     if params[:sub_categories].nil?
       cookies[:selected_sub_category_id] = 10
+      cookies[:selected_category_id] = 4
     else
       cookies[:selected_sub_category_id] = params[:sub_categories][0]
+      cookies[:selected_category_id] = SubCategory.find(params[:sub_categories][0]).category_id
     end
 
     @filters = SearchFilter.build params
