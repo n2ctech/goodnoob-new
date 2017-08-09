@@ -2,27 +2,20 @@
   <div class="main-tabs-wrapper">
     <div class="flex tabs-list">
 
-      <span class="tabs-item social-feed-button-wrapper">
-        <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
+      <span class="tabs-link active dropdown dropdown-on-hover tabs-item">
+        <%= link_to t('.learn'), guides_path(category_id: @categories.default_for_surf)  %>
       </span>
 
       <span class="item-separator"><%= image_tag('l-arrow.png') %></span>
-
-      <span class="tabs-link active dropdown dropdown-on-hover tabs-item">
-        <%= link_to t('.learn'), guides_path(category_id: @categories.first.id)  %>
+      
+      <span class="dropdown dropdown-on-hover tabs-item">
+        <%= link_to t('.compare'), sub_category_path(id: 10), { class: "btn btn-link tabs-link" } %>
       </span>
-
       <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
 
-      <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
-        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown">
-          <span><%= t('.compare') %></span>
-        </button>
-        <div class="dropdown-menu compare-block-wrapper">
-          <%= render 'layouts/compare_products' %>
-        </div>
+      <span class="tabs-item social-feed-button-wrapper">
+        <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
       </span>
-
     </div>
   </div>
 </div>
