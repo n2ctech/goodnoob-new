@@ -31,7 +31,7 @@
             a.share_item.share-button-copylink.js-copylink data-copy-url="#{photo_url(photo)}"
 
     - if photo.picture.present?
-      = link_to photo.picture.image.url, class: 'embed-responsive text-hide thumb-bg js-zoom-photo' do
+      = link_to photo.picture.image.url, class: 'embed-responsive text-hide thumb-bg js-zoom-photo', 'data-mfp-src' => "#{render partial: 'photos/search_popup', locals: { photos: photo }}" do
         = image_tag photo.picture.image.url(:medium), class: 'image-cover-fit'
       = link_to photo.picture.image.url, class: 'btn btn-link btn-xs thumb-preview-button js-zoom-photo' do
         span.glyphicon.glyphicon-resize-full

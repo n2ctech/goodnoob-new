@@ -414,12 +414,7 @@ $(document).ready(function() {
 
     if ($('.js-zoom-photo').length) {
       $('.js-zoom-photo').magnificPopup({
-        type: 'image',
-        closeBtnInside: false,
-        closeOnContentClick: true,
-        image: {
-          verticalFit: true
-        }
+        type: 'inline'
       });
     }
 
