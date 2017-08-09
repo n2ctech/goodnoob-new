@@ -12,11 +12,8 @@
       = link_to search_index_path, class: 'black-search-icon' do
         i.fa.fa-search
   - else
-    .upload-btn-wrapper.hidden-xs 
-    button.upload-btn.dropdown-toggle type="button" class="btn login-btn" data-toggle='modal' data-target='#NewPost' = t '.+new_post'
-    button.btn.blog-btn data-target="#BlogModal" data-toggle="modal" type="button"
-      = t('.the_blog') 
-    button.btn.login-btn data-target="#SignInModal" data-toggle="modal" type="button"
-      = t('.login /') 
-    button.btn.register-btn data-target="#SignUpModal" data-toggle="modal" type="button" = t('. register') 
-    
+    .upload-btn-wrapper.hidden-xs
+    button.upload-btn.dropdown-toggle type="button" class="btn login-btn" data-toggle='modal' data-target='#NewPost' = t '.+ new_post'
+    a.btn.blog-btn href="http://contrasurfing.com/" target="_blank" = t('.the_blog')
+    button.btn.login-btn.text_bold data-target="#SignInModal" data-toggle="modal" type="button" = t('.login /')
+    button.btn.register-btn.text_bold data-target="#SignUpModal" data-toggle="modal" type="button" = t('. register')

@@ -55,6 +55,7 @@ es:
       compare_products: Comparar Productos
       buying_guides: Guías de Compra
       new_post: + Nueva publicación
+      the_blog: EL BLOG
       my_profile: Mi perfil
     mobile_post_button:
       log_in_to_post_video: Necesitas estar logueado para subir videos
@@ -68,6 +69,7 @@ es:
       search: Buscar...
     upload_button:
       new_post: + NUEVA PUBLICACIÓN
+      the_blog: EL BLOG
       photo: Foto
       video: Video
 
