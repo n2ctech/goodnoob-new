@@ -55,6 +55,7 @@ fr:
       compare_products: Comparer les produits
       buying_guides: "Guides d'achat"
       new_post: + PARTAGER
+      the_blog: LE BLOG
       my_profile: Mon profil
     mobile_post_button:
       log_in_to_post_video: Vous devez être connecté pour partager une vidéo
@@ -68,6 +69,7 @@ fr:
       search: Rechercher...
     upload_button:
       new_post: + PARTAGER
+      the_blog: LE BLOG
       photo: Photo
       video: Vidéo
 

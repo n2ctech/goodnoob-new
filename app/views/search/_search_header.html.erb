@@ -17,17 +17,17 @@
         <%= link_to t('.learn'), guides_path(category_id: @categories.default_for_surf), { class: "btn btn-link tabs-link" } %>
       </span>
 
-      <span class="item-separator"><%= image_tag('r-arrow.png') %></span>      
+      <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
 
-      <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper p-static text-center">
-        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown">
+      <a class="tabs-item compare-button-wrapper p-static text-center" href="/sub_categories/<%= cookies[:selected_sub_category_id] %>">
+        <button type="button" class="btn btn-link tabs-link">
           <span ><%= defined?(@category) ? @category.name : t('.compare') %></span>
         </button>
         <div class="dropdown-menu compare-block-wrapper">
           <%= render 'layouts/compare_products' %>
         </div>
-      </span>
-      
+      </a>
+
     </div>
   </div>
 

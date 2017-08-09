@@ -1,5 +1,12 @@
 class SearchController < ApplicationController
   def index
+    # store a selected sub category id
+    if params[:sub_categories].nil?
+      cookies[:selected_sub_category_id] = 10
+    else
+      cookies[:selected_sub_category_id] = params[:sub_categories][0]
+    end
+
     @filters = SearchFilter.build params
     @media = Kaminari.paginate_array(ProductSearchService.new(params).search.media)
                .page(params[:page])

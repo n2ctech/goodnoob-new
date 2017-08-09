@@ -18,7 +18,9 @@
       <%= content_for?(:messages) ? yield(:messages) : render( 'layouts/messages' ) %>
       <%= yield %>
       <div id='footer_render'>
-        <%= render 'layouts/footer' %>
+        <% unless current_page?('/home') || current_page?('/search') %>
+          <%= render 'layouts/footer' %>
+        <% end %>
       </div>
     </section>
     <div id='render_modal_bootstrap'>

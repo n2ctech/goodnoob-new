@@ -59,6 +59,7 @@ en:
       compare: COMPARE
       share: SHARE
       new_post: + New Post
+      the_blog: THE BLOG
       my_profile: My Profile
     mobile_post_button:
       log_in_to_post_video: You need to be logged to upload videos
@@ -72,6 +73,7 @@ en:
       search: Search...
     upload_button:
       new_post: + NEW POST
+      the_blog: THE BLOG
       photo: Photo
       video: Video
 
