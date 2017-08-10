@@ -1,15 +1,20 @@
-<div class='box thumb-wrapper thumb-video'>
-  <div class='flex thumb-header'>
+<% video = @video%>
+<div class='box thumb-wrapper thumb-video pop-up-video'>
+  
+  <%= video_with_share(video) %>
+
+  <div class='thumb-header'>
     <span class='thumb-header-name'>
       <%= video.user.name %>
       <%= video.user.last_name %>
     </span>
+  
     <div class="thumb-menu-stripe">
       <% if local_assigns[:for_profile].present? %>
         <a class="toggle-product-menu social-share thumb-more-button"></a>
         <div class="menu-group">
           <div class="menu-item">
-            <a class="social-share toggle-social-share-menu"><%= t '.share' %></a>
+            <a class="social-share toggle-social-share-menu toggle-social-share-popup"><%= t '.share' %></a>
           </div>
           <hr>
           <div class="menu-item">
@@ -25,7 +30,7 @@
           </div>
         </div>
 
-        <span class="social_share_group">
+        <span class="social_share_group social_share_popup_group">
           <span class="share_items">
             <a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video_url(video) %>"></a>
             <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= video_url(video) %>"></a>
@@ -35,8 +40,8 @@
           </span>
         </span>
       <% else %>
-        <a href="#" class="toggle-social-share-menu thumb-more-button social-share"></a>
-        <span class="social_share_group">
+        <a href="#" class="toggle-social-share-menu toggle-social-share-popup thumb-more-button social-share"></a>
+        <span class="social_share_group social_share_popup_group">
           <span class="share_items">
             <a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video_url(video) %>"></a>
             <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= video_url(video) %>"></a>
@@ -47,18 +52,14 @@
         </span>
       <% end %>
     </div>
-  </div>
-  <div>
-    <span class="popup_modal_video", data-mfp-src= "<%= video_video_popup_path(video)%>" >
+  </div>  
 
-    </span>
-    <%= video_with_share(video) %>
-  </div>
   <div class='thumb-description thumb-brd-btm-4 text-left'>
     <p>
       <%= truncate strip_tags(video.comment), length: 250, separator: ' ' %>
     </p>
   </div>
+
   <div class='flex thumb-footer'>
     <% if video.product.present? %>
       <div class='thumb-footer-model'>
@@ -74,3 +75,8 @@
     <% end %>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.hamburger').hide();
+  });
+</script>

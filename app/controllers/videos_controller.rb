@@ -25,6 +25,7 @@ class VideosController < ApplicationController
   before_action :set_video, only:[:show]
   before_action :set_product, only:[:show]
 
+  layout false, only: [:video_popup]
   def show
     @other_media = @product.photos + @product.videos
     @other_media = @other_media.sort_by(&:created_at).reverse!
@@ -63,6 +64,11 @@ class VideosController < ApplicationController
     video = current_user.videos.find params[:id]
     video.destroy!
     redirect_to :back
+  end
+
+  #Sow popup
+  def video_popup
+    @video = Video.find(params[:video_id])
   end
 
   private

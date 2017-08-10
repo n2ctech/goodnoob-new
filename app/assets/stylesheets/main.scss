@@ -3570,7 +3570,7 @@ $footer-links-color: #7f7f7f;
 .box.modal-popup-img {
     background-color: #fff;
     position: relative;
-    top: 40px;
+    top: 30px;
     left: 14%;
     height: 650px;
     max-width: 70%;
@@ -3593,15 +3593,55 @@ a.img-modal-show {
 }
 .modal-popup-img {
   button.mfp-close {
-    color: #fff;
-    top: -35px;
-    right: -8px;
+    color: transparent;
+    top: -28px;
+    right: 0;
     font-size: 2.5rem;
+    background: image-url('cross.png') no-repeat center center;
+    height: 20px;
+    width: 20px;
+    background-size: 20px; 
+  }
+  .thumb-preview {
+    margin-bottom: 10px;
+  }
+  .thumb-header-name {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .social_share_group > .share_items:before {
+    right: -16px;
+    margin-top: 10px;
+    margin-left: -10px;
+    top: 149px;
+    border-color: transparent transparent #fff transparent;
+    transform: rotate(180deg);
+  }
+  .social_share_group {
+    top: -184px;
+    left: -13px;
+  }
+  .thumb-description {
+    margin: 10px 0 10px 10px;
+  }
+  .thumb-footer-model a {
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
   }
 }
-.thumb-menu-stripe a.social-share, 
-.thumb-menu-stripe a.social-share:hover {
-  background-color: gray;
+
+.modal-popup-img .thumb-menu-stripe a.social-share, 
+.modal-popup-img .thumb-menu-stripe a.social-share:hover, 
+.box.pop-up-video .thumb-menu-stripe .thumb-more-button {
+  background: image-url('three-dots-menu.svg') no-repeat scroll center center transparent;
+  width: 20px;
+  height:20px;
+  margin: 0px;
+  background-size: 20px;
+  display: block;
+  outline: none;
 }
 .modal-user-name {
   font-size: 18px;
@@ -3620,6 +3660,82 @@ a.img-modal-show {
 @media (max-width: 767px) {
   .box.modal-popup-img {
     top: 0;
-    height: 250px;
+    height: 270px;
+  }
+  .modal-popup-img {
+    .thumb-footer-model a {
+      font-size: 12px;
+    }
+  }
+}
+
+.popup_modal_video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  opacity: 1;
+}
+
+.box thumb-wrapper thumb-video{
+  height: 100%;
+  width: 100%;
+}
+.box.pop-up-video {
+  background-color: #fff;
+  position: relative;
+  top: 30px;
+  left: 14%;
+  height: auto;
+  max-width: 69%;
+  width: 81%;
+
+  .thumb-menu-stripe {
+    float: right;
+  }
+  .thumb-header-name {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .thumb-header {
+    margin-top: 10px;
+  }
+  .thumb-description {
+    margin: 10px 0 10px 10px;
+  }
+  .thumb-footer-model {
+    width: 50%;
+    a {
+      color: #333;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  .thumb-star-wrapper {
+    width: 50%;
+    text-align: right;
+  }
+  button.mfp-close {
+    color: transparent;
+    top: -28px;
+    right: 0;
+    font-size: 2.5rem;
+    background: image-url('cross.png') no-repeat center center;
+    height: 20px;
+    width: 20px;
+    background-size: 20px; 
+  }
+  .social_share_group {
+    top: -184px;
+    left: -13px;
+  }
+  .social_share_group > .share_items:before {
+    right: -16px;
+    margin-top: 10px;
+    margin-left: -10px;
+    top: 149px;
+    border-color: transparent transparent #fff transparent;
+    transform: rotate(180deg);
   }
 }

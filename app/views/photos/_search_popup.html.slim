@@ -14,7 +14,7 @@
         i.fa.fa-ellipsis-h
       .menu-group
         .menu-item
-          a.social-share.toggle-social-share-menu= t '.share'
+          a.social-share.toggle-social-share-menu.toggle-social-share-popup= t '.share'
         hr/
         .menu-item
           = modal_button_tag t('.edit'), edit_photo_path(photos), link: true, method: :get
@@ -25,8 +25,8 @@
         .menu-item
           a.share-button-copylink.js-copylink data-copy-url="#{photo_url(photos)}" = t '.copy_url'
     - else
-      a.toggle-social-share-menu.thumb-more-button.social-share href="#"
-    span.social_share_group
+      a.toggle-social-share-menu.toggle-social-share-popup.thumb-more-button.social-share href="#"
+    span.social_share_group.social_share_popup_group
       span.share_items
         a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photos)}"
         a.share_item.share-button-twitter href="https://twitter.com/intent/tweet?url=#{photo_url(photos)}"

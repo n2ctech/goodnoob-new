@@ -418,8 +418,13 @@ $(document).ready(function() {
       });
     }
 
-
-
+    if ($('.popup_modal_video').length) {
+      $('.popup_modal_video').magnificPopup({
+        
+        type: 'ajax'
+      });
+    }
+    
     if ($('.product-zoom-photo').length) {
       $('.product-zoom-photo').magnificPopup({
         type: 'image',
@@ -506,10 +511,22 @@ $(document).ready(function() {
       $(this).closest('.thumb-menu-stripe').find('.social_share_group').toggle();
     })
 
+    $(document).on('click','.toggle-social-share-popup', function(e){
+      e.preventDefault()
+      $(this).closest('.thumb-menu-stripe').find('.social_share_popup_group').toggle();
+    })
+
     // hide social share menu
     window.onclick = function(event) {
       if (!event.target.matches('.social-share')) {
         $('.social_share_group').hide();
+      }
+    }
+
+    // hide social share menu
+    window.onclick = function(event) {
+      if (!event.target.matches('.social-share')) {
+        $('.social_share_popup_group').hide();
       }
     }
 
