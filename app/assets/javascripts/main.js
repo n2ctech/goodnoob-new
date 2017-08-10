@@ -501,11 +501,6 @@ $(document).ready(function() {
       )
     })
 
-    $('.show-filters-button').on('click', function(e){
-      e.preventDefault();
-      $(this).parent().siblings('.applied-filters-wrapper').toggle();
-    })
-
     $('.toggle-social-share-menu').on('click', function(e){
       e.preventDefault()
       $(this).closest('.thumb-menu-stripe').find('.social_share_group').toggle();
