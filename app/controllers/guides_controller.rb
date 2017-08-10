@@ -4,6 +4,15 @@ class GuidesController < ApplicationController
   before_action :prepare_categories, only: [:show, :index]
 
   def index
+    # update selected sub category id and category id
+    if params[:category_id].nil?
+      cookies[:selected_sub_category_id] = 10
+      cookies[:selected_category_id] = 4
+    else
+      cookies[:selected_category_id] = params[:category_id]
+      cookies[:selected_sub_category_id] = SubCategory.where(category_id: params[:category_id]).last.id
+    end
+
     return unless params[:category_id]
     @sub_categories = @sub_categories.where(category_id: params[:category_id] || @categories.first.try(:id))
   end

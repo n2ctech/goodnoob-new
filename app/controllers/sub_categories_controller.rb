@@ -11,6 +11,15 @@
 
 class SubCategoriesController < ApplicationController
   def show
+    # update selected sub category id and category id
+    if params[:id].nil?
+      cookies[:selected_sub_category_id] = 10
+      cookies[:selected_category_id] = 4
+    else
+      cookies[:selected_sub_category_id] = params[:id]
+      cookies[:selected_category_id] = SubCategory.find(params[:id]).category_id
+    end
+
     @sub_category = SubCategory.find(params[:id])
     params[:sub_categories] = [ @sub_category.id.to_s ]
 

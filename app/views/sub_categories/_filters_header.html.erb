@@ -15,6 +15,7 @@
 
     <span class="item-separator"><%= image_tag(asset_path('r-arrow.png')) %></span>
 
+<!--
     <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
       <button type="button" class="btn btn-link tabs-link active dropdown-toggle" data-toggle="dropdown">
         <span><%= defined?(@category) ? @category.name : t('.compare') %></span>
@@ -22,15 +23,24 @@
       <div class="dropdown-menu compare-block-wrapper">
         <%= render 'layouts/compare_products' %>
       </div>
-    </span>    
-    
+    </span>
+-->
+    <a class="tabs-item compare-button-wrapper" href="/sub_categories/<%= cookies[:selected_sub_category_id] %>">
+      <button type="button" class="btn btn-link tabs-link active">
+        <span><%= defined?(@category) ? @category.name : t('.compare') %></span>
+      </button>
+      <div class="dropdown-menu compare-block-wrapper">
+        <%= render 'layouts/compare_products' %>
+      </div>
+    </a>
+
   </div>
 </div>
 
 <div class="flex main-filters-wrapper">
   <% @categories.each do |category| %>
     <div class="filter-wrapper category-item <%= "active" if category.searched_for?(params[:sub_categories]) %>">
-      <%= link_to category.sub_categories.first, class: 'category-link' do %>
+      <%= link_to category.sub_categories.first, class: 'category-link category-link-compare' do %>
         <label class="checkbox-style">
           <input id="<%= "category-#{category.id}" %>" type="checkbox" class="checkbox-inline" <%= category.searched_for?(params[:sub_categories]) ? "checked='checked'" : "" %>>
           <% if category.searched_not_for_all?(params[:sub_categories]) %>

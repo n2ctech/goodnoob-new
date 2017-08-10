@@ -1010,7 +1010,10 @@ header {
         background-size: 30px;
       }
     }
-
+    a.category-link-learn, a.category-link-compare {
+      padding: 9.5px 15px;
+      font-size: 0.8em;
+    }
     .checkbox-inline {
       display: none;
     }
