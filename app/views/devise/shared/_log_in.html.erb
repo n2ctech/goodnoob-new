@@ -3,9 +3,6 @@
     <%= image_tag 'cross.png' %>
   </button>
   <div class="authform row flex-form" id="UserSignIn">
-    <div class='login-image no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12'>
-      <%= image_tag(asset_path 'login_image.png') %>
-    </div>
     <div class='login-form no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12'>
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
         <% devise_error_messages! %>
@@ -32,8 +29,12 @@
           <a type="button" class="btn btn-commit btn-register" data-dismiss='modal' data-target='#SignUpModal' id='btnRegister'>Register</a>
           <%= f.submit 'Login', :class => 'btn btn-commit' %>
         </div>
-      </div>
     </div>
+
+    <div class='login-image no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12'>
+      <%= image_tag(asset_path 'login_image.png') %>
+    </div>
+  </div>
 
             <script>
           $('#btnRegister').click(function() {

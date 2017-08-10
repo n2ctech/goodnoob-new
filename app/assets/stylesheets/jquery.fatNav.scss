@@ -39,10 +39,13 @@
   content: "";
 }
 .hamburger__icon:before {
+  top: -7px;
+}
+.active .hamburger__icon:before {
   top: -5px;
 }
 .hamburger__icon:after {
-  top: 5px;
+  top: 6px;
 }
 .hamburger.active .hamburger__icon {
   background-color: transparent;
