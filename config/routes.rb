@@ -65,6 +65,7 @@ Rails.application.routes.draw do
       get :favourites
     end
   end
+
   get 'ajax_destroy_recent_search', to: 'users#ajax_destroy_recent_search', as: :ajax_destroy_recent_search
   get 'ajax_destroy_favourite', to: 'users#ajax_destroy_favourite', as: :ajax_destroy_favourite
   get 'ajax_destroy_all_favourites', to: 'users#ajax_destroy_all_favourites', as: :ajax_destroy_all_favourites
@@ -92,7 +93,9 @@ Rails.application.routes.draw do
 
   resource :pictures, format: false, only: :create
   resources :photos, only: [:create, :show, :edit, :update, :destroy]
-  resources :videos, format: false, only: [:create, :show, :edit, :update, :destroy]
+  resources :videos, format: false, only: [:create, :show, :edit, :update, :destroy] do
+    get :video_popup
+  end
   resources :guide_images, only: :create
 
   namespace :info do

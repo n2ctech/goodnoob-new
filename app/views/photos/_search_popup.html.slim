@@ -1,0 +1,47 @@
+.box.thumb-wrapper.thumb-photo.modal-popup-img
+  .thumb-preview
+    .flex.thumb-header
+    - if photos.picture.present?
+      = link_to photos.picture.image.url, class: 'embed-responsive text-hide thumb-bg js-zoom-photo img-modal-show' do
+        = image_tag photos.picture.image.url(:medium), class: 'image-cover-fit'
+  span.thumb-header-name
+    = photos.user.name
+    = photos.user.last_name 
+    
+  .thumb-menu-stripe.social-icon-tab
+    - if local_assigns[:for_profile].present?
+      a.toggle-product-menu.social-share
+        i.fa.fa-ellipsis-h
+      .menu-group
+        .menu-item
+          a.social-share.toggle-social-share-menu.toggle-social-share-popup= t '.share'
+        hr/
+        .menu-item
+          = modal_button_tag t('.edit'), edit_photo_path(photos), link: true, method: :get
+        hr/
+        .menu-item
+          = link_to t('.delete'), photo_path(photos), method: :delete
+        hr/
+        .menu-item
+          a.share-button-copylink.js-copylink data-copy-url="#{photo_url(photos)}" = t '.copy_url'
+    - else
+      a.toggle-social-share-menu.toggle-social-share-popup.thumb-more-button.social-share href="#"
+    span.social_share_group.social_share_popup_group
+      span.share_items
+        a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photos)}"
+        a.share_item.share-button-twitter href="https://twitter.com/intent/tweet?url=#{photo_url(photos)}"
+        a.share_item.share-button-whatsapp href="whatsapp://send?text=#{photo_url(photos)}"
+        span.share_item.share-button-separator
+        a.share_item.share-button-copylink.js-copylink data-copy-url="#{photo_url(photos)}"       
+  .thumb-description.thumb-brd-btm-4.text-left
+    p
+      = truncate strip_tags(photos.comment), length: 200, separator: ' '
+  .flex.thumb-footer
+    - if photos.product.present?
+      .thumb-footer-model
+        = link_to photos.product do
+          = "#{photos.product.company.name} – " if photos.product.company
+          = photos.product.name
+          = "(#{photos.product.year})" if photos.product.year
+      .thumb-star-wrapper
+        = render 'products/rating', rating: photos.product.rating, product_id: photos.product.id
