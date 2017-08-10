@@ -40,17 +40,5 @@
       </div>
     </div>
 
-    <% if @filters.length > 0 %>
-      <div class="show-filters">
-        <a href="#" class="show-filters-button">
-          <span class="glyphicon glyphicon-chevron-down"></span>
-          <span class="applied-filter-text"><%= t '.view_filters' %></span>
-        </a>
-        <%= link_to search_index_path(clear_sub_categories(params)), data: {'turbolinks-scroll' => false} do %>
-          <span class="glyphicon glyphicon-remove"></span>
-          <span class="applied-filter-text"><%= t '.clear_all' %></span>
-        <% end %>
-      </div>
-    <% end %>
   </div>
 </div>

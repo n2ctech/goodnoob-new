@@ -3572,9 +3572,14 @@ $footer-links-color: #7f7f7f;
     position: relative;
     top: 30px;
     left: 14%;
-    height: 650px;
+    height: auto;
     max-width: 70%;
     width: 90%;
+    .thumb-description {
+      p {
+        word-wrap: break-word;
+      }
+    }
 }
 
 a.img-modal-show {
@@ -3660,7 +3665,6 @@ a.img-modal-show {
 @media (max-width: 767px) {
   .box.modal-popup-img {
     top: 0;
-    height: 270px;
   }
   .modal-popup-img {
     .thumb-footer-model a {
