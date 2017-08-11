@@ -88,8 +88,8 @@ $font-family-light: 'DIN LIGHT', sans-serif;
     bottom: 2vh;
     position: absolute;
     color: #929292;
-    font-size: 0.9em;
-    right: 9vw;
+    font-size: 0.6em;
+    right: 83px;
   }
 
 
@@ -101,7 +101,7 @@ $font-family-light: 'DIN LIGHT', sans-serif;
     display: inline-block;
     color: black;
     position: absolute;
-    right: 4.4%;
+    right: 5.1%;
     a {
       cursor: pointer;
       color: black;
@@ -159,9 +159,10 @@ $font-family-light: 'DIN LIGHT', sans-serif;
   .logo-text {
     background: white;
     color: #303030;
-    padding: 10px 5px;
+    padding: 2px 4px;
     display: inline-block;
     line-height: 30px;
+    margin-left: -0.8vw;
   }
 
   .small-text {
@@ -179,6 +180,10 @@ $font-family-light: 'DIN LIGHT', sans-serif;
   .image-logo {
     padding-top: 0.2vh;
     display: inline-block;
+    margin-left: 1vw;
+    img {
+      width: 68%;
+    }
   }
 
 
@@ -223,6 +228,7 @@ $font-family-light: 'DIN LIGHT', sans-serif;
               text-transform: uppercase;
               display: inline-flex;
               font-size: 1.7vw;
+              font-family: DIN Condensed;
               font-weight: bold;
               margin-bottom: 1%;
               justify-content: center;
@@ -236,6 +242,7 @@ $font-family-light: 'DIN LIGHT', sans-serif;
               text-transform: uppercase;
               font-weight: bold;
               margin-bottom: 1%;
+              font-family: DIN Condensed;
             }
           }
           img {
