@@ -649,3 +649,47 @@ $(document).ready(function() {
         $(".search-overlay").removeClass("active");
     });
 });
+
+
+
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('.main-tab-hide, .category-main-tabs-hide, .learn-main-tab-hide').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('.main-tab-hide, .hide-category-filter, .category-main-tabs-hide, .category-filters-tabs-hide, .main-category-subfilters-hide, .learn-main-tab-hide, .learn-main-filter-hide').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('.main-tab-hide, .hide-category-filter, .category-main-tabs-hide, .category-filters-tabs-hide, .main-category-subfilters-hide, .learn-main-tab-hide, .learn-main-filter-hide').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    if($(this).scrollTop() == 0){
+      $('.main-tab-hide, .hide-category-filter, .learn-main-tab-hide, .learn-main-filter-hide').removeClass('nav-down')
+    }    
+    
+    lastScrollTop = st;
+}
+

@@ -4,7 +4,7 @@
     </div>
   </div>
   <div class="subcategory-margin"></div>
-  <div class="main-tabs-wrapper w-100">
+  <div class="main-tabs-wrapper main-tab-hide w-100">
 
     <div class="flex tabs-list m-auto">
 
@@ -32,7 +32,7 @@
     </div>
   </div>
 
-    <div class="flex main-filters-wrapper">
+    <div class="flex main-filters-wrapper hide-category-filter">
       <div class="container-filters m-auto">
         <% @categories.each do |category| %>
             <%= render partial: 'search/category_filter', locals: {category: category} %>

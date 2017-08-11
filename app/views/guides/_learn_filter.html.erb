@@ -1,12 +1,6 @@
 <div class="guide-tabs-wrapper">
-  <div class="main-tabs-wrapper">
+  <div class="main-tabs-wrapper learn-main-tab-hide">
     <div class="flex tabs-list">
-
-      <span class="tabs-item social-feed-button-wrapper">
-        <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
-      </span>
-
-      <span class="item-separator"><%= image_tag('l-arrow.png') %></span>
 
       <span class="dropdown dropdown-on-hover tabs-item">
         <div class="tabs-link active">
@@ -14,7 +8,7 @@
         </div>
       </span>
 
-      <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
+      <span class="item-separator"><%= image_tag('l-arrow.png') %></span>
 
       <a class="tabs-item compare-button-wrapper" href="/sub_categories/<%= cookies[:selected_sub_category_id] %>">
         <button type="button" class="btn btn-link tabs-link">
@@ -24,11 +18,17 @@
           <%= render 'layouts/compare_products' %>
         </div>
       </a>
+
+      <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
+
+      <span class="tabs-item social-feed-button-wrapper">
+        <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
+      </span>
     </div>
   </div>
 </div>
 
-<div class="flex main-filters-wrapper">
+<div class="flex main-filters-wrapper learn-main-filter-hide">
   <% @categories.each do |category| %>
       <div class="filter-wrapper category-item <%= "active" if category.id == params[:category_id].to_i %>">
         <%= link_to category.name, guides_path(category_id: category.id), class: 'category-link category-link-learn' %>
