@@ -51,6 +51,9 @@ module SearchHelper
     html_options = {} if html_options.nil?
 
     p = params.dup
+    # initializing sub categories
+    p['sub_categories'] = []
+
     p['filter'] = true
     param_changes.each do |change|
       p = update_params( p, change[:action], change[:key], change[:value] )
@@ -146,17 +149,20 @@ module SearchHelper
   def search_category_link( category, params_sub_categories, classes = nil, &block )
     sub_categories_ids = category.sub_categories.ids.map(&:to_s)
     params_sub_categories ||= []
+
+    param_changes = sub_categories_ids.map{|id| param_change( :add, :sub_categories, id)}
+
     # Sub categories not selected? add!
-    if (sub_categories_ids - params_sub_categories).count == sub_categories_ids.count
-      param_changes = sub_categories_ids.map{|id| param_change( :add, :sub_categories, id)}
-    else # Sub categories selected? remove all!
-      param_changes = []
-      sub_categories_ids.each do |id|
-        if params_sub_categories.include?(id)
-          param_changes << param_change( :remove, :sub_categories, id)
-        end
-      end
-    end
+    # if (sub_categories_ids - params_sub_categories).count == sub_categories_ids.count
+    #   param_changes = sub_categories_ids.map{|id| param_change( :add, :sub_categories, id)}
+    # else # Sub categories selected? remove all!
+    #   param_changes = []
+    #   sub_categories_ids.each do |id|
+    #     if params_sub_categories.include?(id)
+    #       param_changes << param_change( :remove, :sub_categories, id)
+    #     end
+    #   end
+    # end
     search_link param_changes, { class: 'category-link' + (classes != nil ? (' ' + classes) : '') }, &block
   end
 
