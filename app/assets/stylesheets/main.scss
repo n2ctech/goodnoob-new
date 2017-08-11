@@ -1182,7 +1182,7 @@ header {
     a, a:hover, a:visited {
       text-decoration: none;
       color: black;
-      font-size: 16px;
+      font-size: 13px;
     }
     .sort-by-value {
       color: #3cbbe8;
@@ -1520,7 +1520,7 @@ $subfilter-size: 0.8em;
     }
 
     .filter-heading-wrapper {
-      background-color: #f6f6f6;
+      background-color: #ffffff;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1670,7 +1670,7 @@ $subfilter-size: 0.8em;
           cursor: pointer;
           display: inline-block;
           width: 155px;
-          margin: 10px 0 10px 5px;
+          margin: 5px 0 5px 5px;
 
           a,
           a:hover,
@@ -1751,7 +1751,7 @@ $subfilter-size: 0.8em;
 
     .filter-group-contents.visible {
       opacity: 1;
-      padding-top: 20px;
+      padding-top: 0px;
       padding-bottom: 20px;
     }
 
@@ -2205,13 +2205,14 @@ $upload-button-color: #64b0fc;
   }
 
   .thumbs-matrix-wrapper {
+    background: #f9f9f9;
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
     padding: 16px;
 
     .thumb-wrapper {
-      background: #f9f9f9 !important;
+      background: #fefefe !important;
       font-family: $thumbs-main-font;
       margin: 0 15px 15px 0;
       padding: 0;
@@ -2356,6 +2357,7 @@ $upload-button-color: #64b0fc;
         a, img { outline: none; }
 
         &:hover {
+          background: #fbfbfb;
           img {
             opacity: 0.5;
           }
