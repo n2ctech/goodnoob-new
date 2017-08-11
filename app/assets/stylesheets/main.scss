@@ -292,7 +292,7 @@ header {
   align-content: center;
   justify-content: space-between;
   align-items: center;
-  min-height: 33px;
+  min-height: 40px;
   position: fixed;
   width: 100%;
   z-index: 9;
@@ -336,7 +336,7 @@ header {
       width: 40.5%;
     }
     img {
-      height: 22px;
+      height: 20px;
 
       @media only screen and (max-width: 767px) {
         height: auto;
@@ -607,6 +607,9 @@ header {
     top: 7px;
     line-height: inherit;
   }
+  a.btn-blog {
+    margin-right: 10px;
+  }
 }
 
 .buttons-separator {
@@ -638,9 +641,11 @@ header {
     font-weight: 200;
     padding: 0 4px;
     text-transform: uppercase;
+    margin-right: 20px;
     .user-profile {
       img {
-        margin: 0;
+        margin-left: -2px;
+        padding: 2px;
         width: 30px;
         height: 30px;
       }
@@ -666,12 +671,14 @@ header {
     text-transform: uppercase;
     border-radius: 0;
     color: #050505;
+    margin-right: 10px;
   }
   .login-btn.text_bold, .register-btn.text_bold {
     font-weight: 700;
   }
   .register-btn.text_bold {
-    margin-left: -10px;
+    margin-left: -20px;
+    margin-right: 10px;
   }
 }
 
@@ -3600,7 +3607,7 @@ a.img-modal-show {
     background: image-url('cross.png') no-repeat center center;
     height: 20px;
     width: 20px;
-    background-size: 20px; 
+    background-size: 20px;
   }
   .thumb-preview {
     margin-bottom: 10px;
@@ -3632,8 +3639,8 @@ a.img-modal-show {
   }
 }
 
-.modal-popup-img .thumb-menu-stripe a.social-share, 
-.modal-popup-img .thumb-menu-stripe a.social-share:hover, 
+.modal-popup-img .thumb-menu-stripe a.social-share,
+.modal-popup-img .thumb-menu-stripe a.social-share:hover,
 .box.pop-up-video .thumb-menu-stripe .thumb-more-button {
   background: image-url('three-dots-menu.svg') no-repeat scroll center center transparent;
   width: 20px;
@@ -3724,7 +3731,7 @@ a.img-modal-show {
     background: image-url('cross.png') no-repeat center center;
     height: 20px;
     width: 20px;
-    background-size: 20px; 
+    background-size: 20px;
   }
   .social_share_group {
     top: -184px;
