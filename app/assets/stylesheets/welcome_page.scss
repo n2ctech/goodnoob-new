@@ -89,6 +89,7 @@ $font-family-light: 'DIN LIGHT', sans-serif;
     position: relative;
     color: #929292;
     font-size: 0.6em;
+    right: 83px;
   }
 
 
@@ -160,6 +161,7 @@ $font-family-light: 'DIN LIGHT', sans-serif;
     color: #303030;
     padding: 2px 4px;
     display: inline-block;
+    line-height: 30px;
     margin-left: -0.8vw;
   }
 
@@ -179,10 +181,8 @@ $font-family-light: 'DIN LIGHT', sans-serif;
     padding-top: 0.2vh;
     display: inline-block;
     margin-left: 1vw;
-    width: 36px;
-    height: 40px;
     img {
-      width: 100%;
+      width: 68%;
     }
   }
 
