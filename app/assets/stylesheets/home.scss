@@ -333,3 +333,18 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
     width: 50%;
   }
 }
+@media (max-width: 767px) {
+  #new-post-modal .back .text-container .text-text .container-text .logo-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  #new-post-modal .back .text-container .text-text .container-text img {
+    width: 7%;
+  }
+  #new-post-modal .back .text-container .text-text .container-text .small-text {
+    font-size: 0.7rem;
+  }
+  #new-post-modal .back .text-container .text-text .container-text .big-text {
+    font-size: 0.6rem;
+  }
+}
