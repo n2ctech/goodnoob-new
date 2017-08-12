@@ -18,7 +18,7 @@
       <%= content_for?(:messages) ? yield(:messages) : render( 'layouts/messages' ) %>
       <%= yield %>
       <div id='footer_render'>
-        <% unless current_page?('/home') || current_page?('/search') %>
+        <% unless params[:controller] == 'search' || params[:controller] == 'sub_categories' %>
           <%= render 'layouts/footer' %>
         <% end %>
       </div>

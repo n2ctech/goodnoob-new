@@ -3,6 +3,7 @@
   <div class="sort-by-field js-sort-by-dropdown hidden-xs dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
       <%= t '.sort_by' %>
+      &nbsp;&nbsp;
       <span class="sort-by-value"><%= params[:search_field].try(:titleize) || t('.newest') %></span>
       <i class="down-arrow">▼</i>
     </a>

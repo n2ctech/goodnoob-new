@@ -420,11 +420,11 @@ $(document).ready(function() {
 
     if ($('.popup_modal_video').length) {
       $('.popup_modal_video').magnificPopup({
-        
+
         type: 'ajax'
       });
     }
-    
+
     if ($('.product-zoom-photo').length) {
       $('.product-zoom-photo').magnificPopup({
         type: 'image',
@@ -466,7 +466,7 @@ $(document).ready(function() {
     $('.remove-favourite').on('ajax:success', function(){
       $(this).closest('.thumb-product').remove();
     })
-    
+
     $('.more-less-text-big').readmore({
         collapsedHeight: 60,
         moreLink: '<a>(Read more)</a>',
