@@ -20,4 +20,17 @@
   } else if(nextPageMedia.length > 0) {
     $('#load_more_but').show();
   }
+  
+    if ($('.js-zoom-photo').length) {
+      $('.js-zoom-photo').magnificPopup({
+        type: 'inline'
+      });
+    }
+
+    if ($('.popup_modal_video').length) {
+      $('.popup_modal_video').magnificPopup({
+
+        type: 'ajax'
+      });
+    }
 }());

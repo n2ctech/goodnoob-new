@@ -412,18 +412,7 @@ $(document).ready(function() {
       }
     });
 
-    if ($('.js-zoom-photo').length) {
-      $('.js-zoom-photo').magnificPopup({
-        type: 'inline'
-      });
-    }
 
-    if ($('.popup_modal_video').length) {
-      $('.popup_modal_video').magnificPopup({
-
-        type: 'ajax'
-      });
-    }
 
     if ($('.product-zoom-photo').length) {
       $('.product-zoom-photo').magnificPopup({
@@ -692,4 +681,4 @@ function hasScrolled() {
     
     lastScrollTop = st;
 }
-
+  
