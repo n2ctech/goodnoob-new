@@ -20,6 +20,12 @@ class SubCategoriesController < ApplicationController
       cookies[:selected_category_id] = SubCategory.find(params[:id]).category_id
     end
 
+    if session[:country_id].nil?
+      @country_id = 1
+    else
+      @country_id = session[:country_id]
+    end
+
     @sub_category = SubCategory.find(params[:id])
     params[:sub_categories] = [ @sub_category.id.to_s ]
 

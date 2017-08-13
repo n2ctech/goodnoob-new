@@ -14,6 +14,7 @@ class VisitorsController < ApplicationController
     country = Country.find_by(country_code: params[:country]&.upcase)
     if country
       session[:country] = country.country_code
+      session[:country_id] = country.id
       current_user.update(country: country) if current_user
     end
     redirect_to :back
