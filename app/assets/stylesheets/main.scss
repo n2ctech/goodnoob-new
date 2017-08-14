@@ -2398,7 +2398,7 @@ $upload-button-color: #64b0fc;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        font-size: $thumbs-description-fontsize;
+        font-size: 1.20em;
         line-height: 1.4em;
         padding: 10px 20px 20px 20px;
         letter-spacing: -0.25px;
@@ -3723,6 +3723,7 @@ a.img-modal-show {
   }
   .thumb-description {
     margin: 10px 0 10px 10px;
+    font-size: 120%;
   }
   .thumb-footer-model {
     width: 50%;
