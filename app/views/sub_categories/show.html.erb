@@ -6,9 +6,8 @@
 <% content_for :mobile_icons do %>
 <!--  <div class="mobile-filter-button"></div>-->
 <% end %>
-
 <%= render 'filters_header' %>
-<div class="flex main-subfilters-wrapper">
+<div class="flex main-subfilters-wrapper main-category-subfilters-hide">
   <div class="subcategory-wrapper">
     <% cur_category = @categories.where(id: @sub_category.category_id).first %>
     <% if cur_category != nil %>

@@ -1,5 +1,5 @@
 <div class="subcategory-margin"></div>
-<div class="main-tabs-wrapper">
+<div class="main-tabs-wrapper category-main-tabs-hide">
 
   <div class="flex tabs-list">
 
@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<div class="flex main-filters-wrapper">
+<div class="flex main-filters-wrapper category-filters-tabs-hide">
   <% @categories.each do |category| %>
     <div class="filter-wrapper category-item <%= "active" if category.searched_for?(params[:sub_categories]) %>">
       <%= link_to category.sub_categories.first, class: 'category-link category-link-compare' do %>

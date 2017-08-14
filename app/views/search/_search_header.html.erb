@@ -1,44 +1,46 @@
 <div id="home-search-page">
-  <div class="visible-lg">
-    <div class="video-background w-100 p-absolute" id="header_video">
-    </div>
-  </div>
-  <div class="subcategory-margin"></div>
-  <div class="main-tabs-wrapper w-100">
-
-    <div class="flex tabs-list m-auto">
-
-      <span class="dropdown dropdown-on-hover tabs-item">
-        <%= link_to t('.learn'), guides_path(category_id: cookies[:selected_category_id]), { class: "btn btn-link tabs-link" } %>
-      </span>
-
-      <span class="item-separator"><%= image_tag('l-arrow.png') %></span>
-
-      <a class="tabs-item compare-button-wrapper p-static text-center" href="/sub_categories/<%= cookies[:selected_sub_category_id] %>">
-        <button type="button" class="btn btn-link tabs-link">
-          <span ><%= defined?(@category) ? @category.name : t('.compare') %></span>
-        </button>
-        <div class="dropdown-menu compare-block-wrapper">
-          <%= render 'layouts/compare_products' %>
-        </div>
-      </a>
-
-      <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
-
-      <span class="social-feed-button-wrapper">
-        <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link active" } %>
-      </span>
-
-    </div>
-  </div>
-
-    <div class="flex main-filters-wrapper">
-      <div class="container-filters m-auto">
-        <% @categories.each do |category| %>
-            <%= render partial: 'search/category_filter', locals: {category: category} %>
-        <% end %>
+  <div class= "main-tab-hide">
+    <div class="visible-lg">
+      <div class="video-background w-100 p-absolute" id="header_video">
       </div>
     </div>
+    <div class="subcategory-margin"></div>
+      <div class="main-tabs-wrapper w-100">
+
+        <div class="flex tabs-list m-auto">
+
+          <span class="dropdown dropdown-on-hover tabs-item">
+            <%= link_to t('.learn'), guides_path(category_id: cookies[:selected_category_id]), { class: "btn btn-link tabs-link" } %>
+          </span>
+
+          <span class="item-separator"><%= image_tag('l-arrow.png') %></span>
+
+          <a class="tabs-item compare-button-wrapper p-static text-center" href="/sub_categories/<%= cookies[:selected_sub_category_id] %>">
+            <button type="button" class="btn btn-link tabs-link">
+              <span ><%= defined?(@category) ? @category.name : t('.compare') %></span>
+            </button>
+            <div class="dropdown-menu compare-block-wrapper">
+              <%= render 'layouts/compare_products' %>
+            </div>
+          </a>
+
+          <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
+
+          <span class="social-feed-button-wrapper">
+            <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link active" } %>
+          </span>
+
+        </div>
+      </div>
+
+      <div class="flex main-filters-wrapper">
+        <div class="container-filters m-auto">
+          <% @categories.each do |category| %>
+              <%= render partial: 'search/category_filter', locals: {category: category} %>
+          <% end %>
+        </div>
+      </div>
+  </div>
 
   </div>
 </div>
