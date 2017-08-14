@@ -633,7 +633,7 @@ header {
 
 .login-btn-wrapper {
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 0px;
 
   .btn {
     background: transparent;
@@ -3898,6 +3898,19 @@ a.img-modal-show {
   #home-search-page .main-tabs-wrapper.nav-down,
   #home-search-page .main-tabs-wrapper.nav-up {
     height: 7.5vh;
+  }
+
+  .upload-btn-wrapper {
+    display: block;
+    .dropdown {
+      position: absolute;
+      right: 0;
+      top: 6px;
+    } 
+  }
+
+  .login-btn-wrapper{
+    width: 60px;
   }
 }
 
