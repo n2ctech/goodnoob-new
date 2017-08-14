@@ -68,7 +68,7 @@ header
         li= link_to t('.buying_guides'), sub_category_guide_path(default_cat, default_guide)
         hr.divider
         li
-          span data-target="#collapseMedia" data-toggle="collapse" = t '.new_post'
+          span data-target="#NewPost" data-toggle="modal" = t '.new_post'
         li= link_to t('.my_profile'), edit_user_registration_path
         #collapseMedia.collapse
           li.whiteli
