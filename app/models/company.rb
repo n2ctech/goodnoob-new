@@ -17,12 +17,18 @@ class Company < ActiveRecord::Base
   accepts_nested_attributes_for :address
 
 
-  def self.local(country_code)
-    country_code ? joins(:address).where(addresses: { country_code: country_code }).uniq : none
+  def self.local(country_id)
+    # country_code ? joins(:address).where(addresses: { country_code: country_code }).uniq : none
+    country_id ? joins(:companies_countries).where(companies_countries: { country_id: country_id }).uniq : none
+  end
+
+  def self.local_all
+    joins(:companies_countries).uniq
   end
 
   def self.international(country_code)
-    where(id:(all - local(country_code)).map(&:id))
+    # where(id:(all - local(country_code)).map(&:id))
+    where(id:(all - local_all).map(&:id))
   end
 
   def self.with_sub_categories(sub_categories_ids)
