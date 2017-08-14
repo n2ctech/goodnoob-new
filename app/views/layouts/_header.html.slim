@@ -28,10 +28,10 @@ header
             data-toggle="dropdown"
             type="button")
             = flag_icon locale_to_flag, alt: current_locale
-          ul.dropdown-menu.t-center.font-xs
-            li.hidden-lg.area-container.form-control.w-90.m-auto
-              = image_tag 'new-profile.png'
-              span.area-container-text= t('.user_area')
+          ul.dropdown-menu.t-center.font-xs.dropdown_tag
+            /li.hidden-lg.area-container.form-control.w-90.m-auto
+            /  = image_tag 'new-profile.png'
+            /  span.area-container-text= t('.user_area')
             li= t('.choose_your_country')
             li
               = form_tag select_country_path, method: :patch do
