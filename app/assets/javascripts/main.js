@@ -632,10 +632,12 @@ $(document).ready(function() {
     });
 
     $('.search-bar').on('click', function () {
-        $(".search-overlay").addClass("active");
+        $('#searchModal').modal({show: true});
+        // $(".search-overlay").addClass("active");
     });
     $('.cancel-search').on('click', function () {
-        $(".search-overlay").removeClass("active");
+        $('#searchModal').modal({hide: true});
+        // $(".search-overlay").removeClass("active");
     });
 
     if ($('.js-zoom-photo').length) {
@@ -692,8 +694,8 @@ function hasScrolled() {
     }
     if($(this).scrollTop() == 0){
       $('.main-tab-hide, .hide-category-filter, .learn-main-tab-hide, .learn-main-filter-hide').removeClass('nav-down')
-    }    
-    
+    }
+
     lastScrollTop = st;
 }
-  
+
