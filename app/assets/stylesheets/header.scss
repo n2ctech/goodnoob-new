@@ -65,12 +65,15 @@
     vertical-align: top;
     background: #6fecdd;
     color: #fff;
-    height: 36px;
+    height: 35px;
     width: 35px;
     line-height: 39px;
     text-align: center;
     float: right;
     cursor: pointer;
+    opacity: 1.0;
+    font-size: 15px;
+    font-weight: 400;
   }
   .hamburger__icon {
     display: inline-block;
@@ -81,6 +84,10 @@
   }
 }
 
+#searchModal {
+  padding-right: 0px!important;
+}
+
 .search-overlay {
   position: fixed;
   background: rgba(0,0,0,0.5);
@@ -89,7 +96,7 @@
   top: 0;
   left: 0;
   z-index: 103;
-  display: none;
+  //display: none;
   &.active {
     display: block;
   }

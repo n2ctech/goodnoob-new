@@ -30,15 +30,15 @@
       <%= render 'layouts/mobile_post_button' %>
     </div>
 
-    <div class="search-overlay">
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
       <form class="search-input">
         <div class="hamburger__icon"></div>
         <button type="submit">
           <i class="fa fa-search"></i>
         </button>
-        <input type="text" name="search" placeholder="Search your sport, brand, modal...">
-        <span class="cancel-search">X</span>
-        </form>
+        <input type="text" name="search" placeholder="Search your sport, brand, model...">
+        <span aria-label="Close" class="close cancel-search" data-dismiss="modal" type="button">X</span>
+      </form>
     </div>
 
     <script>
