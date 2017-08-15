@@ -637,6 +637,19 @@ $(document).ready(function() {
     $('.cancel-search').on('click', function () {
         $(".search-overlay").removeClass("active");
     });
+
+    if ($('.js-zoom-photo').length) {
+      $('.js-zoom-photo').magnificPopup({
+        type: 'inline'
+      });
+    }
+
+    if ($('.popup_modal_video').length) {
+      $('.popup_modal_video').magnificPopup({
+
+        type: 'ajax'
+      });
+    }
 });
 
 
@@ -669,10 +682,12 @@ function hasScrolled() {
     if (st > lastScrollTop && st > navbarHeight){
         // Scroll Down
         $('.main-tab-hide, .hide-category-filter, .category-main-tabs-hide, .category-filters-tabs-hide, .main-category-subfilters-hide, .learn-main-tab-hide, .learn-main-filter-hide').removeClass('nav-down').addClass('nav-up');
+        $('body').addClass('first-scroll');
     } else {
         // Scroll Up
         if(st + $(window).height() < $(document).height()) {
             $('.main-tab-hide, .hide-category-filter, .category-main-tabs-hide, .category-filters-tabs-hide, .main-category-subfilters-hide, .learn-main-tab-hide, .learn-main-filter-hide').removeClass('nav-up').addClass('nav-down');
+            $('body').removeClass('first-scroll');
         }
     }
     if($(this).scrollTop() == 0){

@@ -10,10 +10,8 @@ header
             button.upload-btn.dropdown-toggle type="button" class="btn login-btn" data-toggle='modal' data-target='#NewPost' = t '.+new_post'
           li
             button.btn.blog-btn data-target="#BlogModal" data-toggle="modal" type="button"= t('.the_blog')
-          li
-            button.btn.login-btn data-target="#SignInModal" data-toggle="modal" type="button"= t('.login')
-          li
-            button.btn.register-btn data-target="#SignUpModal" data-toggle="modal" type="button" = t('. register')
+          - if user_signed_in?
+            li= link_to t('.log_out'), destroy_user_session_path, method: 'delete'
       .search-bar
         =image_tag  "search-icon.png", :class => "icon_search"
     .flex.header-center
@@ -68,7 +66,7 @@ header
         li= link_to t('.buying_guides'), sub_category_guide_path(default_cat, default_guide)
         hr.divider
         li
-          span data-target="#collapseMedia" data-toggle="collapse" = t '.new_post'
+          span data-target="#NewPost" data-toggle="modal" = t '.new_post'
         li= link_to t('.my_profile'), edit_user_registration_path
         #collapseMedia.collapse
           li.whiteli
