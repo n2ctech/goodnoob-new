@@ -1007,7 +1007,7 @@ header {
   justify-content: center;
   background: #60e8cc;
   position: relative;
-  top: 66px;
+  top: 0px;
   z-index: 10;
 
 
@@ -3561,7 +3561,7 @@ $footer-links-color: #7f7f7f;
     .modal-dialog {
       margin: 34px 10px;
     }
-    
+
   }
   #new-post-modal {
     .back {
@@ -3926,7 +3926,7 @@ a.img-modal-show {
       position: absolute;
       right: 0;
       top: 6px;
-    } 
+    }
   }
 
   .login-btn-wrapper{

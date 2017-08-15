@@ -20,7 +20,8 @@ header
       - if user_signed_in?
         = render 'layouts/upload_button'
       = render 'layouts/nav_links_for_auth'
-      .upload-btn-wrapper class=("#{@show_langs || 'visible'}")
+      /.upload-btn-wrapper class=("#{@show_langs || 'visible'}")
+      .upload-btn-wrapper class="visible"
         .dropdown
           button#upload-menu.upload-btn.dropdown-toggle(
             aria-expanded="true"
