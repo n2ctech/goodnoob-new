@@ -1,7 +1,7 @@
 
 <div class="filter-wrapper">
   <%= link_to(category.sub_categories.first, class: 'category-link no-underline')  do %>
-    <label for="<%= "category-#{category.id}" %>" class="filter-name">- <%= category.name %></label>
+    <span for="<%= "category-#{category.id}" %>" class="filter-name">- <%= category.name %></span>
   <% end %>
   <% if category.searched_for?(params[:sub_categories]) %>
     <!--<span class="filter-group-arrow glyphicon glyphicon-play rotated" style="margin: 0px 10px"></span>-->
@@ -9,14 +9,14 @@
   <div class="sub-filter-wrapper <%= 'display' if category.searched_for?(params[:sub_categories]) %>">
     <% category.sub_categories.each do |sub_cat| %>
         <%= link_to(sub_cat, class: 'sub-filter-checkbox' ) do %>
-        <label class="checkbox-style checkbox">
+        <span class="checkbox-style checkbox">
           <input id="<%= "category-#{sub_cat.id}" %>"
                  type="checkbox"
                  class="checkitem-inline"
                  <%= params[:sub_categories].is_a?(Array) && params[:sub_categories].include?(sub_cat.id.to_s) ? "checked='checked'" : "" %>>
           <span class="checkbox-indicator"></span>
-        </label>
-        <label for="<%= "category-#{sub_cat.id}" %>" class="filter-name"><%= sub_cat.name %></label>
+        </span>
+        <span for="<%= "category-#{sub_cat.id}" %>" class="filter-name"><%= sub_cat.name %></span>
       <% end %>
     <% end %>
     </div>

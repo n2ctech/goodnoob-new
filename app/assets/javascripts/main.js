@@ -234,11 +234,11 @@ $(document).ready(function() {
     });
 
     // Removing 'plus' icons if there are no sub-filters
-    $(subFilter).each(function(){
-        if($(this).find('.sub-filter-checkbox').length == 0){
-            $(this).siblings('.filter-plus-icon').hide();
-        }
-    });
+    // $(subFilter).each(function(){
+    //     if($(this).find('.sub-filter-checkbox').length == 0){
+    //         $(this).siblings('.filter-plus-icon').hide();
+    //     }
+    // });
 
     // Adding a custom scrollbar for filtering
     var container = $('.filter-group-contents');
