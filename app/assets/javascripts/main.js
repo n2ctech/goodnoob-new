@@ -640,6 +640,7 @@ $(document).ready(function() {
         // $(".search-overlay").removeClass("active");
     });
 
+  setInterval(function() {
     if ($('.js-zoom-photo').length) {
       $('.js-zoom-photo').magnificPopup({
         type: 'inline'
@@ -651,6 +652,7 @@ $(document).ready(function() {
         type: 'ajax'
       });
     }
+  }, 100);
 });
 
 
