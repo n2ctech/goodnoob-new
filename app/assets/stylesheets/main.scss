@@ -3914,9 +3914,12 @@ a.img-modal-show {
 .mfp-bg.mfp-ready {
   position: fixed !important;
 }
+
+/*
 .mfp-container{
   position: fixed !important;
 }
+*/
 
 
 @media screen and (max-width: 992px) {
@@ -4001,12 +4004,14 @@ a.img-modal-show {
   .box.pop-up-video{
     max-width: 100%;
     width: 100%;
-    margin: -42px;
+    margin: 0px;
+    left: 0;
   }
   .box.modal-popup-img{
     max-width: 100%;
     width: 100%;
-    margin: -42px;
+    margin: 0;
+    left: 0;
   }
   .upload-btn-wrapper {
     display: block;
