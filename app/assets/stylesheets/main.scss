@@ -2419,7 +2419,7 @@ $upload-button-color: #64b0fc;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        font-size: 1.20em;
+        font-size: 1.1em;
         line-height: 1.4em;
         padding: 10px 20px 20px 20px;
         letter-spacing: -0.25px;
@@ -3618,6 +3618,7 @@ $footer-links-color: #7f7f7f;
     .thumb-description {
       p {
         word-wrap: break-word;
+        font-size: 120%;
       }
     }
 }
@@ -3895,6 +3896,20 @@ a.img-modal-show {
 .main-tabs-wrapper.main-tab-hide.nav-down > .tabs-list{
   top: -10px;
 }
+
+/* share image/video height auto */
+.main-content-wrapper{
+  #search_results{
+    .thumbs-matrix-wrapper{
+      .thumb-wrapper{
+        .thumb-bg{
+          height: auto; 
+        }
+      } 
+    }
+  } 
+} 
+
 
 @media screen and (max-width: 992px) {
   .main-category-subfilters-hide {
