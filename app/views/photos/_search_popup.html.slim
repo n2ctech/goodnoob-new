@@ -3,7 +3,7 @@
     .flex.thumb-header
     - if photos.picture.present?
       = link_to photos.picture.image.url, class: 'embed-responsive text-hide thumb-bg js-zoom-photo img-modal-show' do
-        = image_tag photos.picture.image.url(:medium), class: 'image-cover-fit'
+        = image_tag photos.picture.image.url(:original), class: 'image-cover-fit'
   span.thumb-header-name
     = photos.user.name
     = photos.user.last_name 

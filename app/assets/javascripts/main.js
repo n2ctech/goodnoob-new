@@ -490,7 +490,7 @@ $(document).ready(function() {
       )
     })
 
-    $('.toggle-social-share-menu').on('click', function(e){
+    $(document).on('click','.toggle-social-share-menu', function(e){
       e.preventDefault()
       $(this).closest('.thumb-menu-stripe').find('.social_share_group').toggle();
     })
@@ -648,7 +648,6 @@ $(document).ready(function() {
 
     if ($('.popup_modal_video').length) {
       $('.popup_modal_video').magnificPopup({
-
         type: 'ajax'
       });
     }
