@@ -3586,7 +3586,7 @@ $footer-links-color: #7f7f7f;
             }
             .comment-container {
               height: 29%;
-              font-size: 0.6rem;
+              font-size: 0.8rem;
             }
           }
         }
@@ -3943,6 +3943,11 @@ a.img-modal-show {
       top: 6px;
     }
   }
+  .box.pop-up-video{
+    max-width: 100%;
+    width: 100%;
+    margin: -105px;
+  }
 
   .login-btn-wrapper{
     width: 60px;
@@ -3979,6 +3984,11 @@ a.img-modal-show {
   .search-bar {
     padding-right: 15px;
     padding-left: 10px;
+  }
+  .box.pop-up-video{
+    max-width: 100%;
+    width: 100%;
+    margin: -42px;
   }
   .upload-btn-wrapper {
     display: block;
