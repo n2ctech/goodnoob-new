@@ -3896,6 +3896,20 @@ a.img-modal-show {
   top: -10px;
 }
 
+/* share image/video height auto */
+.main-content-wrapper{
+  #search_results{
+    .thumbs-matrix-wrapper{
+      .thumb-wrapper{
+        .thumb-bg{
+          height: auto; 
+        }
+      } 
+    }
+  } 
+} 
+
+
 @media screen and (max-width: 992px) {
   .main-category-subfilters-hide {
     top: 130px;
