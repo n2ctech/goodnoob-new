@@ -27,7 +27,8 @@
 
         <span class="social_share_group">
           <span class="share_items">
-            <a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video_url(video) %>"></a>
+            <!--<a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video_url(video) %>"></a>-->
+            <a class="share_item share-button-facebook" href="javascript:;" onclick="share_facebook_product('<%= video_url(video) %>')"></a>
             <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= video_url(video) %>"></a>
             <a class="share_item share-button-whatsapp" href="whatsapp://send?text=<%= video_url(video) %>"></a>
             <span class="share_item share-button-separator"></span>
@@ -39,7 +40,7 @@
         <span class="social_share_group">
           <span class="share_items">
             <!--<a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video_url(video) %>"></a>-->
-            <a class="share_item share-button-facebook" href="javascript:;" onclick="share_facebook_product('#{video_url(video)}')"></a>
+            <a class="share_item share-button-facebook" href="javascript:;" onclick="share_facebook_product('<%= video_url(video) %>')"></a>
             <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= video_url(video) %>"></a>
             <a class="share_item share-button-whatsapp" href="whatsapp://send?text=<%= video_url(video) %>"></a>
             <span class="share_item share-button-separator"></span>

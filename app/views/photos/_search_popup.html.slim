@@ -6,8 +6,8 @@
         = image_tag photos.picture.image.url(:original), class: 'image-cover-fit'
   span.thumb-header-name
     = photos.user.name
-    = photos.user.last_name 
-    
+    = photos.user.last_name
+
   .thumb-menu-stripe.social-icon-tab
     - if local_assigns[:for_profile].present?
       a.toggle-product-menu.social-share
@@ -28,11 +28,12 @@
       a.toggle-social-share-menu.toggle-social-share-popup.thumb-more-button.social-share href="#"
     span.social_share_group.social_share_popup_group
       span.share_items
-        a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photos)}"
+        /a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photos)}"
+        a.share_item.share-button-facebook href="javascript:;" onclick="share_facebook_product('#{photo_url(photos)}')"
         a.share_item.share-button-twitter href="https://twitter.com/intent/tweet?url=#{photo_url(photos)}"
         a.share_item.share-button-whatsapp href="whatsapp://send?text=#{photo_url(photos)}"
         span.share_item.share-button-separator
-        a.share_item.share-button-copylink.js-copylink data-copy-url="#{photo_url(photos)}"       
+        a.share_item.share-button-copylink.js-copylink data-copy-url="#{photo_url(photos)}"
   .thumb-description.thumb-brd-btm-4.text-left
     p
       = truncate strip_tags(photos.comment), length: 200, separator: ' '
