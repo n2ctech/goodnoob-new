@@ -2295,7 +2295,7 @@ $upload-button-color: #64b0fc;
       &.thumb-video {
         .thumb-description {
           padding: 15px 20px;
-          min-height: 150px;
+          height: auto;
         }
 
         .thumb-header-name {
@@ -2426,7 +2426,7 @@ $upload-button-color: #64b0fc;
       }
 
       .thumb-brd-btm-4 {
-        border-bottom: 4px solid #f9f9f9;
+        border-bottom: 0px solid #f9f9f9;
       }
 
       .thumb-moreinfo-link {

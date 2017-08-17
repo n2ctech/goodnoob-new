@@ -36,8 +36,7 @@
     <%= link_to photo.picture.image.url, class: 'js-zoom-photo' do %>
       <%= image_tag photo.picture.image.url(:original), alt: '', class: 'img-responsive center-block' %>
     <% end %>
-
-    <%= link_to photo.picture.image.url, class: 'btn btn-link btn-xs thumb-preview-button js-zoom-photo' do %>
+    <%= link_to photo.picture.image.url, class: 'btn btn-link btn-xs thumb-preview-button' do %>
       <span class="glyphicon glyphicon-resize-full"></span>
     <% end %>
   </div>
