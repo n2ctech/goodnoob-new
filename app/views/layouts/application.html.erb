@@ -87,19 +87,10 @@
 
     <script>
       function share_facebook_product(url) {
-        var obj = {
-          method: 'feed',
-          link: "https://www.facebook.com/",
-          picture: "",
-          name: "Philip Title",
-          description: "Philip description"
-        };
-        function callback(response) {}
-        FB.ui(obj, callback);
-
         FB.ui({
           method: 'share',
           href: url,
+          display: 'popup'
         }, function(response){});
       }
     </script>
