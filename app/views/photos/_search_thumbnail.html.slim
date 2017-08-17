@@ -48,3 +48,12 @@
           = "(#{photo.product.year})" if photo.product.year
       .thumb-star-wrapper
         = render 'products/rating', rating: photo.product.rating, product_id: photo.product.id
+
+javascript:
+  $(document).ready(function(){
+  if ($('.js-zoom-photo').length) {
+  $('.js-zoom-photo').magnificPopup({
+  type: 'inline'
+  });
+  }
+  });

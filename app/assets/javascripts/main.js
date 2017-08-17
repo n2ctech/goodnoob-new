@@ -639,20 +639,6 @@ $(document).ready(function() {
         $('#searchModal').modal({hide: true});
         // $(".search-overlay").removeClass("active");
     });
-
-  setInterval(function() {
-    if ($('.js-zoom-photo').length) {
-      $('.js-zoom-photo').magnificPopup({
-        type: 'inline'
-      });
-    }
-
-    if ($('.popup_modal_video').length) {
-      $('.popup_modal_video').magnificPopup({
-        type: 'ajax'
-      });
-    }
-  }, 100);
 });
 
 
