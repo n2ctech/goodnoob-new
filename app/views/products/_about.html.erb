@@ -63,9 +63,9 @@
           <%= link_to t('.add_to_favorites'), product_user_favourite_products_path(@product),
                 method: :post,
                 class: 'about-button visible-xs-inline-block product-add-favourites' %>
-          
+
           <% if @buy_url %>
-            <%= link_to t('.buy'), @buy_url.url, class: 'about-button-buy product-buy tracking-buy' %>
+            <%= link_to t('.buy'), @buy_url.url, class: 'about-button-buy product-buy tracking-buy', target: '_blank' %>
 
             <script>
               $('.tracking-buy').click(function() {
