@@ -2565,7 +2565,7 @@ $footer-links-color: #7f7f7f;
   display: flex;
   justify-content: space-between;
   height: auto;
-  padding: 26px 0 22px;
+  padding: 12px 0 10px;
   color: $footer-links-color;
   width: 100%;
 
@@ -2579,7 +2579,7 @@ $footer-links-color: #7f7f7f;
       color: $footer-links-color;
       font-family: $footer-mainlinks-font;
       margin-right: 30px;
-      padding: 8px 12px;
+      padding: 5px 12px;
     }
 
     .footer-main-link:hover {
@@ -3904,11 +3904,11 @@ a.img-modal-show {
     .thumbs-matrix-wrapper{
       .thumb-wrapper{
         .thumb-bg{
-          height: auto; 
+          height: auto;
         }
-      } 
+      }
     }
-  } 
+  }
 }
 
 .mfp-bg.mfp-ready {
