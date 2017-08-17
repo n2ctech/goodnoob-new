@@ -8,13 +8,6 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
-
-    <meta property="og:url" content="https://goodnoob-new.herokuapp.com/photos/105" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Custom Title - Goodnoob" />
-    <meta property="og:description" content="SURF SNOW LONGBOARD SKATE- follow our journey to the perfect ride" />
-    <meta property="og:image" content="http://askpiter-staging-assets.s3.amazonaws.com/pictures/images/000/002/263/medium/9b8e9e7658c9d21af8e1c98b6634d89e.jpeg?1502872492" />
-
   </head>
   <body>
     <%= render 'modals/modal' %>
@@ -67,6 +60,28 @@
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script>
+      function share_facebook_product(url) {
+        FB.ui({
+          method: 'share',
+          display: 'popup',
+          href: url,
+        }, function(response){});
+      }
     </script>
   </body>
 </html>
