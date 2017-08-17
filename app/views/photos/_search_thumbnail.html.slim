@@ -24,7 +24,8 @@
           a.toggle-social-share-menu.thumb-more-button.social-share href="#"
         span.social_share_group
           span.share_items
-            a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photo)}"
+            /a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photo)}"
+            a.share_item.share-button-facebook href="javascript:;" onclick="share_facebook_product('https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photo)}')"
             a.share_item.share-button-twitter href="https://twitter.com/intent/tweet?url=#{photo_url(photo)}"
             a.share_item.share-button-whatsapp href="whatsapp://send?text=#{photo_url(photo)}"
             span.share_item.share-button-separator
