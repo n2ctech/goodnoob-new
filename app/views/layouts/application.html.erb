@@ -68,6 +68,8 @@
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '1806017636079516',
+          status: true,
+          cookie: true,
           xfbml      : true,
           version    : 'v2.10'
         });
@@ -85,13 +87,19 @@
 
     <script>
       function share_facebook_product(url) {
+        var obj = {
+          method: 'feed',
+          link: "https://www.facebook.com/",
+          picture: "",
+          name: "Philip Title",
+          description: "Philip description"
+        };
+        function callback(response) {}
+        FB.ui(obj, callback);
+
         FB.ui({
           method: 'share',
-          display: 'popup',
           href: url,
-          title: 'Philip Title',
-          description: 'Philip Description',
-          caption: 'Philip Caption',
         }, function(response){});
       }
     </script>
