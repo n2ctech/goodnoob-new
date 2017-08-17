@@ -75,7 +75,16 @@
     </script>
 
     <script>
+      window.fbAsyncInit = function() {
+        //SDK loaded, initialize it
+        FB.init({
+          appId      : '1806017636079516',
+          appSecrete : 'b13911f29c5fcbd82acf07b090bf241f'
+        });
+      };
+
       function share_facebook_product(url) {
+        alert(url);
         FB.ui({
           method: 'share',
           display: 'popup',
