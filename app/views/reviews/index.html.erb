@@ -84,7 +84,7 @@
           <i class="glyphicon glyphicon-star"></i>
         <% end %>
         <% if @product.distributors.any? %>
-          <%= link_to t('.buy'), @product.distributors.first.url, class: 'product-button product-buy' %>
+          <%= link_to t('.buy'), @product.distributors.first.url, class: 'product-button product-buy', target: '_blank' %>
         <% end %>
       </div>
     </div>

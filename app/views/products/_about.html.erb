@@ -62,7 +62,7 @@
             <%= content_tag :i, '', class: 'glyphicon glyphicon-star' %>
           <% end %>
           <% if @buy_url %>
-            <%= link_to t('.buy'), @buy_url.url, class: 'product-button product-buy tracking-buy' %>
+            <%= link_to t('.buy'), @buy_url.url, class: 'product-button product-buy tracking-buy', target: '_blank' %>
 
             <script>
               $('.tracking-buy').click(function() {
