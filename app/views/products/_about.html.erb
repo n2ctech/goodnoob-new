@@ -1,4 +1,4 @@
-<section class="product-about-wrapper">
+<section class="product-about-wrapper product-about-custom">
   <div class="product-about row col-md-10 center-block">
     <div class="product-about-photos-wrapper col-md-6">
       <div class="product-photos">
@@ -27,42 +27,45 @@
           <%= render 'products/rating', rating: product.rating, product_id: product.id %>
           (<%= product.ratings.length %>)
         </div>
+        <div class="official_url" >
+          <%= link_to 'Official website', product.company.url %>
+        </div>
         <div class="product-about-text">
           <%= simple_format product.description %>
         </div>
         <div class="product-buttons">
           <span class="product-price"><%= product.price_string %></span>
-          <button type='button' id='upload-menu' class='btn product-button product-post hidden-xs' data-target="#NewPost" data-toggle="modal">
+          <button type='button' id='upload-menu' class='btn about-button product-post hidden-xs' data-target="#NewPost" data-toggle="modal">
             <%= t '.post_photo_video' %>
           </button>
 
-          <%= modal_button_tag t('.add_a_review'),
+          <%#= modal_button_tag t('.add_a_review'),
              new_product_review_path(product),
              method: :get,
              link: true,
-             class: 'product-button visible-xs-inline-block' %>
+             class: 'about-button hide-xs-inline-block' %>
 
           <% if product.users.include? current_user %>
             <%= link_to t('.added_remove'), product_user_favourite_products_path(@product),
               method: :delete,
-              class: 'product-button product-add-favourites hidden-xs' %>
+              class: 'about-button product-add-favourites hidden-xs' %>
           <% else %>
 
 
             <% if current_user.present? %>
               <%= link_to t('.add_to_favorites'), product_user_favourite_products_path(@product),
                 method: :post,
-                class: 'product-button product-add-favourites hidden-xs' %>
+                class: 'about-button product-add-favourites hidden-xs' %>
             <% else %>
-              <%= modal_link t('.add_to_favorites'), 'product-button product-add-favourites hidden-xs' %>
+              <%= modal_link t('.add_to_favorites'), 'about-button product-add-favourites hidden-xs' %>
             <% end %>
           <% end %>
-          <%= link_to product_user_favourite_products_path(@product), method: :post, class:
-            'product-button visible-xs-inline-block product-add-favourites' do %>
-            <%= content_tag :i, '', class: 'glyphicon glyphicon-star' %>
-          <% end %>
+          <%= link_to t('.add_to_favorites'), product_user_favourite_products_path(@product),
+                method: :post,
+                class: 'about-button visible-xs-inline-block product-add-favourites' %>
+
           <% if @buy_url %>
-            <%= link_to t('.buy'), @buy_url.url, class: 'product-button product-buy tracking-buy', target: '_blank' %>
+            <%= link_to t('.buy'), @buy_url.url, class: 'about-button-buy product-buy tracking-buy', target: '_blank' %>
 
             <script>
               $('.tracking-buy').click(function() {
