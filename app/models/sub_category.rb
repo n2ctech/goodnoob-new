@@ -16,6 +16,10 @@ class SubCategory < ActiveRecord::Base
   delegate :url, to: :picture, prefix: true, allow_nil: true # .picture_url
 
   scope :with_guides, -> { where id: Guide.all.map(&:sub_category_id).uniq }
+
+  def attributes
+    super.merge({'name' => name})
+  end
 end
 
 # == Schema Information
