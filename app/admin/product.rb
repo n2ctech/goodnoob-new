@@ -11,7 +11,8 @@ ActiveAdmin.register Product do
 
   permit_params :name, :description_en, :description_fr, :description_es, :year,
                 :sub_category_id, :company_id,
-                attrs_attributes: [:title, :value, :_destroy, :id],
+                attrs_attributes: [:title_en, :title_fr, :title_es,
+                 :value_en, :value_es, :value_fr, :_destroy, :id],
                 prices_attributes: [:amount, :currency_id, :_destroy, :id],
                 dimensions_attributes: [:text, :_destroy, :id],
                 pictures_attributes: [:image, :_destroy, :id],
