@@ -24,6 +24,7 @@ module Paperclip
         storage: :s3,
         path: ':class/:attachment/:id_partition/:style/:filename',
         url: ':s3_domain_url',
+        s3_protocol: :https,
         s3_credentials:
         {
           bucket: ENV['S3_BUCKET_NAME'],
