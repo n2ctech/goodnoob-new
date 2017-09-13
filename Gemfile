@@ -52,6 +52,7 @@ gem 'codemirror-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'puma'
 
 group :development, :test do
   gem 'factory_girl_rails'
@@ -81,7 +82,6 @@ group :test do
 end
 
 group :production do
-  gem 'puma'
   gem 'rails_12factor'
   gem 'heroku-deflater'
 end
