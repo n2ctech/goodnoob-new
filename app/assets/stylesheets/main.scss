@@ -223,6 +223,11 @@ $navbar-height: 50px;
   display: flex;
 }
 
+.center-flex {
+  display: flex;
+  justify-content: center !important;
+}
+
 header {
   position: fixed;
   z-index: 101;
