@@ -1,12 +1,16 @@
 <div class='thumb-wrapper'>
     <div class='thumb-image'>
-      <%= image_tag product.picture_url(:thumbnail), alt: '' %>
+      <%= link_to product do %>
+        <%= image_tag product.picture_url(:thumbnail), alt: '' %>
+      <% end %>
     </div>
     <div class='thumb-description text-left'>
       <p>
-        <strong class='thumb-header-abbr'>
-          <%= product.name %> <%= "(#{product.year})" if product.year %>
-        </strong>
+        <%= link_to product do %>
+          <strong class='thumb-header-abbr'>
+            <%= product.name %> <%= "(#{product.year})" if product.year %>
+          </strong>
+        <% end %>
       </p>
     </div>
     <div class='flex thumb-footer'>
