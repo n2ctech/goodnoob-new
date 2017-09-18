@@ -7,7 +7,7 @@ $(document).ready ->
   $('#js-show-less').hide()
 
   size_li = $('#js-product-media .thumb-wrapper').size()
-  per_page = 6
+  per_page = 12
   x = per_page
 
   if size_li <= x

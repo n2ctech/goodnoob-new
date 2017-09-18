@@ -12,7 +12,7 @@
     <div class="row tab-wrapper">
       <div class="product-characteristics product-tab col-md-5 center-block short">
         <% product.characteristics.each do |characteristic| %>
-          <div class="characteristic-title"><%= "#{characteristic.title}:" %></div>
+          <div class="characteristic-title"><strong><%= "#{characteristic.title}:" %></strong></div>
           <span class="characteristic-value"><%= simple_format characteristic.value %></span>
         <% end %>
 
