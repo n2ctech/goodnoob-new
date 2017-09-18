@@ -6,7 +6,7 @@
     <%= hidden_field_tag :search_direction, params[:search_direction] || true %>
 
     <%= render layout: 'left_filter',
-        locals: { filter_name: 'Categories', filter_type: 'categories', icon_class: 'glyphicon glyphicon-plane' } do %>
+        locals: { filter_name: 'Sports', filter_type: 'categories', icon_class: 'glyphicon glyphicon-plane' } do %>
       <% Category.all.in_groups(2, false) do |cats| %>
         <% cats.each do |cat| %>
           <%= render partial: 'category_filter', locals: { category: cat, sub_categories: cat.sub_categories } %>
