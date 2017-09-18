@@ -69,7 +69,11 @@ header
         hr.divider
         li
           span data-target="#NewPost" data-toggle="modal" = t '.new_post'
-        li= link_to t('.my_profile'), edit_user_registration_path
+        li
+          - if current_user
+            = link_to t('.my_profile'), edit_user_registration_path
+          else
+            a data-target="#SignInModal" data-toggle="modal" = t('.my_profile')
         #collapseMedia.collapse
           li.whiteli
             = modal_button_tag '/Photo', modals_path(action: :add_photo), link: true
