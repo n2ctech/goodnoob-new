@@ -113,10 +113,12 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
         .product-about-text {
           overflow-y: scroll;
           margin: 10px 0;
-          font-size: 1.2rem;
-          font-weight: 200;
-          height: 370px;
-          font-family: 'Myriad Pro Light', sans-serif;
+          p {
+            font-family: "Myriad Pro Light", sans-serif;
+            font-size: 17px;
+            margin-bottom: 20px;
+            line-height: 1.3em;
+          }
         }
 
         .product-about-text {
@@ -132,20 +134,20 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
         .product-about-text::-webkit-scrollbar {
           width: 6px;
         }
-         
+
         /* Track */
         .product-about-text::-webkit-scrollbar-track {
-          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
           -webkit-border-radius: 10px;
           border-radius: 10px;
         }
-         
+
         /* Handle */
         .product-about-text::-webkit-scrollbar-thumb {
           -webkit-border-radius: 10px;
           border-radius: 10px;
-          background: #CFCFCF; 
-          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+          background: #CFCFCF;
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
         }
 
 
@@ -279,7 +281,7 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
           padding: 0 60px;
           margin-bottom: $main-padding*2;
           .product-review {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-top: 20px;
             .product-review-bar {
               font-size: 1rem;
@@ -294,7 +296,12 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
               color: #aaa;
             }
             .review-body {
-              font-weight: 200;
+              p {
+                font-family: "Myriad Pro Light", sans-serif;
+                font-size: 17px;
+                margin-bottom: 20px;
+                line-height: 1.3em;
+              }
             }
           }
         }
@@ -608,7 +615,7 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
       }
     }
   }
-  
+
   .product-reviews-wrapper {
     .product-reviews {
       .filters {
@@ -741,20 +748,20 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
 .flexcroll::-webkit-scrollbar {
     width: 12px;
 }
- 
+
 /* Track */
 .flexcroll::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
- 
+
 /* Handle */
 .flexcroll::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: rgba(255,0,0,0.8); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    background: rgba(255,0,0,0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
 

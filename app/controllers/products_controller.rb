@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
     @buy_url = @product.region_product_urls.find_by region: region
 
     @media = (product.photos + product.videos).sort_by(&:created_at).reverse
-    @pictures = product.pictures.order(created_at: :asc).first(6)
+    @pictures = product.pictures.order(created_at: :asc).first(12)
     @simpage = (params[:similar] || '1').to_i
     if @simpage == 1
       @similars = Kaminari.paginate_array(product.similars.recent)
