@@ -1,9 +1,19 @@
 <section class="product-reviews-wrapper">
   <div class="product-reviews">
     <div class="filters pull-right col-md-3">
-      <% filter_options = product.filter_options %>
+      <%
+        if display_all
+          reviews = product.reviews
+        else
+          reviews = product.reviews.order(created_at: :asc).first(3)
+        end
+      %>
+      <%
+        filter_options = product.filter_options
+        filters = product.filter_options.map(&:filter).uniq.sort { |x, y| x['name'] <=> y['name'] }
+      %>
       <div class="filters-content short">
-        <% @filters.each do |filter| %>
+        <% filters.each do |filter| %>
           <div class="filters-item">
             <strong><%= filter.name %>: </strong>
             <%== filter_options.select{|f| f.filter == filter}.map(&:name).join ', ' %>
@@ -22,7 +32,7 @@
       <div class="reviews">
         <div class="product-reviews-header">
           <span><%= t '.reviews' %></span>
-          <% if reviews.length > 0 %>
+          <% if !display_all && reviews.present? %>
             <%= link_to t('.read_more_reviews'), product_reviews_path(product_id: product.id) %>
           <% end %>
         </div>
@@ -34,10 +44,10 @@
                 class: 'add-review hidden-xs' %>
             <% end %>
 
-            <% reviews.last(2).each do |review|%>
+            <% reviews.each do |review|%>
               <div class="product-review">
                 <span class="product-review-bar">
-                  <%= render partial:'rating', locals:{product_id: review.product_id, rating: review.rating && review.rating.value || 0} %>
+                  <%= render partial:'products/rating', locals:{product_id: review.product_id, rating: review.rating && review.rating.value || 0} %>
                 </span>
                 <span class="review-title">
                   <%= review.title %>
