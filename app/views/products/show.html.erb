@@ -3,7 +3,7 @@
 
 <%= render partial: 'breadcrumbs', locals: { product: @product } %>
 <%= render partial: 'about', locals: { product: @product } %>
-<%= render partial: 'reviews', product: @product, reviews: @reviews %>
+<%= render 'products/reviews', product: @product, display_all: false %>
 <%= render partial: 'photos_and_videos', product: @product %>
 <%= render partial: 'details', product: @product %>
 <%= render partial: 'similar', product: @product %>

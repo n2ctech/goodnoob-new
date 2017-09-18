@@ -3,133 +3,121 @@
 
 <%= render partial: 'breadcrumbs', locals: { product: @product } %>
 
-<section class="product-statistics-wrapper">
-  <div class="product-statistics center-block">
-    <div class="product-thumbnail pull-left col-md-4">
-      <%= image_tag @product.pictures.first.url %>
-    </div>
-    <div class="product-stats pull-right">
-      <h1 class="product-name">
-        <%= @product.name %> <%= "(#{@product.year})" if @product.year %>
-      </h1>
-      <div class="product-review-bar">
-        <%= render 'products/rating', rating: @product.rating, product_id: @product.id %>
-        (<%= @product.ratings.length %>)
-      </div>
-      <div class="product-reviews-charts">
-        <ul class="chart">
-          <% ratings = Array.new(6, 0) %>
-          <% @product.ratings.each {|r|ratings[r.value]+=r.value} %>
-          <li>
-            <span class="chart-title">5 stars</span>
-            <span class="chart-bar-wrapper">
-              <span class="chart-bar" data-number="<%=ratings[5]%>"></span>
-            </span>
-          </li>
-          <li>
-            <span class="chart-title">4 stars</span>
-            <span class="chart-bar-wrapper">
-              <span class="chart-bar" data-number="<%=ratings[4]%>"></span>
-            </span>
-          </li>
-          <li>
-            <span class="chart-title">3 stars</span>
-            <span class="chart-bar-wrapper">
-              <span class="chart-bar" data-number="<%=ratings[3]%>"></span>
-            </span>
-          </li>
-          <li>
-            <span class="chart-title">2 stars</span>
-            <span class="chart-bar-wrapper">
-              <span class="chart-bar" data-number="<%=ratings[2]%>"></span>
-            </span>
-          </li>
-          <li>
-            <span class="chart-title">1 star</span>
-            <span class="chart-bar-wrapper">
-              <span class="chart-bar" data-number="<%=ratings[1]%>"></span>
-            </span>
-          </li>
+<section class="product-about-wrapper product-about-custom">
+  <div class="product-about row col-md-10 center-block">
+    <div class="product-about-photos-wrapper col-md-6">
+      <div class="product-photos">
+        <ul class="photos-container bxslider">
+          <% @product.pictures.each do |picture| %>
+            <li class="product-photo">
+              <%= link_to picture.image.url, class: 'product-zoom-photo' do %>
+                <%= image_tag picture.url %>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </div>
-      <div class="product-buttons">
-        <span class="product-price"><%= @product.price_string %></span>
-        <button type='button' id='upload-menu'
-          class='btn product-button product-post hidden-xs dropdown-toggle'
-          data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
-          <%= t '.post_photo_video' %>
-        </button>
-
-        <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
-          <li>
-            <%= modal_button_tag t('.photo'), modals_path(action: :add_photo), link: true %>
-          </li>
-          <li role='separator' class='divider'></li>
-          <li>
-            <%= modal_button_tag t('.video'), modals_path(action: :add_video), link: true %>
-          </li>
-        </ul>
-
-        <% if @product.users.include? current_user %>
-          <%= link_to t('.added_remove'), product_user_favourite_products_path(@product), method: :delete,
-          class: 'product-button product-add-favourites hidden-xs' %>
-        <% else %>
-
-          <%= link_to t('.add_to_favorites'), product_user_favourite_products_path(@product), method: :post,  class:
-            'product-button product-add-favourites hidden-xs' %>
-        <% end %>
-
-        <%= link_to product_user_favourite_products_path(@product), method: :post, class:
-          'product-button visible-xs-inline-block product-add-favourites' do %>
-          <i class="glyphicon glyphicon-star"></i>
-        <% end %>
-        <% if @product.distributors.any? %>
-          <%= link_to t('.buy'), @product.distributors.first.url, class: 'product-button product-buy', target: '_blank' %>
+      <div class="bx-slider-pager">
+        <% @product.pictures.each_with_index do |picture, index| %>
+          <a href="" data-slide-index="<%= index %>"></a>
         <% end %>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="product-reviews-all-wrapper">
-  <div class="product-reviews-all col-md-7 center-block">
-    <div class="product-reviews-header">
-      <span><%= t '.reviews' %></span>
-    </div>
-
-    <div class="reviews-container">
-      <% if user_signed_in? %>
-        <%= modal_button_tag t('.add_a_review'),
-                     new_product_review_path(@product),
-                     method: :get,
-                     link: true,
-                     class: 'add-review hidden-xs' %>
- <script>
-            $('.add-review').click(function() {
-            send_track_review();
-          });
-</script>
-
-      <% end %>
-
-      <% @product.reviews.each do |review|%>
-        <div class="product-review">
-          <span class="product-review-bar">
-            <%= render partial:'products/rating', locals:{product_id: review.product_id, rating: review.rating && review.rating.value || 0} %>
-          </span>
-          <span class="review-title">
-            <%= review.title %>
-          </span>
-          <div class="review-author-name">
-            <%= review.user.full_name %>
-          </div>
-          <div class="review-body">
-            <div class="more-less-text-big">
-              <%= review.review.html_safe %>
-            </div>
+    <div class="product-info-wrapper col-md-6">
+      <div class="product-info">
+        <h1 class="product-name">
+          <%= @product.name %> <%= "(#{product.year})" if @product.year %>
+        </h1>
+        <div class="product-review-bar">
+          <%= render 'products/rating', rating: @product.rating, product_id: @product.id %>
+          (<%= @product.ratings.length %>)
+        </div>
+        <div class="official_url" >
+          <%= link_to 'Official website', @product.company.url %>
+        </div>
+        <div class="product-stats">
+          <div class="product-reviews-charts">
+            <ul class="chart">
+              <% ratings = Array.new(6, 0) %>
+              <% @product.ratings.each {|r|ratings[r.value]+=r.value} %>
+              <li>
+                <span class="chart-title">5 stars</span>
+                <span class="chart-bar-wrapper">
+                  <span class="chart-bar" data-number="<%=ratings[5]%>"></span>
+                </span>
+              </li>
+              <li>
+                <span class="chart-title">4 stars</span>
+                <span class="chart-bar-wrapper">
+                  <span class="chart-bar" data-number="<%=ratings[4]%>"></span>
+                </span>
+              </li>
+              <li>
+                <span class="chart-title">3 stars</span>
+                <span class="chart-bar-wrapper">
+                  <span class="chart-bar" data-number="<%=ratings[3]%>"></span>
+                </span>
+              </li>
+              <li>
+                <span class="chart-title">2 stars</span>
+                <span class="chart-bar-wrapper">
+                  <span class="chart-bar" data-number="<%=ratings[2]%>"></span>
+                </span>
+              </li>
+              <li>
+                <span class="chart-title">1 star</span>
+                <span class="chart-bar-wrapper">
+                  <span class="chart-bar" data-number="<%=ratings[1]%>"></span>
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
-      <%end%>
+        <div class="product-buttons">
+          <span class="product-price"><%= @product.price_string %></span>
+          <button type='button' id='upload-menu' class='btn about-button product-post hidden-xs' data-target="#NewPost" data-toggle="modal">
+            <%= t '.post_photo_video' %>
+          </button>
+
+          <%#= modal_button_tag t('.add_a_review'),
+             new_product_review_path(product),
+             method: :get,
+             link: true,
+             class: 'about-button hide-xs-inline-block' %>
+
+          <% if @product.users.include? current_user %>
+            <%= link_to t('.added_remove'), product_user_favourite_products_path(@product),
+              method: :delete,
+              class: 'about-button product-add-favourites hidden-xs' %>
+          <% else %>
+
+
+            <% if current_user.present? %>
+              <%= link_to t('.add_to_favorites'), product_user_favourite_products_path(@product),
+                method: :post,
+                class: 'about-button product-add-favourites hidden-xs' %>
+            <% else %>
+              <%= modal_link t('.add_to_favorites'), 'about-button product-add-favourites hidden-xs' %>
+            <% end %>
+          <% end %>
+          <%= link_to t('.add_to_favorites'), product_user_favourite_products_path(@product),
+                method: :post,
+                class: 'about-button visible-xs-inline-block product-add-favourites' %>
+
+          <% if @buy_url %>
+            <%= link_to t('.buy'), @buy_url.url, class: 'about-button-buy product-buy tracking-buy', target: '_blank' %>
+
+            <script>
+              $('.tracking-buy').click(function() {
+                send_track_buy();
+              });
+            </script>
+
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<%= render 'products/reviews', product: @product, display_all: true %>
