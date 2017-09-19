@@ -4,6 +4,6 @@
 <%= render partial: 'breadcrumbs', locals: { product: @product } %>
 <%= render partial: 'about', locals: { product: @product } %>
 <%= render 'products/reviews', product: @product, display_all: false %>
-<%= render partial: 'photos_and_videos', product: @product %>
+<%= render 'photos_and_videos', product: @product, title: t('.photos_and_videos') %>
 <%= render partial: 'details', product: @product %>
 <%= render partial: 'similar', product: @product %>
