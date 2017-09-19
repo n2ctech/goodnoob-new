@@ -31,14 +31,21 @@
     </div>
 
     <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <form class="search-input">
-        <div class="hamburger__icon"></div>
-        <button type="submit">
-          <i class="fa fa-search"></i>
-        </button>
-        <input type="text" name="search" placeholder="Search your sport, brand, model...">
-        <span aria-label="Close" class="close cancel-search" data-dismiss="modal" type="button">X</span>
-      </form>
+        <%= form_tag search_index_path, method: :get, class: 'search-form--inline search-input' do %>
+          <div class="hamburger__icon"></div>
+          <button type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+          <%= text_field_tag :search, params[:search], class: 'search-field',
+              placeholder: 'Search', autocomplete: 'off' %>
+          <span aria-label="Close" class="close cancel-search" data-dismiss="modal" type="button">X</span>
+
+            <div class="suggestions">
+              <div class="s-categories"></div>
+              <div class="s-separator"></div>
+              <div class="s-products"></div>
+            </div>
+        <% end %>
     </div>
 
     <script>
