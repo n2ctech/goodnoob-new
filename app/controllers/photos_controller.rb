@@ -22,8 +22,7 @@ class PhotosController < ApplicationController
   before_action :set_product, only:[:show]
 
   def show
-    @other_media = @product.photos + @product.videos
-    @other_media = @other_media.sort_by(&:created_at).reverse!
+    @media = (@product.photos + @product.videos).sort_by(&:created_at).reverse
   end
 
   def create

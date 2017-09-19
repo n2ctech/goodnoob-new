@@ -4,21 +4,7 @@
     <section class="product-media flex thumbs-matrix-wrapper background-surf">
       <%= render 'photos/search_thumbnail', photo: @photo %>
     </section>
-    <section class="other-product-medias">
-      <div class="other-product-medias-header">
-        <%= t '.other_photos_and_videos' %>
-      </div>
-
-      <div class="flex thumbs-matrix-wrapper">
-        <% @other_media.each do |media_item| %>
-          <% if media_item.is_a? Photo %>
-            <%= render partial: 'photos/thumbnail', locals: { photo: media_item } %>
-          <% elsif media_item.is_a? Video %>
-            <%= render partial: 'videos/thumbnail', locals: { video: media_item } %>
-          <% end %>
-        <% end %>
-      </div>
-    </section>
+    <%= render 'products/photos_and_videos', product: @product, title: t('.other_photos_and_videos') %>
   </main>
 </div>
 
