@@ -12,7 +12,6 @@
 
   <!-- MAIN CONTENTS LAYOUT -->
   <main class="main-content-wrapper">
-    <%= render 'search/search_form' %>
     <%= render partial: 'search_results', locals: {media: @media } %>
     <%= render partial: 'load_more_button', locals: { media: @media } %>
   </main>
