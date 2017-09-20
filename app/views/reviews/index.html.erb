@@ -32,9 +32,6 @@
           <%= render 'products/rating', rating: @product.rating, product_id: @product.id %>
           (<%= @product.ratings.length %>)
         </div>
-        <div class="official_url" >
-          <%= link_to 'Official website', @product.company.url %>
-        </div>
         <div class="product-stats">
           <div class="product-reviews-charts">
             <ul class="chart">
