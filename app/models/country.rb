@@ -8,6 +8,14 @@ class Country < ActiveRecord::Base
   validates :country_code, uniqueness: { case_sensitive: false }
 
   before_save { self.country_code.upcase! }
+
+  class << self
+
+    def default_country
+      find_by(country_code: 'US') || first
+    end
+
+  end
 end
 
 # == Schema Information

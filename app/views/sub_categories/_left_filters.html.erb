@@ -16,10 +16,10 @@
 
     <%= render layout: 'left_filter',
         locals: { filter_name: 'International Brands', filter_type: 'international-brands', icon_class: 'glyphicon glyphicon-plane' } do %>
-      <% @sub_category.companies.international(@user_country).uniq.each do |company| %>
+      <% @sub_category.companies.international(session[:country]).uniq.each do |company| %>
         <%= render partial: 'company_filter', locals: { company: company } %>
       <% end %>
-    <% end if @sub_category.companies.international(@user_country).uniq.present? %>
+    <% end if @sub_category.companies.international(session[:country]).uniq.present? %>
 
     <%= render layout: 'left_filter',
         locals: { filter_name: 'Local Brands', filter_type: 'international-brands', icon_class: 'glyphicon glyphicon-plane' } do %>

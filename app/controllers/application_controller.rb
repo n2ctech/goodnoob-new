@@ -13,7 +13,10 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :set_admin_locale
 
-  include UserLocation
+  helper_method :current_country
+  def current_country
+    @current_country ||= Country.find_by(country_code: session[:country]) || Country.default_country
+  end
 
   private
 
