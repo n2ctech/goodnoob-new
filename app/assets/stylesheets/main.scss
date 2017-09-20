@@ -3190,13 +3190,21 @@ $footer-links-color: #7f7f7f;
 
   .thumb-more-button {
     background: image-url('three-dots-menu_white.svg') no-repeat scroll center center transparent;
+  }
+
+  .thumb-more-button-dark {
+    background: image-url('three-dots-menu.svg') no-repeat scroll center center transparent;
+  }
+
+  .thumb-more-button,
+  .thumb-more-button-dark
+  {
     width: 20px;
     height:20px;
     margin: 0px;
     background-size: 20px;
     display: block;
     outline: none;
-
   }
 
   .menu-group {
