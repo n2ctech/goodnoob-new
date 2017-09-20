@@ -20,9 +20,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
-    country = Country.find_by(country_code: @user_country) || Country.find_by(country_code: 'US')
-    region = country&.region
-    @buy_url = @product.region_product_urls.find_by region: region
+    @buy_url = @product.region_product_urls.find_by region: current_country.region
 
     @media = (product.photos + product.videos).sort_by(&:created_at).reverse
     @pictures = product.pictures.order(created_at: :asc).first(12)
