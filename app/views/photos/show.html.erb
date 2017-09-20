@@ -2,7 +2,9 @@
   <main class='main-content-wrapper main-share-content-wrapper'>
     <%= render partial:'products/breadcrumbs', locals: { product: @product } %>
     <section class="product-media flex thumbs-matrix-wrapper background-surf">
-      <%= render 'photos/search_thumbnail', photo: @photo %>
+      <div style="margin: 20px auto;">
+        <%= render 'photos/search_thumbnail', photo: @photo %>
+      </div>
     </section>
     <%= render 'products/photos_and_videos', product: @product, title: t('.other_photos_and_videos') %>
   </main>
