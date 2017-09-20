@@ -60,8 +60,14 @@ class ApplicationController < ActionController::Base
       end
       I18n.locale = session[:locale]
 
-      session[:country] ||= 'US'
-      session[:currency] ||= 'USD'
+      if session[:country].blank?
+        session[:country] = Country.exists?(country_code: request.location&.country_code) ? request.location.country_code : 'US'
+      end
+
+      if session[:currency].blank?
+        country = Country.find_by country_code: session[:country]
+        session[:currency] = country.currency.code
+      end
     end
 
     def set_admin_locale
