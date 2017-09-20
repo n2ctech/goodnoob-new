@@ -4,7 +4,7 @@
       .col-md-12.review-rating
         p= review.title
         .thumb-menu-stripe
-          a.toggle-product-menu.social-share.thumb-more-button href="javascript:;" 
+          a.toggle-product-menu.social-share.thumb-more-button-dark href="javascript:;" 
           .menu-group
             .menu-item
               = modal_button_tag t('.edit'), edit_product_review_path(review.product, review), method: :get, link: true, class: ''
