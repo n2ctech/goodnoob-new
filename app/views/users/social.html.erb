@@ -2,10 +2,10 @@
 <%- @active_social = 'active' %>
 <%= render partial: 'registrations/profile_top' %>
 <%= render partial: 'registrations/nav_filters' %>
-<div class="center-block sides-indents">
-  <main class="main-content-wrapper social">
-  <div id="user_social">
-    <div class="flex thumbs-matrix-wrapper search-results-container">
+<div class="center-block">
+  <main class="main-content-wrapper">
+  <div id="search_results">
+    <div class="flex thumbs-matrix-wrapper search-results-container" id="masonry-container">
       <% if @media.length == 0 %>
         <%= t '.no_activities' %>
       <% end %>
