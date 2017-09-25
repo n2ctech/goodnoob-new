@@ -6,18 +6,17 @@
         = photo.user.last_name
       .thumb-menu-stripe
         - if local_assigns[:for_profile].present?
-          a.toggle-product-menu.social-share
-            i.fa.fa-ellipsis-h
+          a.toggle-product-menu.social-share.thumb-more-button href="#!"
           .menu-group
             .menu-item
               a.social-share.toggle-social-share-menu= t '.share'
-            hr/
+            hr
             .menu-item
               = modal_button_tag t('.edit'), edit_photo_path(photo), link: true, method: :get
-            hr/
+            hr
             .menu-item
               = link_to t('.delete'), photo_path(photo), method: :delete
-            hr/
+            hr
             .menu-item
               a.share-button-copylink.js-copylink data-copy-url="#{photo_url(photo)}" = t '.copy_url'
         - else
