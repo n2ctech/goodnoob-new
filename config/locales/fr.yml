@@ -1,15 +1,41 @@
 fr:
-  layouts:
-    nav_links_for_auth:
-      log_in: Se connecter
+  dictionary:
+    # repeated words/phrases are defined here for easier reference
+    compare: &compare Compare
+    learn: &learn Learn
+    share: &share Partager
+    title: &title Titre
+    account: &account Compte
+    log_out: &log_out Se déconnecter
+    edit: &edit Editer
+    delete: &delete Supprimer
+    copy_url: &copy_url "Copier l'URL"
+    the_blog: &the_blog LE BLOG
+    photo: &photo Photo
+    video: &video Vidéo
+    comment: &comment Commenter...
+    post: &post + Partager
 
   guides:
+    learn_filter:
+      compare: *compare
+      learn: *learn
+      share: *share
     show:
       chapters: Chapitres
-      compare_sub_category: "Comparer %{name}"
-      other_guides: Autres guides
-      sub_category_guide: "Guide d'achat - %{name}"
-      tagline: "Il est très important de savoir quel est votre %{name} parfait..."
+
+  home:
+    new_post_modal:
+      new_post: new post
+      search_your_gear: Search your gear in our database
+      pick_photo_or_video: Pick your photo/video
+      write_your_comment: Write your comment and help others!
+      post_it: Post it!! =)
+      thank_you: Thank you for your collaboration!!
+      photo: *photo
+      video: *video
+      comment: *comment
+      post: *post
 
   info:
     abouts:
@@ -40,66 +66,56 @@ fr:
       choose_your_country:  'Choisis ton pays'
       choose_your_language: 'Choisissez votre langue'
       choose_your_currency: 'Choisissez votre devise'
-      countries:
-        uk: 'Royaume-Uni'
-        fr: 'France'
-        es: 'Espagne'
       languages:
         uk: 'Anglais'
         fr: 'Français'
         es: 'Espagnol'
-      currencies:
-        eur: 'Euros (€)'
-        gbp: 'Livre sterling (£)'
       social_feed: "Fil d'actualité"
       compare_products: Comparer les produits
       buying_guides: "Guides d'achat"
       new_post: + PARTAGER
-      the_blog: LE BLOG
+      the_blog: *the_blog
       my_profile: Mon profil
-    mobile_post_button:
-      log_in_to_post_video: Vous devez être connecté pour partager une vidéo
-      log_in_to_post_photo: Vous devez être connecté pour partager une photo
+      log_out: *log_out
+      account: *account
     nav_links_for_auth:
-      log_in: Se connecter
-      log_out: Se déconnecter
-      account: Compte
+      log_out: *log_out
+      account: *account
+      the_blog: *the_blog
     search_box:
       categories: Catégories
       search: Rechercher...
     upload_button:
       new_post: + PARTAGER
-      the_blog: LE BLOG
-      photo: Photo
-      video: Vidéo
+      the_blog: *the_blog
 
   photos:
     add:
       upload_your_photo: + Partager une photo
-      comment: Description...
+      comment: *comment
     edit:
       edit_a_photo: éditer une photo
       upload_your_photo: + Partager une photo
-      comment: Description...
+      comment: *comment
+    search_popup:
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
     search_thumbnail:
-      copy_url: "Copier l'URL"
-      delete: Supprimer
-      edit: Editer
-      share: Partager
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
     thumbnail:
-      copy_url: "Copier l'URL"
-      share: Partager
+      copy_url: *copy_url
+      share: *share
     show:
       other_photos_and_videos: autres photos et vidéos
 
   products:
     about:
       post_photo_video: Partager photo/vidéo
-      photo: Photo
-      video: Vidéo
-      log_in_to_post_video: Vous devez être connecté pour partager une vidéo
-      log_in_to_post_photo: Vous devez être connecté pour partager une photo
-      add_a_review: Ajouter un commentaire
       added_remove: Ajouté(Supprimer)
       add_to_favorites: Ajouter aux favoris
       buy: Acheter
@@ -124,12 +140,9 @@ fr:
       contact_phone: Téléphone
       address: Adresse
     photos_and_videos:
-      photos_and_videos: photos et vidéos
       no_photos_or_videos_yet: pas encore de vidéos ou de photos,
       be_the_first: sois le premier!
       new_post: + partager
-      photo: Photo
-      video: Vidéo
     reviews:
       reviews: commentaires
       read_more_reviews: Lire plus de commentaires
@@ -138,10 +151,10 @@ fr:
       be_the_first: sois le premier!
     similar:
       similar_products: produits similaires
-    thumbnail:
-      more_info: "Plus d'Info..."
     set_filter_options:
       filter_options: Filtres
+    show:
+      photos_and_videos: photos et vidéos
 
   registrations:
     new:
@@ -174,38 +187,33 @@ fr:
       home: Home
       reviews: Commentaires
     edit:
-      title: Titre
+      title: *title
       post_review: Partager vos commentaires et aidez la communauté...
       upload: Partager
     new:
       upload: Partager
       title: Ajouter un commentaire
+    new_js:
+      title: *title
+      post_review: Post review
     review_form:
-      title: Titre
+      title: *title
       post_review: Partager vos commentaires et aidez la communauté...
     index:
       post_photo_video: partager photo / vidéo
       added_remove: Ajouté(Supprimer)
       add_to_favorites: Ajouter aux favoris
       buy: acheter
-      reviews: commentaires
-      add_a_review: + Ajouter un commentaire
-      photo: Photo
-      video: Vidéo
 
   search:
-    form:
-      search: Rechercher...
     left_filter:
       more: Plus...
     load_more_button:
       more_listings: Plus de produits
     search_header:
-      social_feed: "Fil d'actualité"
-      compare_products: Comparer les Produits
-      buying_guides: "Guides d'achat"
-      view_filters: Voir les filtres
-      clear_all: Tout supprimer
+      compare: *compare
+      learn: *learn
+      share: *share
     search_results:
       no_results: Aucun résultat pour votre recherche.
 
@@ -222,9 +230,13 @@ fr:
     breadcrumbs:
       home: Accueil
     filters_header:
-      social_feed: "Fil d'actualité"
-      compare_products: Comparer Produits
-      buying_guides: "Guides d'achat"
+      compare: *compare
+      learn: *learn
+      share: *share
+    guide_filter:
+      compare: *compare
+      learn: *learn
+      share: *share
     left_filter:
       see_more: Voir plus...
     load_more_button:
@@ -233,7 +245,6 @@ fr:
       no_results: Aucun résultat pour votre recherche.
       more_info: "Plus d'info..."
     search:
-      search: Rechercher...
       sort_by: Trier par
       newest: Plus récent
       price: Prix
@@ -297,16 +308,21 @@ fr:
 
   videos:
     add:
-      comment: Commenter...
+      comment: *comment
     breadcrumbs:
       home: Accueil
     edit:
-      comment: Commenter...
+      comment: *comment
       edit_a_video: éditer une vidéo
     search_thumbnail:
-      share: Partager
-      edit: Editer
-      delete: Supprimer
-      copy_url: "Copier l'URL"
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
     show:
       other_photos_and_videos: autres photos et vidéos
+    video_popup:
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
