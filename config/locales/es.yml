@@ -1,15 +1,41 @@
 es:
-  layouts:
-    nav_links_for_auth:
-      log_in: Iniciar sesión
+  dictionary:
+    # repeated words/phrases are defined here for easier reference
+    compare: &compare Compare
+    learn: &learn Learn
+    share: &share Compartir
+    title: &title Título
+    account: &account Cuenta
+    log_out: &log_out Salir
+    copy_url: &copy_url Copiar URL
+    delete: &delete Eliminar
+    edit: &edit Editar
+    the_blog: &the_blog EL BLOG
+    photo: &photo Foto
+    video: &video Video
+    comment: &comment Comentar...
+    post: &post + Publicación
 
   guides:
+    learn_filter:
+      compare: *compare
+      learn: *learn
+      share: *share
     show:
       chapters: Capítulos
-      compare_sub_category: "Comparar %{name}"
-      other_guides: Otras guías
-      sub_category_guide: "%{name} guía"
-      tagline: "Es muy importante saber cual es tu %{name} perfecto..."
+  
+  home:
+    new_post_modal:
+      new_post: new post
+      search_your_gear: Search your gear in our database
+      pick_photo_or_video: Pick your photo/video
+      write_your_comment: Write your comment and help others!
+      post_it: Post it!! =)
+      thank_you: Thank you for your collaboration!!
+      photo: *photo
+      video: *video
+      comment: *comment
+      post: *post
 
   info:
     abouts:
@@ -40,66 +66,56 @@ es:
       choose_your_country:  'Elige tu país'
       choose_your_language: 'Elige tu idioma'
       choose_your_currency: 'Elija su moneda'
-      countries:
-        uk: 'Reino Unido'
-        fr: 'Francia'
-        es: 'España'
       languages:
         uk: 'Inglés'
         fr: 'Francés'
         es: 'Español'
-      currencies:
-        eur: 'Euros (€)'
-        gbp: 'Libra esterlina (£)'
       social_feed: Social
       compare_products: Comparar Productos
       buying_guides: Guías de Compra
       new_post: + Nueva publicación
-      the_blog: EL BLOG
+      the_blog: *the_blog
       my_profile: Mi perfil
-    mobile_post_button:
-      log_in_to_post_video: Necesitas estar logueado para subir videos
-      log_in_to_post_photo: Necesitas estar logueado para subir fotos
+      log_out: *log_out
+      account: *account
     nav_links_for_auth:
-      log_in: Iniciar sesión
-      log_out: Salir
-      account: Cuenta
+      log_out: *log_out
+      account: *account
+      the_blog: *the_blog
     search_box:
       categories: Categorias
       search: Buscar...
     upload_button:
       new_post: + NUEVA PUBLICACIÓN
-      the_blog: EL BLOG
-      photo: Foto
-      video: Video
+      the_blog: *the_blog
 
   photos:
     add:
       upload_your_photo: + Sube tu foto
-      comment: Comentario...
+      comment: *comment
     edit:
       edit_a_photo: editar una foto
       upload_your_photo: + Publicar foto
-      comment: Comentar...
+      comment: *comment
+    search_popup:
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
     search_thumbnail:
-      copy_url: Copiar URL
-      delete: Eliminar
-      edit: Editar
-      share: Compartir
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
     thumbnail:
-      copy_url: Copiar URL
-      share: Compartir
+      copy_url: *copy_url
+      share: *share
     show:
       other_photos_and_videos: otras fotos y videos
 
   products:
     about:
       post_photo_video: publicar foto / video
-      photo: Foto
-      video: Video
-      log_in_to_post_video: Necesitas estar logueado para subir videos
-      log_in_to_post_photo: Necesitas estar logueado para subir fotos
-      add_a_review: Añadir una opinión
       added_remove: Añadido(Quitar)
       add_to_favorites: Añadir a favoritos
       buy: Comprar
@@ -124,12 +140,9 @@ es:
       contact_phone: Teléfono de contacto
       address: Dirección
     photos_and_videos:
-      photos_and_videos: fotos y videos
       no_photos_or_videos_yet: no hay fotos o videos todavía,
       be_the_first: se el primero!
       new_post: + nueva publicación
-      photo: Foto
-      video: Video
     reviews:
       reviews: opiniones
       read_more_reviews: Leer más opiniones
@@ -138,10 +151,10 @@ es:
       be_the_first: se el primero!
     similar:
       similar_products: productos similares
-    thumbnail:
-      more_info: Más Información...
     set_filter_options:
       filter_options: Opciones de Filtros
+    show:
+      photos_and_videos: fotos y videos
 
   registrations:
     new:
@@ -174,38 +187,33 @@ es:
       home: Home
       reviews: Opiniones
     edit:
-      title: Título
+      title: *title
       post_review: Publica tu opinión y ayuda a otros...
       upload: Publicar
     new:
       upload: Publicar
       title: Añadir una opinión
+    new_js:
+      title: *title
+      post_review: Post review
     review_form:
-      title: Título
+      title: *title
       post_review: Publica una opinión y ayuda a otros...
     index:
       post_photo_video: publicar foto / video
       added_remove: Añadido(Quitar)
       add_to_favorites: Añadir a favoritos
       buy: comprar
-      reviews: opiniones
-      add_a_review: + Añadir una opinión
-      photo: Foto
-      video: Video
 
   search:
-    form:
-      search: Buscar...
     left_filter:
       more: Más...
     load_more_button:
       more_listings: Más Resultados
     search_header:
-      social_feed: Social
-      compare_products: Comparar Productos
-      buying_guides: Guías de Compra
-      view_filters: Ver filtros
-      clear_all: Quitar filtros
+      compare: *compare
+      learn: *learn
+      share: *share
     search_results:
       no_results: Lo siento, tu búsqueda no tuvo resultados.
 
@@ -222,9 +230,13 @@ es:
     breadcrumbs:
       home: Home
     filters_header:
-      social_feed: Social
-      compare_products: Comparar Productos
-      buying_guides: Guías de Compra
+      compare: *compare
+      learn: *learn
+      share: *share
+    guide_filter:
+      compare: *compare
+      learn: *learn
+      share: *share
     left_filter:
       see_more: Ver más...
     load_more_button:
@@ -233,7 +245,6 @@ es:
       no_results: Lo siento, tu búsqueda no tuvo resultados.
       more_info: Más información...
     search:
-      search: Buscar...
       sort_by: Ordenar por
       newest: Nuevo
       price: Precio
@@ -297,16 +308,21 @@ es:
 
   videos:
     add:
-      comment: Comenta...
+      comment: *comment
     breadcrumbs:
       home: Home
     edit:
-      comment: Comenta...
+      comment: *comment
       edit_a_video: editar un video
     search_thumbnail:
-      share: Compartir
-      edit: Editar
-      delete: Quitar
-      copy_url: Copiar URL
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
     show:
       other_photos_and_videos: otras fotos y videos
+    video_popup:
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share

@@ -7,21 +7,21 @@
         = image_tag(asset_path 'new-post-image.png')
         .container-text
           = image_tag 'good noob_logo.png'
-          .logo-text + new post
+          .logo-text + #{t('.new_post')}
           .small-text
             .count-li 1.&nbsp
-            span Search your gear in our database
+            span = t('.search_your_gear')
           .small-text
             .count-li 2.&nbsp
-            span Pick your photo/video
+            span = t('.pick_photo_or_video')
           .small-text
             .count-li 3.&nbsp
-            span Write your comment and help others!
+            span = t('.write_your_comment')
           .small-text
             .count-li 4.&nbsp
-            span Post it!! =)
+            span = t('.post_it')
           .big-text
-            |Thank you for your collaboration!!
+            = t('.thank_you')
             br
             |goodnoob team
     .col-xs-12.col-sm-6.form-container#photo_form
@@ -31,13 +31,13 @@
             {selected: params[:product_id] || @product&.id},
             {class: 'selectpicker form-control', data: {live_search: true, size: 5}}
           .form-control.container-list.form-height.no-padding
-            .col-xs-6.col-sm-6.open.photo Photo
-            .col-xs-6.col-sm-6.closed.video Video
+            .col-xs-6.col-sm-6.open.photo = t('.photo')
+            .col-xs-6.col-sm-6.closed.video = t('.video')
           = f.fields_for :picture do |fields|
             = fields.file_field :image, class: 'form-control hidden file-upload-button', accept: 'image/*;capture=camera'
             = fields.label :image, '+ Upload photo', class: 'btn_upload form-control form-height no-padding'
           = f.text_area :comment, class: 'comment-container form-control', maxlength: 250, placeholder: 'Comment...'
-          = f.submit '+ Post', class: 'btn-primary btn-submit form-height no-padding w-20', id: 'submit-photo'
+          = f.submit t('.post'), class: 'btn-primary btn-submit form-height no-padding w-20', id: 'submit-photo'
     .col-xs-12.col-sm-6.form-container.hidden#video_form
       = form_for Video.add_billet, url: videos_path, html: {multipart: true, class: 'form-horizontal' } do |f|
         .form-group
@@ -45,8 +45,8 @@
             {selected: params[:product_id] || @product&.id},
             {class: 'selectpicker form-control form-height', data: {live_search: true, size: 5}}
           .form-control.container-list.form-height.no-padding
-            .col-xs-6.col-sm-6.photo.closed Photo
-            .col-xs-6.col-sm-6.video.open Video
+            .col-xs-6.col-sm-6.photo.closed = t('.photo')
+            .col-xs-6.col-sm-6.video.open = t('.video')
           = f.text_field :url, class: 'url-input form-control form-height no-padding', placeholder: 'URL'
-          = f.text_area :comment, class: 'comment-container form-control', maxlength: 250, placeholder: 'Comment...'
-          = f.submit '+ Post', class: 'btn-primary btn-submit form-height no-padding w-20', id: 'submit-photo form-height'
+          = f.text_area :comment, class: 'comment-container form-control', maxlength: 250, placeholder: t('.comment')
+          = f.submit t('.post'), class: 'btn-primary btn-submit form-height no-padding w-20', id: 'submit-photo form-height'
