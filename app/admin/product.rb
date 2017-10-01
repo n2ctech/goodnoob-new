@@ -47,9 +47,7 @@ ActiveAdmin.register Product do
 
   index do
     id_column
-    column :name_en
-    column :name_fr
-    column :name_es
+    column :name
     column :year
     column :sub_category
     column :company
