@@ -45,6 +45,19 @@ ActiveAdmin.register Product do
   filter :sub_category
   filter :company
 
+  index do
+    id_column
+    column :name_en
+    column :name_fr
+    column :name_es
+    column :year
+    column :sub_category
+    column :company
+    column :created_at
+    column :updated_at
+    actions
+  end
+
   show do
     panel 'Product Name' do
       attributes_table_for product do
