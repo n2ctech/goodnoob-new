@@ -52,7 +52,7 @@ module SearchHelper
 
     p = params.dup
     # initializing sub categories
-    p['sub_categories'] = []
+    p['sub_categories'] ||= []
 
     p['filter'] = true
     param_changes.each do |change|
