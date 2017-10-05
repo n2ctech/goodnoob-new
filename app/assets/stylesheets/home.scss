@@ -36,12 +36,12 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
     margin-left: 2vw;
     margin-right: 2vw;
   }
+  .l-arrow {
+    padding-right: 10px;
+  }
   @media only screen and (min-width: 1200px) {
     .tabs-list {
       padding-left: 4%;
-      .compare-button-wrapper {
-        margin-left: 38px;
-      }
     }
   }
   @media only screen and (max-width: 1200px) {
