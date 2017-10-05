@@ -13,7 +13,7 @@
             <%= link_to t('.learn'), guides_path(category_id: cookies[:selected_category_id]), { class: "btn btn-link tabs-link" } %>
           </span>
 
-          <span class="item-separator"><%= image_tag('l-arrow.png') %></span>
+          <span class="item-separator l-arrow"><%= image_tag('l-arrow.png') %></span>
 
           <a class="tabs-item compare-button-wrapper p-static text-center" href="/sub_categories/<%= cookies[:selected_sub_category_id] %>">
             <button type="button" class="btn btn-link tabs-link">
