@@ -14,28 +14,28 @@ es:
     photo: &photo Foto
     video: &video Video
     comment: &comment Comentar...
-    post: &post + Nueva publicación
+    post: &post Publicación
 
   guides:
     learn_filter:
-      compare: *Comparar
-      learn: *Aprender
-      share: *Compartir
+      compare: *compare
+      learn: *learn
+      share: *share
     show:
       chapters: Capítulos
   
   home:
     new_post_modal:
-      new_post: nueva publicación
+      new_post: + Nueva publicación
       search_your_gear: Busca tu producto en nuestra base de datos
       pick_photo_or_video: Elige tu foto/video
       write_your_comment: Escribe tu comentarios y ayuda al resto! 
       post_it: Publica!! =)
       thank_you: Gracias por tu colaboración!! 
-      photo: *foto
+      photo: *photo
       video: *video
-      comment: *comentario
-      post: *publicación
+      comment: *comment
+      post: *post
 
   info:
     abouts:
@@ -74,7 +74,7 @@ es:
       compare_products: Comparar Productos
       buying_guides: Guías de Compra
       new_post: + Nueva publicación
-      the_blog: *blog
+      the_blog: *the_blog
       my_profile: Mi perfil
       log_out: *log_out
       account: *account
@@ -87,29 +87,29 @@ es:
       search: Buscar...
     upload_button:
       new_post: + NUEVA PUBLICACIÓN
-      the_blog: *blog
+      the_blog: *the_blog
 
   photos:
     add:
       upload_your_photo: + Sube tu foto
-      comment: *comentario
+      comment: *comment
     edit:
       edit_a_photo: editar una foto
       upload_your_photo: + Publicar foto
-      comment: *comentario
+      comment: *comment
     search_popup:
-      copy_url: *copiar URL
-      delete: *eliminar
-      edit: *editar
-      share: *compartir
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
     search_thumbnail:
-      copy_url: *copiar URL
-      delete: *eliminar
-      edit: *editar
-      share: *compartir
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
     thumbnail:
-      copy_url: *copiar URL
-      share: *compartir
+      copy_url: *copy_url
+      share: *share
     show:
       other_photos_and_videos: otras fotos y videos
 
@@ -187,14 +187,14 @@ es:
       home: Home
       reviews: Opiniones
     edit:
-      title: *título
+      title: *title
       post_review: Publica tu opinión y ayuda a otros...
       upload: Publicar
     new:
       upload: Publicar
       title: Añadir una opinión
     new_js:
-      title: *título
+      title: *title
       post_review: Publicar review
     review_form:
       title: *title
@@ -211,9 +211,9 @@ es:
     load_more_button:
       more_listings: Más Resultados
     search_header:
-      compare: *comparar
-      learn: *aprender
-      share: *compartir
+      compare: *compare
+      learn: *learn
+      share: *share
     search_results:
       no_results: Lo siento, tu búsqueda no tuvo resultados.
 
@@ -230,13 +230,13 @@ es:
     breadcrumbs:
       home: Home
     filters_header:
-      compare: *comparar
-      learn: *aprender
-      share: *compartir
+      compare: *compare
+      learn: *learn
+      share: *share
     guide_filter:
-      compare: *comparar
-      learn: *aprender
-      share: *compartir
+      compare: *compare
+      learn: *learn
+      share: *share
     left_filter:
       see_more: Ver más...
     load_more_button:
@@ -308,21 +308,21 @@ es:
 
   videos:
     add:
-      comment: *comentario
+      comment: *comment
     breadcrumbs:
       home: Home
     edit:
-      comment: *comentario
+      comment: *comment
       edit_a_video: editar un video
     search_thumbnail:
-      copy_url: *copiar URL
-      delete: *eliminar
-      edit: *editar
-      share: *compartir
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
     show:
       other_photos_and_videos: otras fotos y videos
     video_popup:
-      copy_url: *copiar URL
-      delete: *eliminar
-      edit: *editar
-      share: *compartir
+      copy_url: *copy_url
+      delete: *delete
+      edit: *edit
+      share: *share
