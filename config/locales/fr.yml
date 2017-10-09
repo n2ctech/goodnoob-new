@@ -1,8 +1,8 @@
 fr:
   dictionary:
     # repeated words/phrases are defined here for easier reference
-    compare: &compare Compare
-    learn: &learn Learn
+    compare: &compare Comparer
+    learn: &learn Apprendre
     share: &share Partager
     title: &title Titre
     account: &account Compte
@@ -26,12 +26,12 @@ fr:
 
   home:
     new_post_modal:
-      new_post: new post
-      search_your_gear: Search your gear in our database
-      pick_photo_or_video: Pick your photo/video
-      write_your_comment: Write your comment and help others!
-      post_it: Post it!! =)
-      thank_you: Thank you for your collaboration!!
+      new_post: Nouveau Post
+      search_your_gear: Recherche ton matériel dans notre base
+      pick_photo_or_video: Choisis une photo/vidéo
+      write_your_comment: Laisse un commentaire et aide les autres!
+      post_it: Poste!! =)
+      thank_you: Merci de ta colaboration!!
       photo: *photo
       video: *video
       comment: *comment
@@ -45,7 +45,7 @@ fr:
     privacies:
       show:
         chapters: Chapitres
-        privacy: Vie privée
+        privacy: Confidentialité
     questions:
       show:
         chapters: Chapitres
@@ -59,13 +59,13 @@ fr:
     footer:
       terms: CGU
       faq: FAQ
-      privacy: Vie privée
+      privacy: Confidentialité
       about_us: A propos
       we_are_also_in: "Nous sommes aussi sur:"
     header:
       choose_your_country:  'Choisis ton pays'
-      choose_your_language: 'Choisissez votre langue'
-      choose_your_currency: 'Choisissez votre devise'
+      choose_your_language: 'Choisis ta langue'
+      choose_your_currency: 'Choisis ta devise'
       languages:
         uk: 'Anglais'
         fr: 'Français'
@@ -128,8 +128,8 @@ fr:
       contact_fax: Fax
       address: Adresse
     details:
-      characteristics: caractéristiques
-      company: entreprise
+      characteristics: Caractéristiques
+      company: Entreprise
       dimensions: Dimensions
       email: Email
       address: Adresse
@@ -173,7 +173,7 @@ fr:
       save: Sauvegarder les changements
       logout: Se Déconnecter
       delete_account: Supprimer le compte
-      are_you_sure: "Êtes vous sûr? Cette action n'est pas reversible."
+      are_you_sure: "Es tu sûr? Cette action n'est pas reversible."
     profile_top:
       edit_info: Éditer mes informations
     nav_filters:
@@ -188,7 +188,7 @@ fr:
       reviews: Commentaires
     edit:
       title: *title
-      post_review: Partager vos commentaires et aidez la communauté...
+      post_review: Partage tes commentaires et aide la communauté...
       upload: Partager
     new:
       upload: Partager
@@ -198,7 +198,7 @@ fr:
       post_review: Post review
     review_form:
       title: *title
-      post_review: Partager vos commentaires et aidez la communauté...
+      post_review: Partage tes commentaires et aide la communauté...
     index:
       post_photo_video: partager photo / vidéo
       added_remove: Ajouté(Supprimer)
@@ -215,7 +215,7 @@ fr:
       learn: *learn
       share: *share
     search_results:
-      no_results: Aucun résultat pour votre recherche.
+      no_results: Aucun résultat pour ta recherche.
 
   shared:
     selects:
@@ -242,7 +242,7 @@ fr:
     load_more_button:
       more_listings: Plus de Produits
     products:
-      no_results: Aucun résultat pour votre recherche.
+      no_results: Aucun résultat pour ta recherche.
       more_info: "Plus d'info..."
     search:
       sort_by: Trier par
@@ -279,20 +279,20 @@ fr:
       enter_your_street: rue
       save: Enregistrer
     photo_result:
-      no_results: Aucun résultat pour votre recherche.
+      no_results: Aucun résultat pour ta recherche.
     photo_thumbnail:
       more_info: "Plus d'Info..."
     review_result:
-      no_reviews: "Vous n'avez pas encore partagé de commentaire"
+      no_reviews: "Tu n'as pas encore partagé de commentaire"
     review_thumbnail:
       edit: Editer
       remove: Supprimer
     video_result:
-      no_results: Aucun résultat pour votre recherche.
+      no_results: Aucun résultat pour ta recherche.
     video_thumbnail:
       more_info: "Plus d'Info..."
     favourites:
-      no_favorites: "vous n'avez pas encore de favoris"
+      no_favorites: "Tu n'as pas encore de favoris"
       remove: Supprimer
       more_info: "Plus d'Info..."
     review:
@@ -300,9 +300,9 @@ fr:
     reviews:
       more_listings: Plus de commentaires
     social:
-      no_activities: "Vous n'avez pas encore d'activité"
+      no_activities: "Tu n'as pas encore d'activité"
     video:
-      no_results: Aucun résultat pour votre recherche.
+      no_results: Aucun résultat pour ta recherche.
       remove: Supprimer
       more_info: Plus d'Info...
 
