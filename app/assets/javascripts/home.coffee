@@ -48,4 +48,13 @@ $(document).ready ->
   $('#masonry-container').masonry
     itemSelector: '.box'
     columnWidth: (containerWidth) ->
-      containerWidth / 5
+      if containerWidth > 1000
+        containerWidth / 5
+      else if containerWidth > 800
+        containerWidth / 4
+      else if containerWidth > 600
+        containerWidth / 3
+      else if containerWidth > 400
+        containerWidth / 2
+      else
+        containerWidth
