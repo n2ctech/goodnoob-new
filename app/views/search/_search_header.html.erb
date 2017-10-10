@@ -27,7 +27,7 @@
           <span class="item-separator"><%= image_tag('r-arrow.png') %></span>
 
           <span class="social-feed-button-wrapper">
-            <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link active" } %>
+            <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link active #{session[:locale]}" } %>
           </span>
 
         </div>

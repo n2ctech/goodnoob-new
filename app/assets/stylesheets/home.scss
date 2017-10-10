@@ -40,10 +40,27 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
     padding-right: 10px;
   }
   @media only screen and (min-width: 1200px) {
-    .tabs-list {
-      padding-left: 4%;
+    .tabs-link.active.en {
+      margin-right: -45px;
+    }
+    .tabs-link.active.fr {
+      margin-right: -55px;
+    }
+    .tabs-link.active.es {
+      margin-right: -95px;
     }
   }
+  @media only screen and (max-width: 600px) {
+    .main-tabs-wrapper {
+      .tabs-link {
+        font-size: 4vw;
+      }
+      .tabs-link.active {
+        font-size: 6vw;
+      }
+    }
+  }
+
   @media only screen and (max-width: 1200px) {
     .container-filters {
       //width: 100%;
@@ -57,10 +74,10 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
       display: inline-block;
       margin-top: 0;
       .tabs-link {
-        font-size: 5vw;
+        font-size: 2.5vw;
       }
       .tabs-link.active {
-        font-size: 6vw;
+        font-size: 3vw;
       }
     }
     .show-filters a {
