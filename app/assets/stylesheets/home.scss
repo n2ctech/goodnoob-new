@@ -40,8 +40,14 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
     padding-right: 10px;
   }
   @media only screen and (min-width: 1200px) {
-    .tabs-link.active {
+    .tabs-link.active.en {
+      margin-right: -45px;
+    }
+    .tabs-link.active.fr {
       margin-right: -55px;
+    }
+    .tabs-link.active.es {
+      margin-right: -95px;
     }
   }
   @media only screen and (max-width: 600px) {
