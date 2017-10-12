@@ -2,7 +2,31 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
 
 
 #search_results{
-  @media only screen and (max-width: 400px) {
+  .thumb-wrapper{
+    width: 16.9vw;
+    margin: 0 1.2vw 3vh 0;
+  }
+  @media only screen and (max-width: 1115px) {
+    .thumb-wrapper{
+      width: 21vw;
+      margin: 0 1.2vw 3vh 0;
+    }
+  }
+  @media only screen and (max-width: 890px) {
+    .thumb-wrapper{
+      width: 28vw;
+      margin: 0 1.2vw 3vh 0;
+    }
+  }
+  
+  @media only screen and (max-width: 675px) {
+    .thumb-wrapper{
+      width: 42vw;
+      margin: 0 1.2vw 3vh 0;
+    }
+  }
+
+  @media only screen and (max-width: 460px) {
     .thumb-wrapper{
       width: 91vw;
       margin: 0 0 3vh 0;
@@ -22,12 +46,8 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
       text-overflow: ellipsis;
     }
   }
+  
   @media only screen and (min-width: 400px) {
-    .thumb-wrapper{
-      min-width: 200px;
-      width: 16.9vw;
-      margin: 0 1.2vw 3vh 0;
-    }
     .new-post-container {
       width: 16.9vw;
       align: center;

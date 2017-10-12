@@ -3887,6 +3887,11 @@ a.img-modal-show {
 }
 */
 
+@media screen and (max-width: 1200px) {
+  #home-search-page + .main-container {
+    padding-top: 135px;
+  }
+}
 
 @media screen and (max-width: 992px) {
   .main-category-subfilters-hide {
@@ -3903,9 +3908,6 @@ a.img-modal-show {
   }
   #home-search-page .main-tabs-wrapper {
     background-color: #333;
-  }
-  #home-search-page + .main-container {
-    padding-top: 154px;
   }
   #home-search-page .main-tabs-wrapper.nav-down,
   #home-search-page .main-tabs-wrapper.nav-up {
