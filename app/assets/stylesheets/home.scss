@@ -39,6 +39,9 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
   .l-arrow {
     padding-right: 10px;
   }
+  .main-tabs-wrapper {
+    padding-top: 6px;
+  }
   @media only screen and (min-width: 1200px) {
     .tabs-link.active.en {
       margin-right: -45px;
@@ -49,8 +52,15 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
     .tabs-link.active.es {
       margin-right: -95px;
     }
+
+    .filter-wrapper {
+      font-size: 1.25vw;
+    }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
+    .main-tabs-wrapper {
+      padding-top: 8px;
+    }
     .main-tabs-wrapper {
       .tabs-link {
         font-size: 4vw;
@@ -62,6 +72,9 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
   }
 
   @media only screen and (max-width: 1200px) {
+    .video-background {
+      display: none;
+    }
     .container-filters {
       //width: 100%;
       .filter-wrapper{
@@ -82,11 +95,6 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
     }
     .show-filters a {
       font-size: 4vw;
-    }
-  }
-  @media only screen and (min-width: 1200px) {
-    .filter-wrapper {
-      font-size: 1.25vw;
     }
   }
 }
