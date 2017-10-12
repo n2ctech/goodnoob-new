@@ -94,4 +94,6 @@ Rails.application.configure do
   config.action_mailer.default_options = {
     from: "no-reply@goodnoob.com"
   }
+
+  config.force_ssl = true
 end
