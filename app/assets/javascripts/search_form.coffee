@@ -84,7 +84,7 @@ class SearchForm
     search_params = $.param { search: query }
     "<a class='s-suggestion' href='/search?#{search_params}'>" +
     "  <span class='s-query'>#{query}</span> in " +
-    "  <span class='s-highlight-primary'>Social Feed</span>" +
+    "  <span class='s-highlight-primary'>Share</span>" +
     "</a>"
 
 
