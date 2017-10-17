@@ -2898,6 +2898,7 @@ $footer-links-color: #7f7f7f;
     border-color: transparent;
     font-size: 2em;
     text-decoration: none;
+    transition: font-size 0.2s, color 0.2s;
   }
 
   @media only screen and (min-width: 768px) {
