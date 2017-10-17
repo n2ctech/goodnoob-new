@@ -2339,6 +2339,10 @@ $upload-button-color: #64b0fc;
         position: relative;
         outline: none;
 
+        &.overflow-visible {
+          overflow: visible;
+        }
+
         a, img { outline: none; }
 
         &:hover {
