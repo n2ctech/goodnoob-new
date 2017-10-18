@@ -57,19 +57,6 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
       font-size: 1.25vw;
     }
   }
-  @media only screen and (max-width: 800px) {
-    .main-tabs-wrapper {
-      padding-top: 8px;
-    }
-    .main-tabs-wrapper {
-      .tabs-link {
-        font-size: 4vw;
-      }
-      .tabs-link.active {
-        font-size: 6vw;
-      }
-    }
-  }
 
   @media only screen and (max-width: 1200px) {
     .video-background {
@@ -86,17 +73,46 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
       height: inherit;
       display: inline-block;
       margin-top: 0;
-      .tabs-link {
-        font-size: 2.5vw;
-      }
-      .tabs-link.active {
-        font-size: 3vw;
-      }
     }
     .show-filters a {
       font-size: 4vw;
     }
+
+    .main-tabs-wrapper {
+      .tabs-link {
+        font-size: 2.5vw;
+      }
+      .tabs-link.active {
+        font-size: 4vw;
+      }
+    }
   }
+  
+  @media only screen and (max-width: 800px) {
+    .main-tabs-wrapper {
+      padding-top: 8px;
+    }
+    .main-tabs-wrapper {
+      .tabs-link {
+        font-size: 3.5vw;
+      }
+      .tabs-link.active {
+        font-size: 5vw;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .main-tabs-wrapper {
+      .tabs-link {
+        font-size: 5vw;
+      }
+      .tabs-link.active {
+        font-size: 7vw;
+      }
+    }
+  }
+
 }
 
 #new-post-modal {
