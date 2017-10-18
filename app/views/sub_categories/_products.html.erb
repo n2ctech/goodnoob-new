@@ -23,6 +23,7 @@
               <div class='flex thumb-header'>
                 <span class='thumb-header-abbr'>
                   <%= link_to product do %>
+                      <%= "#{product.company.name} - " if product.company %>
                       <%= product.name %> <%= "(#{product.year})" if product.year %>
                       <% if false %>
                           <!-- commented -->
