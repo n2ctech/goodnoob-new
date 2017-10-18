@@ -53,6 +53,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'puma'
+gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   gem 'factory_girl_rails'

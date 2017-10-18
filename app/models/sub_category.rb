@@ -1,6 +1,9 @@
 class SubCategory < ActiveRecord::Base
   translates :name
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   belongs_to :category
   has_many :products, inverse_of: :sub_category
   has_many :filters
@@ -33,4 +36,9 @@ end
 #  updated_at  :datetime         not null
 #  name_fr     :string
 #  name_es     :string
+#  slug        :string
+#
+# Indexes
+#
+#  index_sub_categories_on_slug  (slug) UNIQUE
 #

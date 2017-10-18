@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805132009) do
+ActiveRecord::Schema.define(version: 20171018041946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -275,7 +275,10 @@ ActiveRecord::Schema.define(version: 20170805132009) do
     t.integer  "company_id"
     t.text     "description_fr"
     t.text     "description_es"
+    t.string   "slug"
   end
+
+  add_index "products", ["slug"], name: "index_products_on_slug", unique: true, using: :btree
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "value"
@@ -328,7 +331,10 @@ ActiveRecord::Schema.define(version: 20170805132009) do
     t.datetime "updated_at",  null: false
     t.string   "name_fr"
     t.string   "name_es"
+    t.string   "slug"
   end
+
+  add_index "sub_categories", ["slug"], name: "index_sub_categories_on_slug", unique: true, using: :btree
 
   create_table "user_favourites", force: :cascade do |t|
     t.integer  "user_id"

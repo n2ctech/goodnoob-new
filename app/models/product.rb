@@ -1,6 +1,9 @@
 class Product < ActiveRecord::Base
   include Recentable
 
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
   translates :description
 
   belongs_to :company
@@ -25,7 +28,7 @@ class Product < ActiveRecord::Base
 
   alias_attribute :characteristics, :attrs # .characteristics method
 
-  delegate :name, to: :company, prefix: true # .company_name method
+  delegate :name, to: :company, prefix: true, allow_nil: true # .company_name method
   delegate :name, to: :sub_category, prefix: true # .sub_category_name method
   delegate :count, to: :photos, prefix: true # .photos_count method
   delegate :count, to: :videos, prefix: true # .videos_count method
@@ -105,6 +108,16 @@ class Product < ActiveRecord::Base
     picture.url *args
   end
 
+  private
+
+  def slug_candidates
+    [
+      :name,
+      [:name, :year],
+      [:name, :year, :company_name]
+    ]
+  end
+
   def self.media
     media = []
     media += Photo.where(product_id: self.ids)
@@ -152,4 +165,9 @@ end
 #  company_id      :integer
 #  description_fr  :text
 #  description_es  :text
+#  slug            :string
+#
+# Indexes
+#
+#  index_products_on_slug  (slug) UNIQUE
 #

@@ -88,3 +88,5 @@ Procfile.dev
 *~
 
 config/database.yml
+latest.dump
+import_scripts/*
