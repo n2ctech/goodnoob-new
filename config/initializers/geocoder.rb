@@ -1,3 +1,4 @@
 Geocoder.configure(
-  ip_lookup: :google
+  ip_lookup: :geoip2,
+  geoip2: { file: Rails.root.join('GeoLite2-Country.mmdb') }
 )
