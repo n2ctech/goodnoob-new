@@ -2192,9 +2192,10 @@ $upload-button-color: #64b0fc;
   .thumbs-matrix-wrapper {
     background: #f9f9f9;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 16px;
+    padding-left: 30px;
 
     .thumb-wrapper {
       background: #fefefe !important;
