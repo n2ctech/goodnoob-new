@@ -111,4 +111,6 @@ Rails.application.routes.draw do
 
   post '/modals/:action', controller: :modals, format: false, as: :modals
   get '/modals/fetch' => 'modals#fetch', format: :json
+
+  get ':sub_category_id/:id', to: 'products#show'
 end

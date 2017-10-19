@@ -70,7 +70,9 @@ class ProductsController < ApplicationController
         end
       end
 
-      format.html
+      format.html do
+        redirect_to "/#{@product.sub_category.slug}/#{@product.slug}" if params[:sub_category_id].blank?
+      end
     end
   end
 
