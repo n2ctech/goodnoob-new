@@ -31,6 +31,7 @@ class SubCategoriesController < ApplicationController
 
     @products =
       @sub_category.products
+                   .includes(:company)
                    .base_search(params[:search],
                                 params[:sub_categories],
                                 params[:companies])
