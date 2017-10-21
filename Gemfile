@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'masonry-rails'
 gem 'slim-rails'
 gem 'rails', '4.2.4'
@@ -75,6 +76,14 @@ group :development do
   gem 'annotate'
   gem 'thin'
   gem 'letter_opener'
+end
+
+group :development do
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 group :test do
