@@ -92,23 +92,15 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
     .main-tabs-wrapper {
       padding-top: 8px;
     }
-    .main-tabs-wrapper {
-      .tabs-link {
-        font-size: 3.5vw;
-      }
-      .tabs-link.active {
-        font-size: 5vw;
-      }
-    }
   }
   
   @media only screen and (max-width: 600px) {
     .main-tabs-wrapper {
       .tabs-link {
-        font-size: 5vw;
+        font-size: 4vw;
       }
       .tabs-link.active {
-        font-size: 7vw;
+        font-size: 5vw;
       }
     }
   }
