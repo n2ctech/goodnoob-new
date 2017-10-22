@@ -15,6 +15,8 @@ en:
     video: &video Video
     comment: &comment Comment...
     post: &post + Post
+    login: &login Login
+    register: &register Register
     
   guides:
     show:
@@ -78,6 +80,8 @@ en:
       my_profile: My Profile
       account: *account
       log_out: *log_out
+      login: *login
+      register: *register
     nav_links_for_auth:
       log_out: *log_out
       account: *account
