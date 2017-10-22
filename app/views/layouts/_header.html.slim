@@ -13,6 +13,11 @@ header
             li
               button.btn.blog-btn data-target="#BlogModal" data-toggle="modal" type="button"= t('.the_blog')
             li= link_to t('.log_out'), destroy_user_session_path, method: 'delete'
+          - else
+            li
+              a.text_bold data-target="#SignInModal" data-toggle="modal" = t('.login')
+            li
+              a.text_bold data-target="#SignUpModal" data-toggle="modal" type="button" = t('.register')
       .search-bar
         =image_tag  "search-icon.png", :class => "icon_search"
     .flex.header-center
