@@ -95,5 +95,5 @@ Rails.application.configure do
     from: "no-reply@goodnoob.com"
   }
 
-  config.force_ssl = true
+  config.force_ssl = false
 end
