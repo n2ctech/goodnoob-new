@@ -3,7 +3,7 @@ en:
     # repeated words/phrases are defined here for easier reference
     compare: &compare Shop
     learn: &learn Guides
-    share: &share Share
+    share: &share Social
     title: &title Title
     account: &account Account
     log_out: &log_out Log out
