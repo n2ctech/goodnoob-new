@@ -31,6 +31,6 @@
 </div>
 <div class="flex main-filters-wrapper learn-main-filter-hide">
   <% @categories.each do |category| %>
-  <%= render partial: 'search/category_filter', locals: {category: category} %>
+    <%= render partial: 'search/category_filter', locals: {category: category} %>
   <% end %>
 </div>
