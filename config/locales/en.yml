@@ -1,8 +1,8 @@
 en:
   dictionary:
     # repeated words/phrases are defined here for easier reference
-    compare: &compare Compare
-    learn: &learn Learn
+    compare: &compare Shop
+    learn: &learn Guides
     share: &share Share
     title: &title Title
     account: &account Account
@@ -17,7 +17,7 @@ en:
     post: &post + Post
     login: &login Login
     register: &register Register
-    
+
   guides:
     show:
       chapters: Chapters

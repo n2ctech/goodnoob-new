@@ -1,9 +1,9 @@
 es:
   dictionary:
     # repeated words/phrases are defined here for easier reference
-    compare: &compare Comparar
-    learn: &learn Aprender
-    share: &share Compartir
+    compare: &compare Tienda
+    learn: &learn Guias
+    share: &share Social
     title: &title Título
     account: &account Cuenta
     log_out: &log_out Salir
@@ -25,7 +25,7 @@ es:
       share: *share
     show:
       chapters: Capítulos
-  
+
   home:
     new_post_modal:
       new_post: + Nueva publicación

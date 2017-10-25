@@ -1,9 +1,9 @@
 fr:
   dictionary:
     # repeated words/phrases are defined here for easier reference
-    compare: &compare Comparer
-    learn: &learn Apprendre
-    share: &share Partager
+    compare: &compare Shop
+    learn: &learn Guides
+    share: &share Social
     title: &title Titre
     account: &account Compte
     log_out: &log_out Se déconnecter
