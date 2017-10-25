@@ -86,6 +86,7 @@ en:
       log_out: *log_out
       account: *account
       the_blog: *the_blog
+      new_post: *post
     search_box:
       categories: Categories
       search: Search...
