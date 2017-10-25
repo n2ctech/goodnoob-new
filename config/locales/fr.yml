@@ -73,7 +73,7 @@ fr:
         fr: 'Français'
         es: 'Espagnol'
       social_feed: "Fil d'actualité"
-      compare_products: Comparer les produits
+      compare_products: Shop
       buying_guides: "Guides d'achat"
       new_post: + PARTAGER
       the_blog: *the_blog
@@ -124,7 +124,7 @@ fr:
       add_to_favorites: Ajouter aux favoris
       buy: Acheter
     breadcrumbs:
-      home: "Fil d'actualité"
+      home: "Social"
     company:
       contacts: Contacts
       contact_email: Email

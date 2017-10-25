@@ -72,9 +72,9 @@ en:
         uk: 'English'
         fr: 'French'
         es: 'Spanish'
-      social_feed: Social Feed
-      compare_products: Compare Products
-      buying_guides: Buying Guides
+      social_feed: Social
+      compare_products: Shop
+      buying_guides: Guides
       new_post: + New Post
       the_blog: *the_blog
       my_profile: My Profile
