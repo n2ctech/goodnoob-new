@@ -35,7 +35,7 @@ set :sitemap_roles, :web # default
 # set :keep_releases, 5
 
 ## Linked Files & Directories (Default None):
-set :linked_files, %w{config/database.yml .env.production}
+set :linked_files, %w{config/database.yml .env.production public/sitemap.xml.gz}
 set :linked_dirs,  %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :puma do
