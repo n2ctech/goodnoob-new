@@ -307,3 +307,11 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
 .search-results-container {
   .image-cover-fit {min-height: 124px;}
 }
+
+.box {
+  img.image-cover-fit {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+  }
+}
