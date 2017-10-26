@@ -10,6 +10,8 @@
 #
 
 class SubCategoriesController < ApplicationController
+  protect_from_forgery except: :show
+
   def show
     # update selected sub category id and category id
     if params[:id].nil?
