@@ -165,7 +165,7 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
             font-size: 1.6rem;
             display: inline-block;
             width: 107px;
-            vertical-align: middle;
+            vertical-align: top;
           }
           .product-button {
             border-radius: 0;
@@ -190,6 +190,13 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
             &.glyphicon {
               font-size: 0.7rem;
             }
+          }
+          .btn {
+            margin-bottom: 7px;
+          }
+          .buttons {
+            display: inline-block;
+            width: 70%;
           }
           .dropdown-menu {
             right: auto;
