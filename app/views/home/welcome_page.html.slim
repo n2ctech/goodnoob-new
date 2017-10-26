@@ -17,7 +17,8 @@
         .small-text This is how it works:
         .row
           .col-lg-4.component
-            = image_tag 'learn.png'
+            = link_to guides_path(category_id: cookies[:selected_category_id]) do
+              = image_tag 'learn.png'
             .text-back
               |Learn everything with our buying guides
               .text
@@ -27,7 +28,8 @@
                 br
                 |information is power!
           .col-lg-4.component
-            = image_tag 'compare.png'
+            = link_to sub_category_path(cookies[:selected_sub_category_id]) do
+              = image_tag 'compare.png'
             .text-back
               |Compare and search your extreme sport product
               .text
@@ -37,15 +39,16 @@
                 br
                 |buy it.
           .col-lg-4.component
-            = image_tag 'share.png'
-            .text-back
-              |Share your photos and videos with the community
-              .text
-                |Share your photos with the community, make a
-                br
-                |video, or upload the review of your new gear.
-                br
-                |Enjoy the ride!
+              = link_to search_index_path do
+                = image_tag 'share.png'
+              .text-back
+                |Share your photos and videos with the community
+                .text
+                  |Share your photos with the community, make a
+                  br
+                  |video, or upload the review of your new gear.
+                  br
+                  |Enjoy the ride!
       .col-lg-3.col-sm-12.col-xs-12
         - unless user_signed_in?
           .authform.register-form-welcome-page
