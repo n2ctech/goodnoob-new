@@ -240,16 +240,6 @@ $(document).ready(function() {
     //     }
     // });
 
-    // Adding a custom scrollbar for filtering
-    var container = $('.filter-group-contents');
-    $(container).perfectScrollbar({
-        wheelSpeed: .1,
-        wheelPropagation: true,
-        minScrollbarLength: 20,
-        scrollYMarginOffset: 150,
-        maxScrollbarLength: 80
-    });
-
     // Toggling main filters
     $(filterHead).click(function(){
         $(this).siblings('.filter-group-contents').toggle(300).toggleClass('visible');
@@ -685,4 +675,3 @@ function hasScrolled() {
 
     lastScrollTop = st;
 }
-
