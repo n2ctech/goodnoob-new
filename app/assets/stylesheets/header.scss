@@ -18,17 +18,16 @@
 }
 
 .search-input {
-  width: 99%;
+  width: 100%;
   display: block;
-  margin: 0.3% 0.5% 0;
   background: #fff;
-  min-height: 35px;
+  height: 40px;
   input[type=text] {
     border: none;
     font-size: 16px;
     max-width: 88.99%;
     width: 100%;
-    line-height: 35px;
+    line-height: 40px;
     padding: 0;
     display: inline-block;
     vertical-align: top;
@@ -65,8 +64,8 @@
     vertical-align: top;
     background: #6fecdd;
     color: #fff;
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     line-height: 39px;
     text-align: center;
     float: right;
@@ -78,14 +77,26 @@
   .hamburger__icon {
     display: inline-block;
     vertical-align: middle;
-    margin: 0 10px;
     top: 0;
-    opacity: 0.10;
+    margin-top: 7px;
+    opacity: 0.1;
   }
 }
 
 #searchModal {
   padding-right: 0px!important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1050;
+  height: auto;
+  .hamburger {
+    position: relative;
+    display: inline-block;
+    margin-right: -3px;
+    height: 30px;
+  }
 }
 
 .search-overlay {
@@ -139,7 +150,7 @@
     }
   }
   .search-input .cancel-search {
-    height: 35px;
+    height: 40px;
   }
 }
 
