@@ -31,11 +31,13 @@
       <%= render 'layouts/mobile_post_button' %>
     </div>
 
-    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="hidden" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
         <%= form_tag search_index_path, method: :get, class: 'search-form--inline search-input' do %>
-          <div class="hamburger__icon"></div>
+          <a href="javascript:void(0)" class="hamburger" id="hamburger">
+            <div class="hamburger__icon"></div>
+          </a>
           <button type="submit">
-            <i class="fa fa-search"></i>
+            <i class="fa fa-search fa-lg"></i>
           </button>
           <%= text_field_tag :search, params[:search], class: 'search-field',
               placeholder: 'Search', autocomplete: 'off' %>

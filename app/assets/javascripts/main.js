@@ -621,13 +621,15 @@ $(document).ready(function() {
       nextArrow: $('.down-arrow')
     });
 
-    $('.search-bar').on('click', function () {
-        $('#searchModal').modal({show: true});
-        // $(".search-overlay").addClass("active");
+    $('.search-bar').on('click', function (e) {
+      e.preventDefault();
+      $('#searchModal').removeClass('hidden');
+      $('#searchModal').addClass('in');
     });
-    $('.cancel-search').on('click', function () {
-        $('#searchModal').modal({hide: true});
-        // $(".search-overlay").removeClass("active");
+    $('.cancel-search').on('click', function (e) {
+      e.preventDefault();
+      $('#searchModal').addClass('hidden');
+      $('#searchModal').removeClass('in');
     });
 });
 
