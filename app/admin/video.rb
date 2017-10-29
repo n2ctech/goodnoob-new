@@ -1,8 +1,7 @@
 ActiveAdmin.register Video do
 
   permit_params :category_id, :product_id, :user_id,
-                :url, :main, :comment, :day, :caption,
-                picture_attributes: [:id, :url, :imageable_id, :imageable_type]
+                :url, :main, :comment, :day, :caption
 
   controller do
     belongs_to :user, :category, :product, optional: true
@@ -43,12 +42,6 @@ ActiveAdmin.register Video do
       f.input :comment
       f.input :day
       f.input :caption
-    end
-    f.inputs 'Picture', for: [:picture_attributes, f.object.picture || f.object.build_picture] do |picture|
-      picture.input :id, as: :hidden, value: picture.object.id
-      picture.input :imageable_id, as: :hidden, value: f.object.id
-      picture.input :imageable_type, as: :hidden, value: 'Video'
-      picture.input :url
     end
     actions
   end
