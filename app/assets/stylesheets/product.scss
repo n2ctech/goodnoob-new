@@ -776,16 +776,21 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
 
 .main-container.product-photo-videos {
   .main-content-wrapper {
-   .thumbs-matrix-wrapper {
-    margin: 35px 4.4vw;
-    padding: 0;
-    .thumb-wrapper.thumb-photo {
-       .thumb-description.thumb-brd-btm-4 {
+    .thumbs-matrix-wrapper {
+      margin: 35px 4.4vw;
+      padding: 0;
+      .thumb-wrapper.thumb-photo {
+        .thumb-description.thumb-brd-btm-4 {
           border-bottom: none;
           height: auto;
-       }
+        }
+      }
     }
-   }
+   .product-media {
+      .thumb-header {
+        display: none;
+      }
+    }
   }
 }
 span.thumb-footer-price {
