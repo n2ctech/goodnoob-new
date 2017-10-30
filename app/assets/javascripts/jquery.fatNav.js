@@ -60,11 +60,7 @@
 
     			var isNavOpen = $body.hasClass('no-scroll');
 
-          if (isNavOpen) {
-            $body.width($body.width());
-          } else {
-            $body.css({'width': ''});
-          }
+          // $body.width($body.width());
           $body.css('overflow', isNavOpen ? 'hidden' : self._bodyOverflow);
 
         }
