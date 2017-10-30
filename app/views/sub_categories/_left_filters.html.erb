@@ -16,7 +16,7 @@
 
     <%= render layout: 'left_filter',
         locals: { filter_name: 'International Brands', filter_type: 'international-brands', icon_class: 'glyphicon glyphicon-plane' } do %>
-      <% @sub_category.companies.international(session[:country]).uniq.each do |company| %>
+      <% @sub_category.companies.international(session[:country]).uniq.sort_by(&:name).each do |company| %>
         <%= render partial: 'company_filter', locals: { company: company } %>
       <% end %>
     <% end if @sub_category.companies.international(session[:country]).uniq.present? %>

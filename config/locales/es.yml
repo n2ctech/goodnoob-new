@@ -244,6 +244,7 @@ es:
       share: *share
     left_filter:
       see_more: Ver más...
+      see_less: See less...
     load_more_button:
       more_listings: Más Resultados
     products:
