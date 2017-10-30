@@ -52,20 +52,22 @@
         },
 
         toggleBodyOverflow: function() {
+          var self = this;
 
-            var self = this;
+    			var $body = $('body');
 
-			var $body = $('body');
+          $body.toggleClass('no-scroll');
 
-            $body.toggleClass('no-scroll');
+    			var isNavOpen = $body.hasClass('no-scroll');
 
-			var isNavOpen = $body.hasClass('no-scroll');
-
-			$body.width($body.width());
-            $body.css('overflow', isNavOpen ? 'hidden' : self._bodyOverflow);
+          if (isNavOpen) {
+            $body.width($body.width());
+          } else {
+            $body.css({'width': ''});
+          }
+          $body.css('overflow', isNavOpen ? 'hidden' : self._bodyOverflow);
 
         }
-
     });
 
     if (typeof $[pluginName] === 'undefined') {
