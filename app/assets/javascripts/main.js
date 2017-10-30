@@ -340,17 +340,20 @@ $(document).ready(function() {
         }
     });
 
+
     // Behaviour of 'Show more' button
     $(showMoreLink).click(function(event){
-        if($(this).children('.more-link').text() == 'See more...'){
+      var seeMore = $(this).children('.more-link').data('see-more');
+      var seeLess = $(this).children('.more-link').data('see-less');
+        if($(this).children('.more-link').text() == seeMore){
             $(this).siblings('.filter-group-contents').children('.filter-wrapper:gt(9)').show(400);
             $(this).siblings('.filter-group-contents').children('.ps-scrollbar-y-rail:first').css('display', 'block');
-            $(this).children('.more-link').text('See less...');
+            $(this).children('.more-link').text(seeLess);
         }
         else{
             $(this).siblings('.filter-group-contents').children('.filter-wrapper:gt(9)').hide(400)
             $(this).siblings('.filter-group-contents').children('.ps-scrollbar-y-rail:first').css('display', 'none');
-            $(this).children('.more-link').text('See more...');
+            $(this).children('.more-link').text(seeMore);
 
         }
     });

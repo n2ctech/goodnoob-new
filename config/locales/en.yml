@@ -244,6 +244,7 @@ en:
       share: *share
     left_filter:
       see_more: See more...
+      see_less: See less...
     load_more_button:
       more_listings: More Listings
     products:

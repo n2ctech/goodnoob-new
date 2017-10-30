@@ -8,6 +8,8 @@
     <%= yield %>
   </div>
   <div class="showmore-link-wrapper">
-    <span class="more-link"><%= t '.see_more' %></span>
+    <span class="more-link" data-see-more='<%=t('.see_more') %>'
+      data-see-less='<%=t('.see_less') %>'
+    ><%= t '.see_more' %></span>
   </div>
 </div>
