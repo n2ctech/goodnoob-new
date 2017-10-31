@@ -139,6 +139,7 @@
             .login-form.no-padding.hidden#welcome_login_form
               = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %
                 = devise_error_messages!
+                = f.hidden_field :remember_me, value: 1
                 .form-group
                   = f.email_field :email, :autofocus => true, class: 'form-control b', placeholder: 'Mail address'
                 .form-group
