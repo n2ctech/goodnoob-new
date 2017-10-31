@@ -15,14 +15,8 @@
           <!-- <% end -%> -->
           <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
         </div>
+        <%= f.hidden_field :remember_me, value: 1 %>
 
-<!--       <% if devise_mapping.rememberable? -%>
-        <div class="checkbox" style="width:150px">
-          <label>
-            <%= f.check_box :remember_me %> Remember me
-          </label>
-        </div>
-      <% end -%> -->
         <%= render "devise/shared/social_login" %>
 
         <div class="button-login-page" align="center">
