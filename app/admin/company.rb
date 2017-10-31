@@ -9,8 +9,6 @@ ActiveAdmin.register Company do
     address_attributes: [:id, :street, :city, :postcode, :country, :country_code,
       :latitude, :longitude, :addressable_type, :addressable_id]
 
-  scope :all
-
   filter :name_cont, label: 'Name'
   filter :description_en_cont, label: 'Description'
   filter :email_cont, label: 'Email'
