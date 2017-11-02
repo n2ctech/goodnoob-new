@@ -537,16 +537,9 @@ $(document).ready(function() {
 
     $('.product-tab-button').on('click', function(e){
       e.preventDefault();
-      var tabs, tab;
-
-      tabs = {
-        characteristics: '.product-characteristics',
-        company: '.product-company'
-      }
-
-      tab = $(this).html();
+      var tab = '.' + $(this).data('tab-name');
       $('.product-tab').addClass('hidden');
-      $(tabs[tab]).removeClass('hidden');
+      $(tab).removeClass('hidden');
 
       $('.product-tab-button.active').removeClass('active')
       $(this).addClass('active')

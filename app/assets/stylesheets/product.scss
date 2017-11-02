@@ -453,6 +453,14 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
     .tab-wrapper {
       overflow: hidden;
     }
+    .product-characteristics, .product-company {
+      p {
+        font-family: "Myriad Pro Light", sans-serif;
+        font-size: 17px;
+        margin-bottom: 20px;
+        line-height: 1.3em;
+      }
+    }
     .product-characteristics {
       .characteristic-title {
         font-weight: bolder;
