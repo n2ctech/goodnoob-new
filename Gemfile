@@ -57,6 +57,7 @@ gem 'fog-aws'
 gem 'puma'
 gem 'friendly_id', '~> 5.1.0'
 gem 'sitemap_generator'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'factory_girl_rails'
