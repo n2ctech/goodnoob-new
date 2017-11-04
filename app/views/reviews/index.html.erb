@@ -26,7 +26,7 @@
     <div class="product-info-wrapper col-md-6">
       <div class="product-info">
         <h1 class="product-name">
-          <%= @product.name %> <%= "(#{product.year})" if @product.year %>
+          <%= @product.name %> <%= "(#{@product.year})" if @product.year %>
         </h1>
         <div class="product-review-bar">
           <%= render 'products/rating', rating: @product.rating, product_id: @product.id %>
