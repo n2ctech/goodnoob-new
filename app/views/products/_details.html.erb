@@ -29,38 +29,39 @@
 
     <div class="row tab-wrapper">
       <div class="product-company product-tab col-md-5 center-block short hidden">
-        <% company = product.company %>
-        <div class="company-name"><%= company.name %></div>
-        <div class="company-email">
-          <%= link_to company.url, company.url, :target => "_blank" %>
-        </div>
-        <%= simple_format company.description %>
+        <% if company = product.company %>
+          <div class="company-name"><%= company.name %></div>
+          <div class="company-email">
+            <%= link_to company.url, company.url, :target => "_blank" %>
+          </div>
+          <%= simple_format company.description %>
 
-        <div class="contacts">
-          <% if company.email? %>
-            <p>
-              <%= t '.email' %>: <%= company.email %>
-            </p>
-          <% end %>
+          <div class="contacts">
+            <% if company.email? %>
+              <p>
+                <%= t '.email' %>: <%= company.email %>
+              </p>
+            <% end %>
 
-          <% unless company.address.nil? %>
-            <p>
-              <%= t '.address' %>: <%= company.address.street %> <%= company.address.city %> <%= company.address.postcode %>
-            </p>
-          <% end %>
+            <% unless company.address.nil? %>
+              <p>
+                <%= t '.address' %>: <%= company.address.street %> <%= company.address.city %> <%= company.address.postcode %>
+              </p>
+            <% end %>
 
-          <% if company.phone? %>
-            <p>
-              <%= t '.phone' %>: <%= company.phone %>
-            </p>
-          <% end %>
+            <% if company.phone? %>
+              <p>
+                <%= t '.phone' %>: <%= company.phone %>
+              </p>
+            <% end %>
 
-          <% if company.fax? %>
-            <p>
-              <%= t '.fax' %>: <%= company.fax %>
-            </p>
-          <% end %>
-        </div>
+            <% if company.fax? %>
+              <p>
+                <%= t '.fax' %>: <%= company.fax %>
+              </p>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
 
