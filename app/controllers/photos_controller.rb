@@ -31,8 +31,8 @@ class PhotosController < ApplicationController
                       main: false, day: false, user: current_user,
                       category_id: product.category.id
 
-    if photo.save
-      redirect_to :back
+    if photo.save!
+      redirect_to product
     else
       render 'shared/errors', locals: { errors: photo.errors }
     end
