@@ -5,8 +5,7 @@
       = link_to photos.picture.image.url, class: 'embed-responsive text-hide thumb-bg js-zoom-photo img-modal-show' do
         = image_tag photos.picture.image.url(:original), class: 'image-cover-fit'
   span.thumb-header-name
-    = photos.user.name
-    = photos.user.last_name
+    = photos.user.full_name
 
   .thumb-menu-stripe.social-icon-tab
     - if local_assigns[:for_profile].present?
