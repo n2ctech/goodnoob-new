@@ -2,8 +2,7 @@
   .thumb-preview.overflow-visible
     .flex.thumb-header
       span.thumb-header-name
-        = photo.user.name
-        = photo.user.last_name
+        = photo.user.full_name
       .thumb-menu-stripe
         - if local_assigns[:for_profile].present?
           a.toggle-product-menu.social-share.thumb-more-button href="#!"
