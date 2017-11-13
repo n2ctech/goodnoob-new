@@ -1,8 +1,7 @@
 <div class="thumb-wrapper">
   <div class='flex thumb-header'>
     <span class='thumb-header-name'>
-      <%= photo.user.try :name %>
-      <%= photo.user.try(:last_name) if photo.user.try :last_name %>
+      <%= photo.user&.full_name %>
     </span>
     <div class="thumb-menu-stripe">
       <a class="toggle-product-menu social-share"></a>
