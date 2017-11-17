@@ -50,7 +50,13 @@ $(document).ready ->
 
 
 $ ->
-  $('#guide_description_en, #guide_description_es, #guide_description_fr').redactor
+  $('#guide_description_en, #guide_description_es, #guide_description_fr,
+    #info_about_description_en, #info_about_description_es, #info_about_description_fr,
+    #info_question_description_en, #info_question_description_es, #info_question_description_fr,
+    #info_privacy_description, #info_term_description,
+    #product_description_en, #product_description_es, #product_description_fr,
+    #company_description_en, #company_description_es, #company_description_fr,
+    #distributor_information_en, #distributor_information_es, #distributor_information_fr').redactor
     plugins: [
       'inlinestyle'
       'codemirror'

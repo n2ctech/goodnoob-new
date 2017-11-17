@@ -22,7 +22,7 @@ ActiveAdmin.register Info::About do
         f.input column, label: column
       end
       Info::About.locale_columns(:description).each do |column|
-        f.input column, label: column, as: :html_editor
+        f.input column, label: column
       end
     end
     f.actions
