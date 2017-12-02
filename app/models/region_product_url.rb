@@ -1,6 +1,6 @@
 class RegionProductUrl < ActiveRecord::Base
   belongs_to :region, required: true
-  belongs_to :product, required: true
+  belongs_to :product, required: true, inverse_of: :region_product_urls
 
   validates :url, presence: true
   validates :region_id, uniqueness: { scope: :product_id }

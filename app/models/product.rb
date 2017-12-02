@@ -20,7 +20,7 @@ class Product < ActiveRecord::Base
   has_many :user_favourites, as: :favouriteable
   has_many :users, through: :user_favourites
   has_many :pictures, as: :imageable
-  has_many :region_product_urls
+  has_many :region_product_urls, inverse_of: :product
   has_many :similars, -> (p) { where.not(id: p) }, through: :sub_category, source: :products
   has_and_belongs_to_many :filter_options
 
