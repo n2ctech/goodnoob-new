@@ -548,7 +548,7 @@ DEPENDENCIES
   paperclip (~> 4.3)
   paperclip-optimizer
   pg
-  pry-rails (= 0.3.6)
+  pry-rails
   puma
   quiet_assets
   rails (= 4.2.4)
@@ -578,4 +578,4 @@ RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.15.4
+   1.16.0

@@ -57,12 +57,12 @@ gem 'puma'
 gem 'friendly_id', '~> 5.1.0'
 gem 'sitemap_generator'
 gem 'whenever', require: false
+gem 'pry-rails'
 
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'pry-rails', '0.3.6'
 end
 
 group :development do
