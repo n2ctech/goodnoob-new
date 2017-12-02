@@ -15,6 +15,16 @@ class Picture < ActiveRecord::Base
                        content_type: { content_type: /\Aimage\/.*\Z/ }
 
   delegate :url, to: :image
+
+  attr_reader :image_remote_url
+
+  def image_remote_url=(url_value)
+    self.image = URI.parse(url_value)
+    # Assuming url_value is http://example.com/photos/face.png
+    # avatar_file_name == "face.png"
+    # avatar_content_type == "image/png"
+    @image_remote_url = url_value
+  end
 end
 
 # == Schema Information
