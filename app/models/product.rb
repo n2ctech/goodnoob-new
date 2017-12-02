@@ -28,6 +28,8 @@ class Product < ActiveRecord::Base
 
   alias_attribute :characteristics, :attrs # .characteristics method
 
+  validates :blue_tomato_product_code, uniqueness: true, allow_blank: true
+
   delegate :name, to: :company, prefix: true, allow_nil: true # .company_name method
   delegate :name, to: :sub_category, prefix: true # .sub_category_name method
   delegate :count, to: :photos, prefix: true # .photos_count method
@@ -155,19 +157,21 @@ end
 #
 # Table name: products
 #
-#  id              :integer          not null, primary key
-#  name            :string
-#  description_en  :text
-#  year            :integer
-#  sub_category_id :integer
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  company_id      :integer
-#  description_fr  :text
-#  description_es  :text
-#  slug            :string
+#  id                       :integer          not null, primary key
+#  name                     :string
+#  description_en           :text
+#  year                     :integer
+#  sub_category_id          :integer
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  company_id               :integer
+#  description_fr           :text
+#  description_es           :text
+#  slug                     :string
+#  blue_tomato_product_code :string
 #
 # Indexes
 #
-#  index_products_on_slug  (slug) UNIQUE
+#  index_products_on_blue_tomato_product_code  (blue_tomato_product_code) UNIQUE
+#  index_products_on_slug                      (slug) UNIQUE
 #

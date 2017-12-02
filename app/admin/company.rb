@@ -16,6 +16,18 @@ ActiveAdmin.register Company do
   filter :fax_cont, label: 'Fax'
   filter :created_at
 
+  index do
+    id_column
+    column :name
+    column :url
+    column :email
+    column :phone
+    column :fax
+    column :created_at
+    column :updated_at
+    actions
+  end
+
   action_item :products, only: :show do
     link_to 'Products', admin_company_products_path(company)
   end
@@ -33,7 +45,7 @@ ActiveAdmin.register Company do
       f.input :name
       f.input :url
       Company.locale_columns(:description).each do |column|
-        f.input column, label: column, as: :html_editor
+        f.input column, label: column
       end
       f.input :email
       f.input :phone

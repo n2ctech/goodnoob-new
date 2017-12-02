@@ -104,7 +104,7 @@ ActiveAdmin.register Product do
     f.inputs do
       f.input :name
       Product.locale_columns(:description).each do |column|
-        f.input column, label: column, as: :html_editor
+        f.input column, label: column
       end
       f.input :year
       f.input :company
@@ -137,7 +137,7 @@ ActiveAdmin.register Product do
           attr.input column, label: column
         end
         Attribute.locale_columns(:value).each do |column|
-          attr.input column, label: column, as: :html_editor
+          attr.input column, label: column
         end
       end
     end

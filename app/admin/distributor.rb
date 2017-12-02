@@ -39,7 +39,7 @@ ActiveAdmin.register Distributor do
   form do |f|
     f.inputs do
       Distributor.locale_columns(:information).each do |column|
-        f.input column, label: column, as: :html_editor
+        f.input column, label: column
       end
       f.input :phone
       f.input :url
