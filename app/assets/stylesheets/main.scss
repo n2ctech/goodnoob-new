@@ -1082,6 +1082,12 @@ header {
     white-space: nowrap;
     font-weight: 300;
 
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
 
     .subcategory-link {
       background-position: center;

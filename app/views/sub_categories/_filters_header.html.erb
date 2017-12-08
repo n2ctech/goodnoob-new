@@ -28,7 +28,7 @@
 
 <div class="flex main-filters-wrapper category-filters-tabs-hide">
   <% @categories.each do |category| %>
-    <div class="filter-wrapper category-item <%= "active" if category.searched_for?(params[:sub_categories]) %>">
+    <div class="filter-wrapper category-item <%= "active" if category.searched_for?(params[:sub_categories]) %>" data-cat-id="<%= category.id %>">
       <%= link_to category.sub_categories.first, class: 'category-link category-link-compare' do %>
         <label class="checkbox-style">
           <input id="<%= "category-#{category.id}" %>" type="checkbox" class="checkbox-inline" <%= category.searched_for?(params[:sub_categories]) ? "checked='checked'" : "" %>>

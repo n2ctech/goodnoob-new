@@ -7,17 +7,15 @@
 <!--  <div class="mobile-filter-button"></div>-->
 <% end %>
 <%= render 'filters_header' %>
-<div class="flex main-subfilters-wrapper main-category-subfilters-hide">
-  <div class="subcategory-wrapper">
-    <% cur_category = @categories.where(id: @sub_category.category_id).first %>
-    <% if cur_category != nil %>
-      <% subcategory_first = true %>
-      <% cur_category.sub_categories.each do |sub_cat| %>
 
-        <!-- subcategory separator -->
-        <!-- <% if subcategory_first == false %>
-          <div class="subcategory-separator"></div>
-        <% end %> -->
+<div class="flex main-subfilters-wrapper main-category-subfilters-hide">
+
+  <% @categories.each do |category| %>
+
+    <div class="subcategory-wrapper <%= "active" if category.searched_for?(params[:sub_categories]) %>" data-cat-sub="<%= category.id %>">
+
+    <% if category != nil %>
+      <% category.sub_categories.each do |sub_cat| %>
 
         <% class_name = 'subcategory-name' %>
         <% if @sub_category.id == sub_cat.id %>
@@ -26,10 +24,12 @@
         <% link_body = '<label class="' + class_name + '">' + sub_cat.name + '</label>' %>
         <%= link_to raw(link_body), sub_cat, class: 'subcategory-link' %>
 
-        <% subcategory_first = false %>
       <% end %>
     <% end %>
-  </div>
+
+    </div>
+
+  <% end %>
 </div>
 
 <%= form_tag(sub_category_path(@sub_category, format: :js), method: 'get', id: 'filter_form', remote: true) do %>
