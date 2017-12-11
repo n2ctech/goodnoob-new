@@ -17,7 +17,46 @@ ActiveAdmin.register Product do
                 dimensions_attributes: [:text, :_destroy, :id],
                 pictures_attributes: [:image, :_destroy, :id],
                 region_product_urls_attributes: [:url, :_destroy, :id, :region_id],
-                :filter_option_ids => []
+                :filter_option_ids => [],
+                :surfboard_detail_attributes => [
+                  :id,
+                  :perfect_for,
+                  :perfecto_para,
+                  :parfait_pour,
+
+                  :manufacturing_time_en,
+                  :manufacturing_time_es,
+                  :manufacturing_time_fr,
+
+                  :rocker_en,
+                  :rocker_es,
+                  :rocker_fr,
+
+                  :rails_en,
+                  :rails_es,
+                  :rails_fr,
+
+                  :concave_en,
+                  :concave_es,
+                  :concave_fr,
+
+                  :wave_size_en,
+                  :wave_size_es,
+                  :wave_size_fr,
+
+                  :surfboard_detail_params_attributes => [
+                    :id,
+                    :size_height_id,
+                    :size_width_id,
+                    :thickness_id,
+                    :volume_id,
+                    :tail_shape_id,
+                    :construction_id,
+                    :fin_system_id,
+                    :artwork_id,
+                    :_destroy
+                  ]
+                ]
 
   action_item :videos, only: :show do
     link_to 'Videos', admin_product_videos_path(product)
@@ -113,6 +152,44 @@ ActiveAdmin.register Product do
                                collection: FilterOption.includes(:filter).all.group_by(&:filter),
                                label: 'Filter Options'
     end
+
+    f.inputs 'Details', for: [:surfboard_detail, f.object.surfboard_detail || SurfboardDetail.new] do |d|
+      d.input :perfect_for
+      d.input :perfecto_para
+      d.input :parfait_pour
+
+      d.input :manufacturing_time_en
+      d.input :manufacturing_time_es
+      d.input :manufacturing_time_fr
+
+      d.input :rocker_en
+      d.input :rocker_es
+      d.input :rocker_fr
+
+      d.input :rails_en
+      d.input :rails_es
+      d.input :rails_fr
+
+      d.input :concave_en
+      d.input :concave_es
+      d.input :concave_fr
+
+      d.input :wave_size_en
+      d.input :wave_size_es
+      d.input :wave_size_fr
+
+      d.has_many :surfboard_detail_params, allow_destroy: true do |attr|
+        attr.input :size_height
+        attr.input :size_width
+        attr.input :thickness
+        attr.input :volume
+        attr.input :tail_shape
+        attr.input :construction
+        attr.input :fin_system
+        attr.input :artwork
+      end
+    end
+
     f.inputs 'Pictures' do
       f.has_many :pictures, allow_destroy: true do |attr|
         attr.input :image, required: true, as: :file,

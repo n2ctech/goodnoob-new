@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127095612) do
+ActiveRecord::Schema.define(version: 20171208083016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 20171127095612) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "country_code"
+  end
+
+  create_table "artworks", force: :cascade do |t|
+    t.decimal "price", precision: 10, scale: 2
   end
 
   create_table "attributes", force: :cascade do |t|
@@ -75,6 +79,11 @@ ActiveRecord::Schema.define(version: 20171127095612) do
 
   add_index "companies_countries", ["company_id"], name: "index_companies_countries_on_company_id", using: :btree
   add_index "companies_countries", ["country_id"], name: "index_companies_countries_on_country_id", using: :btree
+
+  create_table "constructions", force: :cascade do |t|
+    t.string  "name"
+    t.decimal "price", precision: 10, scale: 2
+  end
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -156,6 +165,11 @@ ActiveRecord::Schema.define(version: 20171127095612) do
   end
 
   add_index "filters", ["sub_category_id"], name: "index_filters_on_sub_category_id", using: :btree
+
+  create_table "fin_systems", force: :cascade do |t|
+    t.string  "name"
+    t.decimal "price", precision: 10, scale: 2
+  end
 
   create_table "guide_images", force: :cascade do |t|
     t.string   "image"
@@ -326,6 +340,14 @@ ActiveRecord::Schema.define(version: 20171127095612) do
     t.integer  "user_id"
   end
 
+  create_table "size_heights", force: :cascade do |t|
+    t.string "height"
+  end
+
+  create_table "size_widths", force: :cascade do |t|
+    t.string "width"
+  end
+
   create_table "sub_categories", force: :cascade do |t|
     t.string   "name_en"
     t.integer  "category_id"
@@ -337,6 +359,54 @@ ActiveRecord::Schema.define(version: 20171127095612) do
   end
 
   add_index "sub_categories", ["slug"], name: "index_sub_categories_on_slug", unique: true, using: :btree
+
+  create_table "surfboard_artworks", force: :cascade do |t|
+    t.integer "surfboard_details_id"
+    t.integer "artworks_id"
+  end
+
+  create_table "surfboard_detail_params", force: :cascade do |t|
+    t.integer "surfboard_detail_id"
+    t.integer "size_height_id"
+    t.integer "size_width_id"
+    t.integer "thickness_id"
+    t.integer "volume_id"
+    t.integer "tail_shape_id"
+    t.integer "construction_id"
+    t.integer "fin_system_id"
+    t.integer "artwork_id"
+  end
+
+  create_table "surfboard_details", force: :cascade do |t|
+    t.integer "product_id"
+    t.string  "perfect_for"
+    t.string  "perfecto_para"
+    t.string  "parfait_pour"
+    t.string  "manufacturing_time_en"
+    t.string  "manufacturing_time_es"
+    t.string  "manufacturing_time_fr"
+    t.string  "rocker_en"
+    t.string  "rocker_es"
+    t.string  "rocker_fr"
+    t.string  "rails_en"
+    t.string  "rails_es"
+    t.string  "rails_fr"
+    t.string  "concave_en"
+    t.string  "concave_es"
+    t.string  "concave_fr"
+    t.string  "wave_size_en"
+    t.string  "wave_size_es"
+    t.string  "wave_size_fr"
+  end
+
+  create_table "tail_shapes", force: :cascade do |t|
+    t.string  "name"
+    t.decimal "price", precision: 10, scale: 2
+  end
+
+  create_table "thicknesses", force: :cascade do |t|
+    t.string "thickness"
+  end
 
   create_table "user_favourites", force: :cascade do |t|
     t.integer  "user_id"
@@ -397,6 +467,10 @@ ActiveRecord::Schema.define(version: 20171127095612) do
     t.datetime "updated_at",             null: false
     t.string   "host",        limit: 10
     t.string   "code",        limit: 20
+  end
+
+  create_table "volumes", force: :cascade do |t|
+    t.string "volume"
   end
 
   add_foreign_key "companies_countries", "companies"
