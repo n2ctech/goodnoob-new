@@ -1,0 +1,371 @@
+/
+    <% content_for(:title) { "#{@product.company_name} #{@product.name}" } %>
+    <% content_for(:description) { @product.description.to_s.truncate 80 } %>
+
+    <%= render partial: 'breadcrumbs', locals: { product: @product } %>
+    <%= render partial: 'about', locals: { product: @product } %>
+    <%= render 'products/reviews', product: @product, display_all: false %>
+    <%= render 'photos_and_videos', product: @product, title: t('.photos_and_videos') %>
+    <%= render partial: 'details', product: @product %>
+    <%= render partial: 'similar', product: @product %>
+
+section.product__section.product-about-wrapper
+    .product-about.de_container
+        .product__left-col
+            .product-about-photos-wrapper
+                .product-photos
+                    ul.photos-container.bxslider
+                        li.product-photo
+                            a.product-zoom-photo href="https://askpiter-staging-assets.s3.amazonaws.com/pictures/images/000/007/758/original/e7f90f7d9232d54f00b9f62288331b02.jpeg?1509706798"
+                                img [src="https://askpiter-staging-assets.s3.amazonaws.com/pictures/images/000/007/758/original/e7f90f7d9232d54f00b9f62288331b02.jpeg?1509706798"]
+                        li.product-photo
+                            a.product-zoom-photo href="https://askpiter-staging-assets.s3.amazonaws.com/pictures/images/000/007/758/original/e7f90f7d9232d54f00b9f62288331b02.jpeg?1509706798"
+                                img [src="https://askpiter-staging-assets.s3.amazonaws.com/pictures/images/000/007/758/original/e7f90f7d9232d54f00b9f62288331b02.jpeg?1509706798"]
+                        li.product-photo
+                            a.product-zoom-photo href="https://askpiter-staging-assets.s3.amazonaws.com/pictures/images/000/007/758/original/e7f90f7d9232d54f00b9f62288331b02.jpeg?1509706798"
+                                img [src="https://askpiter-staging-assets.s3.amazonaws.com/pictures/images/000/007/758/original/e7f90f7d9232d54f00b9f62288331b02.jpeg?1509706798"]
+
+                .bx-slider-pager
+                    a href="#" data-slide-index="0"
+                    a href="#" data-slide-index="1"
+                    a href="#" data-slide-index="2"
+
+            .product__specs-wrap.mobile-hidden
+                .product__specs
+                    h2.product__title Cali Quad - Dimitry Project
+
+                    table.product__price
+                        tr
+                            th Size
+                            td
+                                | 5'3 x 18 1/4 x 2 1/4'' x 23.6
+                                span.additional
+                                    |  + 1450 $
+                        tr
+                            th Tall Shape
+                            td Swallow
+                        tr
+                            th Construction
+                            td
+                                | PE (Epoxy)
+                                span.additional
+                                    |  + 150 $
+                        tr
+                            th Glassing
+                            td Standard
+                        tr
+                            th Fin Layout
+                            td Thruster
+                        tr
+                            th Fin System
+                            td FCS II
+                        tr
+                            th Artwork
+                            td
+                                | Dimitri Drjuchin
+                                span.additional
+                                    |  + 50 $
+                        tr
+                            th Total
+                            td 1650 $
+
+                    a.button.button-cart Add To Cart
+                    a.button.button-filled Buy Now
+
+        .product__right-col
+            .product__subsection
+                h3.product__heading Description
+                p
+                    | <b>The Cali Quad Dimitri Project,</b> combines the classic Cali Quad shape with artwork from artist Dimitri Drjuchin. This fish style quad loves clean and powerful waves.
+
+            .product__subsection
+                h3.product__heading 1. Size
+
+                table.product__table
+                    tr
+                        th Height
+                        th Width
+                        th Thickness
+                        th Volume
+                        th Price
+
+                    tr
+                        td
+                            select
+                                option val="val1" Value 1
+                                option val="val2" Value 2
+                                option val="val3" Value 3
+                        td
+                            select
+                                option val="val1" Value 1
+                                option val="val2" Value 2
+                                option val="val3" Value 3
+                        td
+                            select
+                                option val="val1" Value 1
+                                option val="val2" Value 2
+                                option val="val3" Value 3
+                        td N/A
+                        td N/A
+
+                    tr
+                        td
+                            input.chb-custom[type="radio" id="chb1" name="productSize"]
+                            label for="chb1" 5'1''
+                        td 17 3/4
+                        td 2 3/16''
+                        td 21.7
+                        td 1450 $
+                    tr.checked
+                        td
+                            input.chb-custom[type="radio" id="chb2" checked="checked" name="productSize"]
+                            label for="chb2" 5'1''
+                        td 17 3/4
+                        td 2 3/16''
+                        td 21.7
+                        td 1450 $
+                    tr
+                        td
+                            input.chb-custom[type="radio" id="chb3" name="productSize"]
+                            label for="chb3" 5'1''
+                        td 17 3/4
+                        td 2 3/16''
+                        td 21.7
+                        td 1450 $
+                    tr
+                        td
+                            input.chb-custom[type="radio" id="chb4" name="productSize"]
+                            label for="chb4" 5'1''
+                        td 17 3/4
+                        td 2 3/16''
+                        td 21.7
+                        td 1450 $
+                    tr
+                        td
+                            input.chb-custom[type="radio" id ="chb5" name="productSize"]
+                            label for="chb5" 5'1''
+                        td 17 3/4
+                        td 2 3/16''
+                        td 21.7
+                        td 1450 $
+                    tr
+                        td
+                            input.chb-custom[type="radio" id="chb6" name="productSize"]
+                            label for="chb6" 5'1''
+                        td 17 3/4
+                        td 2 3/16''
+                        td 21.7
+                        td 1450 $
+
+            .product__subsection
+                h3.product__heading 2. Tail Shape
+                .chb-block
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="tails"]
+                            .circle-image
+                                = image_tag("tail_shapes/squash.png");
+                            span Squash
+
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="tails"]
+                            .circle-image
+                                = image_tag("tail_shapes/round-pin.png");
+                            span Round Pin
+
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="tails" checked]
+                            .circle-image
+                                = image_tag("tail_shapes/swallow.png");
+                            span Swallow
+
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="tails"]
+                            .circle-image
+                                = image_tag("tail_shapes/square.png");
+                            span Square
+
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="tails"]
+                            .circle-image
+                                = image_tag("tail_shapes/pin.png");
+                            span Pin
+
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="tails"]
+                            .circle-image
+                                = image_tag("tail_shapes/diamond.png");
+                            span Diamond
+
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="tails"]
+                            .circle-image
+                                = image_tag("tail_shapes/bat.png");
+                            span Bat
+
+            .product__subsection
+                h3.product__heading 3. Construction
+                .labels-block
+                    label
+                        input.chb-custom[type="checkbox" checked]
+                        span
+                            | PE (Epoxy)
+                            span.txt-accent + 150 $
+                        .label__helper.mobile-hidden Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+            .product__subsection
+                h3.product__heading 4. Glassing
+                .labels-block
+                    label
+                        input.chb-custom[type="radio" name="glassing" checked]
+                        span
+                            | Standard
+                    label
+                        input.chb-custom[type="radio" name="glassing"]
+                        span
+                            | Team Lite
+                    label
+                        input.chb-custom[type="radio" name="glassing"]
+                            span
+                            | Extra strong
+
+            .product__subsection
+                h3.product__heading 5. Signature
+                .input-group
+                    label[for="fieldSignature"] To be written on the board
+                    input.input-text[type="text" id="fieldSignature" placeholder="Harry Bale"]
+
+            .product__subsection
+                h3.product__heading 6. Fin Layout & System
+
+                p.block-title
+                    | <b>Fin Layout</b>
+                .chb-block
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="fins"]
+                            .circle-image
+                                = image_tag("fins/fin-01.png");
+
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="fins" checked]
+                            .circle-image
+                                = image_tag("fins/fin-02.png");
+
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="fins"]
+                            .circle-image
+                                = image_tag("fins/fin-03.png");
+
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="fins"]
+                            .circle-image
+                                = image_tag("fins/fin-04.png");
+
+                p.block-title
+                    | <b>System</b>
+                .chb-block
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="systems" checked]
+                            .circle-image
+                                = image_tag("systems/system-01.png");
+                    .chb-block__item
+                        label
+                            input.chb-custom[type="radio" name="systems"]
+                            .circle-image
+                                = image_tag("systems/system-02.png");
+
+            .product__subsection.big
+                h3.product__heading 7. Artwork
+                .swiper-container.artwork
+                    .chb-block.swiper-wrapper
+                        .chb-block__item.swiper-slide
+                            label[tabindex="-1"]
+                                input.chb-custom[type="radio" name="artworks" tabindex="-1"]
+                                .image-wrapper
+                                    = image_tag("serf.jpg");
+                                span
+                                    | Dimitri Drjuchin Full Graphic Inlay
+                                    span.text-accent  +50 $
+
+                        .chb-block__item.swiper-slide
+                            label[tabindex="-1"]
+                                input.chb-custom[type="radio" name="artworks" tabindex="-1" checked]
+                                .image-wrapper
+                                    = image_tag("serf.jpg");
+                                span
+                                    | Dimitri Drjuchin Full Graphic Inlay
+                                    span.text-accent  +50 $
+
+                        .chb-block__item.swiper-slide
+                            label[tabindex="-1"]
+                                input.chb-custom[type="radio" name="artworks" tabindex="-1"]
+                                .image-wrapper
+                                    = image_tag("serf.jpg");
+                                span
+                                    | Dimitri Drjuchin Full Graphic Inlay
+                                    span.text-accent  +50 $
+                        .chb-block__item.swiper-slide
+                            label[tabindex="-1"]
+                                input.chb-custom[type="radio" name="artworks" tabindex="-1"]
+                                .image-wrapper
+                                    = image_tag("serf.jpg");
+                                span
+                                    | Dimitri Drjuchin Full Graphic Inlay
+                                    span.text-accent  +50 $
+
+                    .swiper-button-prev
+                    .swiper-button-next
+
+            .product__specs-wrap.desktop-hidden
+                .product__specs
+                    h2.product__title Cali Quad - Dimitry Project
+
+                    table.product__price
+                        tr
+                            th Size
+                            td
+                                | 5'3 x 18 1/4 x 2 1/4'' x 23.6
+                                span.additional
+                                    |  + 1450 $
+                        tr
+                            th Tall Shape
+                            td Swallow
+                        tr
+                            th Construction
+                            td
+                                | PE (Epoxy)
+                                span.additional
+                                    |  + 150 $
+                        tr
+                            th Glassing
+                            td Standard
+                        tr
+                            th Fin Layout
+                            td Thruster
+                        tr
+                            th Fin System
+                            td FCS II
+                        tr
+                            th Artwork
+                            td
+                                | Dimitri Drjuchin
+                                span.additional
+                                    |  + 50 $
+                        tr
+                            th Total
+                            td 1650 $
+
+                div
+                    a.button.button-cart Add To Cart
+                    a.button.button-filled Buy Now

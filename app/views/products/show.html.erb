@@ -1,9 +1,0 @@
-<% content_for(:title) { "#{@product.company_name} #{@product.name}" } %>
-<% content_for(:description) { @product.description.to_s.truncate 80 } %>
-
-<%= render partial: 'breadcrumbs', locals: { product: @product } %>
-<%= render partial: 'about', locals: { product: @product } %>
-<%= render 'products/reviews', product: @product, display_all: false %>
-<%= render 'photos_and_videos', product: @product, title: t('.photos_and_videos') %>
-<%= render partial: 'details', product: @product %>
-<%= render partial: 'similar', product: @product %>
