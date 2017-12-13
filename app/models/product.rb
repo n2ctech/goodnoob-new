@@ -9,6 +9,7 @@ class Product < ActiveRecord::Base
   belongs_to :company
   belongs_to :sub_category, inverse_of: :products
   has_one :category, through: :sub_category
+  has_one :surfboard_detail
 
   has_many :videos
   has_many :photos
@@ -42,6 +43,7 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :dimensions, allow_destroy: true
   accepts_nested_attributes_for :pictures, allow_destroy: true
   accepts_nested_attributes_for :region_product_urls, allow_destroy: true
+  accepts_nested_attributes_for :surfboard_detail
 
   scope :filter, ->(filters) { includes(:filter_options)
                                  .where(filter_options: { id: filters }) if filters.present? }

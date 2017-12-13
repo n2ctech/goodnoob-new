@@ -21,6 +21,7 @@
 #= require redactor/imagelink
 #= require codemirror
 #= require codemirror/modes/xml
+#= require jquery.ddslick.min
 
 $ ->
   if $('#product_sub_category_id').length == 0
@@ -33,8 +34,36 @@ $ ->
       $.get '/ajax_get_filter_options/' + $(@).val(),
         (data) -> $('#product_filter_options_input').html data
 
+###
+  Dynamicaly decorate dropdowns with ddslick plugin
+  http://designwithpc.com/Plugins/ddSlick
+
+  data-type: product_details - container
+  data-type: ddslick - dropdown
+###
+ddslick_decorator = ->
+  target = $('[data-type=product_details]').get(0)
+
+  return unless target
+
+  $('[data-type=ddslick]', target).ddslick()
+
+  config =
+    childList: true
+    subtree: true
+    attributes: false
+    characterData: false
+
+  observer = new MutationObserver (mutations) ->
+    mutations.forEach (mutation)->
+      $('[data-type=ddslick]', mutation.addedNodes).ddslick()
+
+  observer.observe(target, config)
+
 
 $(document).ready ->
+  ddslick_decorator()
+
   if $('#product_sub_category_id').length == 0
     return
 
