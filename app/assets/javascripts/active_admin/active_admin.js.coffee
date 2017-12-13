@@ -21,7 +21,7 @@
 #= require redactor/imagelink
 #= require codemirror
 #= require codemirror/modes/xml
-#= require third-party/jquery.ddslick.min.js
+#= require jquery.ddslick.min
 
 $ ->
   if $('#product_sub_category_id').length == 0
