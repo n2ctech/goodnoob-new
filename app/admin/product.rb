@@ -153,7 +153,7 @@ ActiveAdmin.register Product do
                                label: 'Filter Options'
     end
 
-    f.inputs 'Details', for: [:surfboard_detail, f.object.surfboard_detail || SurfboardDetail.new] do |d|
+    f.inputs 'Details', for: [:surfboard_detail, f.object.surfboard_detail || SurfboardDetail.new], 'data-type' => 'product_details' do |d|
       d.input :perfect_for
       d.input :perfecto_para
       d.input :parfait_pour
@@ -186,7 +186,9 @@ ActiveAdmin.register Product do
         attr.input :tail_shape
         attr.input :construction
         attr.input :fin_system
-        attr.input :artwork
+        attr.input :artwork, as: :select, include_blank: true,
+                   collection: Artwork.all.map{|item| [item.id, item.id, {'data-imagesrc' => item.picture.url}]},
+                   input_html: {'data-type' => 'ddslick'}
       end
     end
 
