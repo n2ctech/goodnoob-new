@@ -63,6 +63,7 @@ Rails.application.routes.draw do
       get :reviews
       get :social
       get :favourites
+      get :orders
     end
   end
 

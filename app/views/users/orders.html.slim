@@ -1,0 +1,105 @@
+- @active_orders = 'active'
+= render partial: 'registrations/profile_top'
+= render partial: 'registrations/nav_filters'
+
+nav.orders__tabs
+  a.current[href="#" data-tab-id="orders"] Orders
+  a[href="#" data-tab-id="active"] Active orders
+  a[href="#" data-tab-id="cancelled"] Cancelled orders
+
+main.orders
+  .orders__container
+    .orders__tab.current[data-tab="orders"]
+      .orders__order
+        .orders__image
+          = image_tag('orders_image.jpg')
+        .orders__content
+          .orders__heading
+            div
+              span Delivery:
+              span.text-accent  30-11-2017
+            div
+              span Ordered
+              span.text-grey  26-11-17
+
+          h3.orders__title DX1 JF
+          p.orders__number ORDER 426439-1249-3529
+
+          p.orders__description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+          .orders__actions
+            a[href="#"] Track Order
+            a[href="#"] Add a Review
+            a[href="#"] Post Photo Or Video
+
+          .orders__heading
+            div
+              span Total
+              span.text-accent  610 $
+            div
+              span Send To
+              span.text-grey  Main Street 7, 1A London, UK
+
+    .orders__tab[data-tab="active"]
+      .orders__order
+        .orders__image
+          = image_tag('orders_image.jpg')
+        .orders__content
+          .orders__heading
+            div
+              span Delivery:
+              span.text-accent  30-11-2017
+            div
+              span Ordered
+              span.text-grey  26-11-17
+
+          h3.orders__title DX1 JF
+          p.orders__number ORDER 426439-1249-3529
+
+          p.orders__description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+          .orders__actions
+            a[href="#"] Track Order
+            a[href="#"] Add a Review
+            a[href="#"] Post Photo Or Video
+
+          .orders__heading
+            div
+              span Total
+              span.text-accent  610 $
+            div
+              span Send To
+              span.text-grey  Main Street 7, 1A London, UK
+
+      .orders__order
+        .orders__image
+          = image_tag('orders_image.jpg')
+        .orders__content
+          .orders__heading
+            div
+              span Delivery:
+              span.text-accent  30-11-2017
+            div
+              span Ordered
+              span.text-grey  26-11-17
+
+          h3.orders__title DX1 JF
+          p.orders__number ORDER 426439-1249-3529
+
+          p.orders__description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+          .orders__actions
+            a[href="#"] Track Order
+            a[href="#"] Add a Review
+            a[href="#"] Post Photo Or Video
+
+          .orders__heading
+            div
+              span Total
+              span.text-accent  610 $
+            div
+              span Send To
+              span.text-grey  Main Street 7, 1A London, UK
+
+    .orders__tab[data-tab="cancelled"]
+      h3 Cancelled Orders

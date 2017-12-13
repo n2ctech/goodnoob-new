@@ -36,7 +36,7 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_only, :except => [:reviews, :social, :favourites, :update, :review, :photo, :video, :show, :ajax_destroy_favourite, :ajax_destroy_recent_search,
+  before_action :admin_only, :except => [:reviews, :social, :favourites, :update, :review, :photo, :video, :orders, :show, :ajax_destroy_favourite, :ajax_destroy_recent_search,
                                           :ajax_destroy_all_favourites, :ajax_destroy_recent_searches]
 
   def show
@@ -181,6 +181,10 @@ class UsersController < ApplicationController
       @categories = Category.includes(:sub_categories).order(:id)
       render
     end
+  end
+
+  def orders
+
   end
 
   private

@@ -13,3 +13,6 @@ nav#nav-filters.navbar.navbar-default
       li.navbar-btn class="#{@active_favorites || ''}"
         = link_to(favourites_users_path, class:"btn-icon favourites-icon") do
           label type="text" = t '.favorites'
+      li.navbar-btn class="#{@active_orders || ''}"
+        = link_to(orders_users_path, class: "btn-icon favourites-icon") do
+          label type="text" = t '.orders'

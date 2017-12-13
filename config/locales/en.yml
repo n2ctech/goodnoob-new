@@ -186,6 +186,7 @@ en:
       reviews: Reviews
       social: Social
       favorites: Favorites
+      orders: Orders
 
   reviews:
     breadcrumbs:
