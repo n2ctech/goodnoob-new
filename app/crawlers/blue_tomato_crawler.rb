@@ -1,3 +1,4 @@
+class BlueTomatoCrawler
 URL_TO_SUBCATEGORY_MAPPINGS = {
   'https://www.blue-tomato.com/en-ES/products/categories/Snowboard-00000000--Snowboard+Bindings-0000000A/' => 'Snow Bindings',
   'https://www.blue-tomato.com/en-ES/products/categories/Snowboard-00000000--Snowboard+Boots-0000000E/' => 'Snowboots',
@@ -146,4 +147,5 @@ links.each do |sub_category_name, urls|
     end
   end
   end
+end
 end
